@@ -20,8 +20,8 @@ set expandtab        " expand tabs to spaces
 set textwidth=120
 " turn syntax highlighting on
 set t_Co=256
-syntax on
-" colorscheme wombat256
+syntax enable
+colorscheme monokai
 " turn line numbers on
 set number
 " highlight matching braces
@@ -40,6 +40,9 @@ set tags+=~/.vim/tags/qt4
 let g:DoxygenToolkit_authorName="John Doe <john@doe.com>"
 
 execute pathogen#infect()
+
+"I hate tmp files"
+set backupdir=/dev/null
 
 " Enhanced keyboard mappings
 "
