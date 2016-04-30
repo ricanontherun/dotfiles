@@ -41,8 +41,8 @@ let g:DoxygenToolkit_authorName="John Doe <john@doe.com>"
 
 execute pathogen#infect()
 
-"I hate tmp files"
-set backupdir=/dev/null
+"Store tmp files in /var/tmp, thanks http://stackoverflow.com/a/4331812"
+set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 
 " Enhanced keyboard mappings
 "
@@ -55,3 +55,4 @@ set backupdir=/dev/null
 :map <C-v> p
 :map <C-x> d
 :map <C-z> u
+:map <C-q> :wqa<Enter>
