@@ -56,3 +56,4 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <C-Left> :tabprevious<CR>
 :map <C-Right> :tabnext<CR>
 :map <C-d> :Dox<Enter>
+:map nt :NERDTree<Enter>:on<Enter>
