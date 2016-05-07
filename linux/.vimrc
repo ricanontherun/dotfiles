@@ -21,7 +21,7 @@ set textwidth=120
 " turn syntax highlighting on
 set t_Co=256
 syntax enable
-colorscheme monokai
+colorscheme darcula 
 " turn line numbers on
 set number
 " highlight matching braces
@@ -56,3 +56,5 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <C-x> d
 :map <C-z> u
 :map <C-q> :wqa<Enter>
+:map <C-Left> :tabprevious<CR>
+:map <C-Right> :tabnext<CR>
