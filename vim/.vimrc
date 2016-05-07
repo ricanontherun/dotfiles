@@ -1,6 +1,4 @@
-" VIM Configuration File
-" Description: Optimized for C/C++ development, but useful also for other things.
-"
+" Christian Roman - vim cofig
 
 " set UTF-8 encoding
 set enc=utf-8
@@ -44,8 +42,7 @@ execute pathogen#infect()
 "Store tmp files in /var/tmp, thanks http://stackoverflow.com/a/4331812"
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 
-" Enhanced keyboard mappings
-"
+" Mappings
 :map <C-z> u
 :map <C-a> GVgg
 :map <C-n> :enew
@@ -58,3 +55,4 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <C-q> :wqa<Enter>
 :map <C-Left> :tabprevious<CR>
 :map <C-Right> :tabnext<CR>
+:map <C-d> :Dox<Enter>

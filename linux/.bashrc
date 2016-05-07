@@ -89,10 +89,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# custom alias
-alias valgrind='valgrind --track-origins=yes --leak-check=full -v'
-alias update_system='sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -117,4 +113,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-stty -ixon
+export GOPATH=/usr/local/go/bin
+export PATH=$GOPATH:$GOPATH/bin:$PATH
