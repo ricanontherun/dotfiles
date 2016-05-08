@@ -43,7 +43,6 @@ execute pathogen#infect()
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 
 " Mappings
-:map <C-z> u
 :map <C-a> GVgg
 :map <C-n> :enew
 :map <C-o> :e . <Enter>
@@ -52,7 +51,7 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <C-v> p
 :map <C-x> d
 :map <C-z> u
-:map <C-q> :wqa<Enter>
+:map <C-q> :q<Enter>
 :map <C-Left> :tabprevious<CR>
 :map <C-Right> :tabnext<CR>
 :map <C-d> :Dox<Enter>
