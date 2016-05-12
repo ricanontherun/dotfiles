@@ -1,5 +1,10 @@
 " Christian Roman - vim cofig
 
+" Install DoxygenToolkit from http://www.vim.org/scripts/script.php?script_id=987
+let g:DoxygenToolkit_authorName="John Doe <ricanontherun@gmail.com>"
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 " set UTF-8 encoding
 set enc=utf-8
 set fenc=utf-8
@@ -33,9 +38,6 @@ set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/gl
 set tags+=~/.vim/tags/sdl
 set tags+=~/.vim/tags/qt4
-
-" Install DoxygenToolkit from http://www.vim.org/scripts/script.php?script_id=987
-let g:DoxygenToolkit_authorName="John Doe <john@doe.com>"
 
 execute pathogen#infect()
 
