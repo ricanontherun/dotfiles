@@ -1,7 +1,7 @@
 " Christian Roman - vim cofig
 
 " Install DoxygenToolkit from http://www.vim.org/scripts/script.php?script_id=987
-let g:DoxygenToolkit_authorName="John Doe <ricanontherun@gmail.com>"
+let g:DoxygenToolkit_authorName="Christian Roman<ricanontherun@gmail.com>"
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
