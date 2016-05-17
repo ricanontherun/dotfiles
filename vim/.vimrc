@@ -1,7 +1,12 @@
 " Christian Roman - vim cofig
 
+" disable vi compatibility (emulation of old bugs)
+set nocompatible
+
 " Install DoxygenToolkit from http://www.vim.org/scripts/script.php?script_id=987
 let g:DoxygenToolkit_authorName="Christian Roman<ricanontherun@gmail.com>"
+
+execute pathogen#infect()
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
@@ -12,9 +17,6 @@ let g:ctrlp_working_path_mode = 0
 set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
-
-" disable vi compatibility (emulation of old bugs)
-set nocompatible
 
 " use indentation of previous line
 set autoindent
@@ -49,10 +51,14 @@ set tags+=~/.vim/tags/gl
 set tags+=~/.vim/tags/sdl
 set tags+=~/.vim/tags/qt4
 
-execute pathogen#infect()
-
 "Store tmp files in /var/tmp, thanks http://stackoverflow.com/a/4331812"
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
+
+" Putty specific mappings.
+:map <ESC>OA <C-Up>
+:map <ESC>OB <C-Down>
+:map <ESC>OC <C-Right>
+:map <ESC>OD <C-Left>
 
 " Mappings
 :map <C-a> GVgg
@@ -68,3 +74,9 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <C-Right> :tabnext<CR>
 :map <C-d> :Dox<Enter>
 :map nt :NERDTree<Enter>:on<Enter>
+
+" Language specific configurations
+
+" PHP
+map <F5> :!php -l %<CR>
+
