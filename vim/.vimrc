@@ -31,6 +31,7 @@ set expandtab        " expand tabs to spaces
 
 " wrap lines at 120 chars. 80 is somewaht antiquated with nowadays displays.
 set textwidth=120
+set wrap!
 
 " turn syntax highlighting on
 set t_Co=256
@@ -55,6 +56,11 @@ set tags+=~/.vim/tags/qt4
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 
 " Putty specific mappings.
+:map <ESC>[A <Up>
+:map <ESC>[B <Down>
+:map <ESC>[C <Right>
+:map <ESC>[D <Left>
+
 :map <ESC>OA <C-Up>
 :map <ESC>OB <C-Down>
 :map <ESC>OC <C-Right>
@@ -63,7 +69,6 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 " Mappings
 :map <C-a> GVgg
 :map <C-n> :enew
-:map <C-t> :tabe<Enter>
 :map <C-o> :e . <Enter>
 :map <C-s> :w <Enter>
 :map <C-c> y
@@ -80,4 +85,3 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 
 " PHP
 map <F5> :!php -l %<CR>
-
