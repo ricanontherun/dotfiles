@@ -63,6 +63,7 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 " Mappings
 :map <C-a> GVgg
 :map <C-n> :enew
+:map <C-t> :tabe<Enter>
 :map <C-o> :e . <Enter>
 :map <C-s> :w <Enter>
 :map <C-c> y
