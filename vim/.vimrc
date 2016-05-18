@@ -3,7 +3,6 @@
 " disable vi compatibility (emulation of old bugs)
 set nocompatible
 
-" Install DoxygenToolkit from http://www.vim.org/scripts/script.php?script_id=987
 let g:DoxygenToolkit_authorName="Christian Roman<ricanontherun@gmail.com>"
 
 execute pathogen#infect()
@@ -29,14 +28,14 @@ set tabstop=4        " tab width is 4 spaces
 set shiftwidth=4     " indent also with 4 spaces
 set expandtab        " expand tabs to spaces
 
-" wrap lines at 120 chars. 80 is somewaht antiquated with nowadays displays.
 set textwidth=120
 set wrap!
 
 " turn syntax highlighting on
 set t_Co=256
+
 syntax enable
-colorscheme darcula 
+colorscheme jellybeans 
 
 " turn line numbers on
 set number
@@ -55,7 +54,11 @@ set tags+=~/.vim/tags/qt4
 "Store tmp files in /var/tmp, thanks http://stackoverflow.com/a/4331812"
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 
-" Putty specific mappings.
+" ==================================================
+" Mappings
+" ==================================================
+
+" Putty conversions
 :map <ESC>[A <Up>
 :map <ESC>[B <Down>
 :map <ESC>[C <Right>
@@ -66,7 +69,6 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <ESC>OC <C-Right>
 :map <ESC>OD <C-Left>
 
-" Mappings
 :map <C-a> GVgg
 :map <C-n> :enew
 :map <C-o> :e . <Enter>
@@ -83,5 +85,16 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 
 " Language specific configurations
 
+" ==================================================
 " PHP
+" ==================================================
 map <F5> :!php -l %<CR>
+
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+
+" Auto import the class under the cursor.
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
