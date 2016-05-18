@@ -1,13 +1,35 @@
 " Christian Roman - vim cofig
 
-" disable vi compatibility (emulation of old bugs)
-set nocompatible
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-let g:DoxygenToolkit_authorName="Christian Roman<ricanontherun@gmail.com>"
+" ==================================================
+" Plugin Management
+" ==================================================
 
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'scrooloose/nerdTree'
+Plugin 'ctrlp.vim'
+Plugin 'DoxygenToolkit.vim'
+Plugin 'php.vim'
+Plugin 'Valloric/YouCompleteMe'
+
+call vundle#end()            " required
+
+" Initialize pathogen stuff.
 execute pathogen#infect()
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+filetype plugin indent on    " required
+
+let g:DoxygenToolkit_authorName="Christian Roman<ricanontherun@gmail.com>"
 
 " ctrlp.vim will only operate in the current working directory.
 let g:ctrlp_working_path_mode = 0
@@ -43,9 +65,9 @@ set number
 " highlight matching braces
 set showmatch
 
-" Install OmniCppComplete like described on http://vim.wikia.com/wiki/C++_code_completion
-" This offers intelligent C++ completion when typing ‘.’ ‘->’ or <C-o>
-" Load standard tag files
+" ==================================================
+" ctags extensions
+" ==================================================
 set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/gl
 set tags+=~/.vim/tags/sdl
@@ -90,6 +112,7 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 " ==================================================
 map <F5> :!php -l %<CR>
 
+" Neat little function which will auto import the php class/trait under the cursor.
 function! IPhpInsertUse()
     call PhpInsertUse()
     call feedkeys('a',  'n')
