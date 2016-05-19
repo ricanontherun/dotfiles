@@ -1,4 +1,6 @@
-" Christian Roman - vim cofig
+" ==================================================
+" Christian Roman - Vim config
+" ==================================================
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -19,22 +21,27 @@ Plugin 'scrooloose/nerdTree'
 Plugin 'ctrlp.vim'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'php.vim'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'terryma/vim-multiple-cursors'
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
 
 call vundle#end()            " required
-
-" Initialize pathogen stuff.
-execute pathogen#infect()
-
-set laststatus=2
-
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 filetype plugin indent on    " required
 
+" ==================================================
+" Powerline config
+" ==================================================
+set laststatus=2
+
+" ==================================================
+" Doxygen config
+" ==================================================
 let g:DoxygenToolkit_authorName="Christian Roman<ricanontherun@gmail.com>"
 
-" ctrlp.vim will only operate in the current working directory.
+" ==================================================
+" ctrlp config
+" ==================================================
 let g:ctrlp_working_path_mode = 0
 
 " set UTF-8 encoding
@@ -72,9 +79,7 @@ set showmatch
 " ctags extensions
 " ==================================================
 set tags+=~/.vim/tags/cpp
-set tags+=~/.vim/tags/gl
-set tags+=~/.vim/tags/sdl
-set tags+=~/.vim/tags/qt4
+set tags+=~/.vim/tags/php
 
 "Store tmp files in /var/tmp, thanks http://stackoverflow.com/a/4331812"
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
@@ -107,6 +112,11 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <C-Right> :tabnext<CR>
 :map <C-d> :Dox<Enter>
 :map nt :NERDTree<Enter>:on<Enter>
+
+" ==================================================
+" Leaders
+" ==================================================
+:map <leader>v :tabe ~/.vimrc<Enter>
 
 " Language specific configurations
 
