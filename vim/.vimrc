@@ -22,9 +22,8 @@ Plugin 'ctrlp.vim'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'php.vim'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'nathanaelkane/vim-indent-guides'
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -117,6 +116,7 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 " Leaders
 " ==================================================
 :map <leader>v :tabe ~/.vimrc<Enter>
+:map <leader>t :tabe 
 
 " Language specific configurations
 
