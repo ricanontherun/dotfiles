@@ -20,11 +20,14 @@ Plugin 'ctrlp.vim'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'php.vim'
 Plugin 'Valloric/YouCompleteMe'
+Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 call vundle#end()            " required
 
 " Initialize pathogen stuff.
 execute pathogen#infect()
+
+set laststatus=2
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 filetype plugin indent on    " required
