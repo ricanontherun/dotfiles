@@ -1,13 +1,13 @@
-" ==================================================
+" -------------------------------------------------
 " Christian Roman - Vim config
-" ==================================================
+" -------------------------------------------------
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" ==================================================
+" -------------------------------------------------
 " Plugin Management
-" ==================================================
+" -------------------------------------------------
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -24,24 +24,37 @@ Plugin 'php.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'nathanaelkane/vim-indent-guides'
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'tpope/vim-fugitive'
+Plugin 'ntpeters/vim-better-whitespace'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" ==================================================
+" -------------------------------------------------
 " Powerline config
-" ==================================================
+" -------------------------------------------------
 set laststatus=2
 
-" ==================================================
+" -------------------------------------------------
 " Doxygen config
-" ==================================================
+" -------------------------------------------------
 let g:DoxygenToolkit_authorName="Christian Roman<ricanontherun@gmail.com>"
 
-" ==================================================
+" -------------------------------------------------
 " ctrlp config
-" ==================================================
+" -------------------------------------------------
 let g:ctrlp_working_path_mode = 0
+
+" Auto trim whitespace
+autocmd FileType c,h,cpp,hpp,php,js,html,vue,sql autocmd BufWritePre <buffer> StripWhitespace
+
+" -------------------------------------------------
+" Indent guide config
+" -------------------------------------------------
+set ts=4
+set sw=4
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
 
 " set UTF-8 encoding
 set enc=utf-8
@@ -74,56 +87,65 @@ set number
 " highlight matching braces
 set showmatch
 
-" ==================================================
+" -------------------------------------------------
 " ctags extensions
-" ==================================================
+" -------------------------------------------------
 set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/php
 
 "Store tmp files in /var/tmp, thanks http://stackoverflow.com/a/4331812"
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 
-" ==================================================
+" -------------------------------------------------
 " Mappings
-" ==================================================
+" -------------------------------------------------
 
 " Putty conversions
-:map <ESC>[A <Up>
-:map <ESC>[B <Down>
-:map <ESC>[C <Right>
-:map <ESC>[D <Left>
+:map <ESC>[A        <Up>
+:map <ESC>[B        <Down>
+:map <ESC>[C        <Right>
+:map <ESC>[D        <Left>
 
-:map <ESC>OA <C-Up>
-:map <ESC>OB <C-Down>
-:map <ESC>OC <C-Right>
-:map <ESC>OD <C-Left>
+:map <ESC>OA        <C-Up>
+:map <ESC>OB        <C-Down>
+:map <ESC>OC        <C-Right>
+:map <ESC>OD        <C-Left>
 
-:map <C-a> GVgg
-:map <C-n> :enew
-:map <C-o> :e . <Enter>
-:map <C-s> :w <Enter>
-:map <C-c> y
-:map <C-v> p
-:map <C-x> d
-:map <C-z> u
-:map <C-q> :q<Enter>
-:map <C-Left> :tabprevious<CR>
-:map <C-Right> :tabnext<CR>
-:map <C-d> :Dox<Enter>
-:map nt :NERDTree<Enter>:on<Enter>
+:map <C-a>          GVgg
+:map <C-n>          :enew
+:map <C-o>          :e . <Enter>
+:map <C-s>          :w <Enter>
+:map <C-c>          y
+:map <C-v>          p
+:map <C-x>          d
+:map <C-z>          u
+:map <C-q>          :q<Enter>
+:map <C-Left>       :tabprevious<CR>
+:map <C-Right>      :tabnext<CR>
+:map <C-d>          :Dox<Enter>
+:map nt             :NERDTree<Enter>:on<Enter>
 
-" ==================================================
+" -------------------------------------------------
 " Leaders
-" ==================================================
-:map <leader>v :tabe ~/.vimrc<Enter>
-:map <leader>t :tabe 
+" -------------------------------------------------
+:map <leader>v      :tabe ~/.vimrc<Enter>
+:map <leader>t      :tabe<Enter>
+
+" --------------------------------------------------
+" Fugitive.vim Leaders
+" --------------------------------------------------
+:map <leader>gs     :Git status<Enter>
+:map <leader>gaa    :Git add --all<Enter>
+:map <leader>ga     :Git add %<Enter>
+:map <leader>gc     :Git commit<Enter>
+:map <leader>gp     :Git push<Enter>
 
 " Language specific configurations
 
-" ==================================================
+" -------------------------------------------------
 " PHP
-" ==================================================
-map <F5> :!php -l %<CR>
+" -------------------------------------------------
+map <F5>            :!php -l %<CR>
 
 " Neat little function which will auto import the php class/trait under the cursor.
 function! IPhpInsertUse()
