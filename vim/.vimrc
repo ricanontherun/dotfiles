@@ -46,7 +46,7 @@ let g:DoxygenToolkit_authorName="Christian Roman<ricanontherun@gmail.com>"
 let g:ctrlp_working_path_mode = 0
 
 " Auto trim whitespace
-autocmd FileType c,h,cpp,hpp,php,js,html,vue,sql autocmd BufWritePre <buffer> StripWhitespace
+autocmd FileType c,h,cpp,hpp,php,js,html,vue,sql,vimrc autocmd BufWritePre <buffer> StripWhitespace
 
 " -------------------------------------------------
 " Indent guide config
@@ -129,16 +129,13 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 " Leaders
 " -------------------------------------------------
 :map <leader>v      :tabe ~/.vimrc<Enter>
-:map <leader>t      :tabe<Enter>
-
-" --------------------------------------------------
-" Fugitive.vim Leaders
-" --------------------------------------------------
+:map <leader>t      :tabe<Enter><C-p>
 :map <leader>gs     :Git status<Enter>
 :map <leader>gaa    :Git add --all<Enter>
 :map <leader>ga     :Git add %<Enter>
 :map <leader>gc     :Git commit<Enter>
 :map <leader>gp     :Git push<Enter>
+:map <leader>gg     :Get pull<Enter>
 
 " Language specific configurations
 
