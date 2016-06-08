@@ -19,28 +19,25 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdTree'
 Plugin 'ctrlp.vim'
-Plugin 'DoxygenToolkit.vim'
 Plugin 'php.vim'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'tpope/vim-fugitive'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'c9s/phpunit.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'DoxygenToolkit.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+let g:DoxygenToolkit_briefTag_pre=""
 
 " -------------------------------------------------
 " Powerline config
 " -------------------------------------------------
 set laststatus=2
-
-" -------------------------------------------------
-" Doxygen config
-" -------------------------------------------------
-let g:DoxygenToolkit_authorName="Christian Roman<ricanontherun@gmail.com>"
 
 " -------------------------------------------------
 " ctrlp config
@@ -91,8 +88,6 @@ autocmd FileType c,h,cpp,hpp,js,php,html,vue,.vimrc autocmd BufWritePre <buffer>
 " -------------------------------------------------
 " ctags extensions
 " -------------------------------------------------
-set tags+=~/.vim/tags/cpp
-set tags+=~/.vim/tags/php
 
 "Store tmp files in /var/tmp, thanks http://stackoverflow.com/a/4331812"
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
@@ -120,12 +115,13 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <C-v>          p
 :map <C-x>          d
 :map <C-z>          u
-:map <C-q>          :q<Enter>
 :map <C-Left>       :tabprevious<CR>
 :map <C-Right>      :tabnext<CR>
 :map <C-d>          :Dox<Enter>
 
 :map g]             <C-w>g]
+
+:map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
 
 " -------------------------------------------------
 " Leaders
@@ -142,11 +138,12 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <leader>gda    :Git diff<Enter>
 :map <leader>tw     <C-w><S-t>
 :map <leader>l      :TagbarToggle<CR>
+:map <leader>q      :q<Enter>
 
 " -------------------------------------------------
 " PHP
 " -------------------------------------------------
-map <F5>            :!php -l %<CR>
+map <F6>            :!php -l %<CR>
 
 " Neat little function which will auto import the php class/trait under the cursor.
 function! IPhpInsertUse()
