@@ -43,14 +43,7 @@ set laststatus=2
 " ctrlp config
 " -------------------------------------------------
 let g:ctrlp_working_path_mode = 0
-
-" -------------------------------------------------
-" Indent guide config
-" -------------------------------------------------
-set ts=4
-set sw=4
-let g:indent_guides_start_level=2
-let g:indent_guides_guide_size=1
+let g:ctrlp_regexp = 1
 
 " set UTF-8 encoding
 set enc=utf-8
@@ -96,17 +89,6 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 " Mappings
 " -------------------------------------------------
 
-" Putty conversions
-:map <ESC>[A        <Up>
-:map <ESC>[B        <Down>
-:map <ESC>[C        <Right>
-:map <ESC>[D        <Left>
-
-:map <ESC>OA        <C-Up>
-:map <ESC>OB        <C-Down>
-:map <ESC>OC        <C-Right>
-:map <ESC>OD        <C-Left>
-
 :map <C-a>          GVgg
 :map <C-n>          :enew
 :map <C-o>          :e . <Enter>
@@ -115,9 +97,13 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <C-v>          p
 :map <C-x>          d
 :map <C-z>          u
-:map <C-Left>       :tabprevious<CR>
-:map <C-Right>      :tabnext<CR>
 :map <C-d>          :Dox<Enter>
+:imap <C-s>         <Esc><C-s>a
+
+:map <S-t>          :tabprevious<CR>
+:map <S-y>          :tabnext<CR>
+:map <S-n>          :tn<Enter>
+:map <S-p>          :tp<Enter>
 
 :map g]             <C-w>g]
 
@@ -128,6 +114,12 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 " -------------------------------------------------
 :map <leader>v      :tabe ~/.vimrc<Enter>
 :map <leader>nt     :tabe<Enter><C-p>
+:map <leader>tw     <C-w><S-t>
+:map <leader>q      :q<Enter>
+:map <leader>k      :tabe<Enter>:NERDTree<Enter><C-w>o
+:map <leader>l      :TagbarToggle<CR>
+
+" Fugitive
 :map <leader>gs     :Git status<Enter>
 :map <leader>gaa    :Git add --all<Enter>
 :map <leader>ga     :Git add %<Enter>
@@ -136,9 +128,8 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <leader>gg     :Git pull<Enter>
 :map <leader>gd     :Git diff %<Enter>
 :map <leader>gda    :Git diff<Enter>
-:map <leader>tw     <C-w><S-t>
-:map <leader>l      :TagbarToggle<CR>
-:map <leader>q      :q<Enter>
+:map <leader>gu     :Git checkout %<Enter>
+:map <leader>gua    :Git checkout *<Enter>
 
 " -------------------------------------------------
 " PHP
