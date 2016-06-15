@@ -21,3 +21,6 @@ alias tail_dev_log='tail -f ~/Code/devx/files/logs/vault.log'
 alias js_compile='npm run watch no-upload'
 
 alias tmux="TERM=screen-256color-bce tmux"
+
+alias my_proc='ps ux'
+alias all_proc='ps ax'

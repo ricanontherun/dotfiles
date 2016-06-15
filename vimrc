@@ -28,6 +28,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'c9s/phpunit.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'DoxygenToolkit.vim'
+Plugin 'raimondi/delimitmate'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -102,8 +103,6 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 
 :map <S-t>          :tabprevious<CR>
 :map <S-y>          :tabnext<CR>
-:map <S-n>          :tn<Enter>
-:map <S-p>          :tp<Enter>
 
 :map g]             <C-w>g]
 

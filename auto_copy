@@ -1,0 +1,13 @@
+#! /bin/bash
+# Automatically update the current directory, ideally dotfiles, with the current system
+# versions of various scripts.
+
+# .vimrc
+cp $HOME/.vimrc vimrc
+cp -r $HOME/.vim/* vim/
+
+cp $HOME/.bashrc bashrc
+
+cp $HOME/.tmux.conf tmux.conf
+
+cp $HOME/.bash_aliases bash_aliases
