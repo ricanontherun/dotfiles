@@ -18,31 +18,24 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdTree'
-Plugin 'ctrlp.vim'
 Plugin 'php.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Yggdroot/indentLine'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'c9s/phpunit.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'raimondi/delimitmate'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'posva/vim-vue'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 let g:DoxygenToolkit_briefTag_pre=""
 
-" -------------------------------------------------
-" Powerline config
-" -------------------------------------------------
-set laststatus=2
-
-" -------------------------------------------------
-" ctrlp config
-" -------------------------------------------------
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_regexp = 1
 
@@ -77,11 +70,7 @@ set number
 " highlight matching braces
 set showmatch
 
-autocmd FileType c,h,cpp,hpp,js,php,html,vue,.vimrc autocmd BufWritePre <buffer> StripWhitespace
-
-" -------------------------------------------------
-" ctags extensions
-" -------------------------------------------------
+autocmd FileType c,h,cpp,hpp,js,php,html,vue,vimrc autocmd BufWritePre <buffer> StripWhitespace
 
 "Store tmp files in /var/tmp, thanks http://stackoverflow.com/a/4331812"
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
@@ -91,7 +80,6 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 " -------------------------------------------------
 
 :map <C-a>          GVgg
-:map <C-n>          :enew
 :map <C-o>          :e . <Enter>
 :map <C-s>          :w <Enter>
 :map <C-c>          y
@@ -99,10 +87,12 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <C-x>          d
 :map <C-z>          u
 :map <C-d>          :Dox<Enter>
+:map <S-Left>       <C-w> h
 :imap <C-s>         <Esc><C-s>a
 
-:map <S-t>          :tabprevious<CR>
-:map <S-y>          :tabnext<CR>
+
+:map <Left>          :tabprevious<CR>
+:map <Right>          :tabnext<CR>
 
 :map g]             <C-w>g]
 
@@ -144,3 +134,5 @@ endfunction
 " Auto import the class under the cursor.
 autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
 autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+
+set pastetoggle=<F2>
