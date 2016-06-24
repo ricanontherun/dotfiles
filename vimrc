@@ -36,8 +36,12 @@ filetype plugin indent on    " required
 
 let g:DoxygenToolkit_briefTag_pre=""
 
+" I want airline to always be displayed.
+set laststatus=2
+
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_regexp = 1
+let g:ctrlp_max_files=0
 
 " set UTF-8 encoding
 set enc=utf-8
