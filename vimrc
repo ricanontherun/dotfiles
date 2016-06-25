@@ -18,18 +18,21 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdTree'
-Plugin 'php.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Yggdroot/indentLine'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'c9s/phpunit.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'raimondi/delimitmate'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'nanotech/jellybeans.vim'
+
+" Language specific plugins
+Plugin 'c9s/phpunit.vim'
 Plugin 'posva/vim-vue'
+Plugin 'php.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
