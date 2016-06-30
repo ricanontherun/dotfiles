@@ -18,18 +18,21 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdTree'
-Plugin 'php.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Yggdroot/indentLine'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'c9s/phpunit.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'raimondi/delimitmate'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'nanotech/jellybeans.vim'
+
+" Language specific plugins
+Plugin 'c9s/phpunit.vim'
 Plugin 'posva/vim-vue'
+Plugin 'php.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -91,12 +94,11 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <C-x>          d
 :map <C-z>          u
 :map <C-d>          :Dox<Enter>
-:map <S-Left>       <C-w> h
 :imap <C-s>         <Esc><C-s>a
 
 
 :map <Left>          :tabprevious<CR>
-:map <Right>          :tabnext<CR>
+:map <Right>         :tabnext<CR>
 
 :map g]             <C-w>g]
 
@@ -108,8 +110,8 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <leader>v      :tabe ~/.vimrc<Enter>
 :map <leader>nt     :tabe<Enter><C-p>
 :map <leader>tw     <C-w><S-t>
-:map <leader>q      :q<Enter>
-:map <leader>k      :tabe<Enter>:NERDTree<Enter><C-w>o
+:map <leader>q      :q!<Enter>
+:map <leader>k      :NERDTree<Enter><C-w>o
 :map <leader>l      :TagbarToggle<CR>
 
 " Fugitive
