@@ -31,10 +31,11 @@ alias tail_api_log='tail -f ~/Code/api/storage/logs/lumen.log'
 alias tail_dev_log='tail -f ~/Code/devx/files/logs/vault.log'
 alias js_compile='npm run watch no-upload'
 
+# Command overrides
 alias tmux="TERM=screen-256color-bce tmux"
-
-alias my_proc='ps ux'
-alias all_proc='ps ax'
+alias valgrind='valgrind -v --leak-check=full --show-leak-kinds=all'
+alias cppcheck='cppcheck --quiet --enable=all'
+alias package_update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove'
 
 force_color_prompt=yes
 
