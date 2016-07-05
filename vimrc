@@ -94,12 +94,11 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <C-x>          d
 :map <C-z>          u
 :map <C-d>          :Dox<Enter>
-:map <S-Left>       <C-w> h
 :imap <C-s>         <Esc><C-s>a
 
 
 :map <Left>          :tabprevious<CR>
-:map <Right>          :tabnext<CR>
+:map <Right>         :tabnext<CR>
 
 :map g]             <C-w>g]
 
@@ -111,8 +110,8 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <leader>v      :tabe ~/.vimrc<Enter>
 :map <leader>nt     :tabe<Enter><C-p>
 :map <leader>tw     <C-w><S-t>
-:map <leader>q      :q<Enter>
-:map <leader>k      :tabe<Enter>:NERDTree<Enter><C-w>o
+:map <leader>q      :q!<Enter>
+:map <leader>k      :NERDTree<Enter><C-w>o
 :map <leader>l      :TagbarToggle<CR>
 
 " Fugitive
