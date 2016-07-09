@@ -7,35 +7,32 @@ cd ~/Code
 # Git aliases
 #--------------------------------------------------
 alias gs='git status'
-
 alias ga='git add '
 alias gaa='git add --all'
-
 alias gc='git commit'
 alias gcm='git commit -m '
-
 alias gd='git diff'
-
 alias gp='git push'
-
 alias gg='git pull'
 alias ggm='git pull origin master'
-
 alias gu='git checkout'
 alias gum='git checkout master'
 alias gnb='git checkout -b'
-
 alias conflicts='git diff --name-only --diff-filter=U'
 
 alias tail_api_log='tail -f ~/Code/api/storage/logs/lumen.log'
 alias tail_dev_log='tail -f ~/Code/devx/files/logs/vault.log'
 alias js_compile='npm run watch no-upload'
 
+#--------------------------------------------------
 # Command overrides
+#--------------------------------------------------
 alias tmux="TERM=screen-256color-bce tmux"
 alias valgrind='valgrind -v --leak-check=full --show-leak-kinds=all'
 alias cppcheck='cppcheck --quiet --enable=all'
-alias package_update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove'
+
+alias update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove'
+alias install='sudo apt-get install'
 
 force_color_prompt=yes
 
