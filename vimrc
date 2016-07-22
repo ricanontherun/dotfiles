@@ -109,10 +109,13 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 " -------------------------------------------------
 :map <leader>v      :tabe ~/.vimrc<Enter>
 :map <leader>nt     :tabe<Enter><C-p>
+:map <leader>nf     :tabe<Enter>:e
 :map <leader>tw     <C-w><S-t>
 :map <leader>q      :q!<Enter>
+:map <leader>qa     :qa!<Enter>
 :map <leader>k      :NERDTree<Enter><C-w>o
 :map <leader>l      :TagbarToggle<CR>
+:map <leader>t      :!ctags %<Enter>
 
 " Fugitive
 :map <leader>gs     :Git status<Enter>
