@@ -28,8 +28,9 @@ Plugin 'DoxygenToolkit.vim'
 Plugin 'raimondi/delimitmate'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'c.vim'
 
-" Language specific plugins
+" Web Language specific plugins
 Plugin 'c9s/phpunit.vim'
 Plugin 'posva/vim-vue'
 Plugin 'php.vim'
