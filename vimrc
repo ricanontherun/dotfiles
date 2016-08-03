@@ -115,7 +115,9 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <leader>qa     :qa!<Enter>
 :map <leader>k      :NERDTree<Enter><C-w>o
 :map <leader>l      :TagbarToggle<CR>
-:map <leader>t      :!ctags %<Enter>
+:map <leader>t      :!ctags %<Enter>A
+:map <leader>c      :s/^/\/\/<enter>
+:map <leader>uc     :s/\/\//<enter>
 
 " Fugitive
 :map <leader>gs     :Git status<Enter>
