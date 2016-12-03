@@ -31,8 +31,10 @@ alias tmux="TERM=screen-256color-bce tmux"
 alias valgrind='valgrind -v --leak-check=full --show-leak-kinds=all'
 alias cppcheck='cppcheck --quiet --enable=all'
 
-alias update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove'
+alias update='sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y autoremove'
 alias install='sudo apt-get install'
+alias search='sudo apt-cache search'
+alias uninstall='sudo apt-get remove'
 
 force_color_prompt=yes
 
