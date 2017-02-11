@@ -21,19 +21,12 @@ Plugin 'scrooloose/nerdTree'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Yggdroot/indentLine'
 Plugin 'vim-airline/vim-airline'
-Plugin 'tpope/vim-fugitive'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'majutsushi/tagbar'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'raimondi/delimitmate'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'nanotech/jellybeans.vim'
-Plugin 'c.vim'
-
-" Web Language specific plugins
-Plugin 'c9s/phpunit.vim'
-Plugin 'posva/vim-vue'
-Plugin 'php.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -97,7 +90,6 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <C-d>          :Dox<Enter>
 :imap <C-s>         <Esc><C-s>a
 
-
 :map <Left>          :tabprevious<CR>
 :map <Right>         :tabnext<CR>
 
@@ -108,43 +100,23 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 " -------------------------------------------------
 " Leaders
 " -------------------------------------------------
+
 :map <leader>v      :tabe ~/.vimrc<Enter>
+
 :map <leader>nt     :tabe<Enter><C-p>
+:map <leader>ct     :tabclose<Enter>
 :map <leader>nf     :tabe<Enter>:e
 :map <leader>tw     <C-w><S-t>
+
 :map <leader>q      :q!<Enter>
 :map <leader>qa     :qa!<Enter>
+
 :map <leader>k      :NERDTree<Enter><C-w>o
+
 :map <leader>l      :TagbarToggle<CR>
+
 :map <leader>t      :!ctags %<Enter>A
+
+" [Un]Comment the select lines.
 :map <leader>c      :s/^/\/\/<enter>
 :map <leader>uc     :s/\/\//<enter>
-
-" Fugitive
-:map <leader>gs     :Git status<Enter>
-:map <leader>gaa    :Git add --all<Enter>
-:map <leader>ga     :Git add %<Enter>
-:map <leader>gc     :Git commit<Enter>
-:map <leader>gp     :Git push<Enter>
-:map <leader>gg     :Git pull<Enter>
-:map <leader>gd     :Git diff %<Enter>
-:map <leader>gda    :Git diff<Enter>
-:map <leader>gu     :Git checkout %<Enter>
-:map <leader>gua    :Git checkout *<Enter>
-
-" -------------------------------------------------
-" PHP
-" -------------------------------------------------
-map <F6>            :!php -l %<CR>
-
-" Neat little function which will auto import the php class/trait under the cursor.
-function! IPhpInsertUse()
-    call PhpInsertUse()
-    call feedkeys('a',  'n')
-endfunction
-
-" Auto import the class under the cursor.
-autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
-
-set pastetoggle=<F2>
