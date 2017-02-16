@@ -3,9 +3,8 @@
 # versions of various scripts.
 
 # .vimrc
-echo 'Copying .vimrc and .vim'
+echo 'Copying .vimrc'
 cp $HOME/.vimrc vimrc
-cp -r $HOME/.vim/* vim/
 
 echo 'Copying .bashrc'
 cp $HOME/.bashrc bashrc

@@ -27,6 +27,8 @@ Plugin 'DoxygenToolkit.vim'
 Plugin 'raimondi/delimitmate'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'valloric/youcompleteme'
+Plugin 'rdnetto/YCM-Generator'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -40,6 +42,15 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_regexp = 1
 let g:ctrlp_max_files=0
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " set UTF-8 encoding
 set enc=utf-8
 set fenc=utf-8
@@ -52,8 +63,8 @@ set autoindent
 set smartindent
 
 " configure tabwidth and insert spaces instead of tabs
-set tabstop=4        " tab width is 4 spaces
-set shiftwidth=4     " indent also with 4 spaces
+set tabstop=2        " tab width is 4 spaces
+set shiftwidth=2     " indent also with 4 spaces
 set expandtab        " expand tabs to spaces
 
 set textwidth=120
@@ -93,7 +104,14 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <Left>          :tabprevious<CR>
 :map <Right>         :tabnext<CR>
 
+" Tag navigation
 :map g]             <C-w>g]
+
+" Movement.
+noremap ; l
+noremap l k
+noremap k j
+noremap j h
 
 :map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
 
@@ -104,7 +122,6 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <leader>v      :tabe ~/.vimrc<Enter>
 
 :map <leader>nt     :tabe<Enter><C-p>
-:map <leader>ct     :tabclose<Enter>
 :map <leader>nf     :tabe<Enter>:e
 :map <leader>tw     <C-w><S-t>
 
