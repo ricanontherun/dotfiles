@@ -42,14 +42,7 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_regexp = 1
 let g:ctrlp_max_files=0
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:ycm_show_diagnostics_ui = 0
 
 " set UTF-8 encoding
 set enc=utf-8
@@ -112,6 +105,11 @@ noremap ; l
 noremap l k
 noremap k j
 noremap j h
+
+:map w; <C-w>l
+:map wl <C-w>k
+:map wk <C-w>j
+:map wj <C-w>h
 
 :map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
 
