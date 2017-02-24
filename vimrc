@@ -106,10 +106,10 @@ noremap l k
 noremap k j
 noremap j h
 
-:map w; <C-w>l
-:map wl <C-w>k
-:map wk <C-w>j
-:map wj <C-w>h
+:map g; <C-w>l
+:map gl <C-w>k
+:map gk <C-w>j
+:map gj <C-w>h
 
 :map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
 
