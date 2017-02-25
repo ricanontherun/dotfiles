@@ -27,4 +27,4 @@ bashrc_path="$HOME/.bashrc"
 disperse bashrc $bashrc_path
 
 bash_aliases_path="$HOME/.bash_aliases"
-disperse bash_alises $bash_aliases_path
+disperse bash_aliases $bash_aliases_path
