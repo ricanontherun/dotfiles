@@ -29,6 +29,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'valloric/youcompleteme'
 Plugin 'rdnetto/YCM-Generator'
+Plugin 'sickill/vim-monokai'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -66,6 +67,7 @@ set wrap!
 " turn syntax highlighting on
 set t_Co=256
 
+" Color scheme
 syntax enable
 colorscheme jellybeans 
 
@@ -93,11 +95,9 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <C-z>          u
 :map <C-d>          :Dox<Enter>
 :imap <C-s>         <Esc><C-s>a
+noremap q           :q<Enter>
 
-:map <Left>          :tabprevious<CR>
-:map <Right>         :tabnext<CR>
-
-" Tag navigation
+" Ctags
 :map g]             <C-w>g]
 
 " Movement.
@@ -106,10 +106,19 @@ noremap l k
 noremap k j
 noremap j h
 
+" Split Navigation
 :map g; <C-w>l
 :map gl <C-w>k
 :map gk <C-w>j
 :map gj <C-w>h
+
+" Tab Navigation
+:map <C-j> :tabprevious<Enter>
+:map <C-l> :tabnext<Enter>
+
+:map <leader>nt     :tabe<Enter><C-p>
+:map <leader>nf     :tabe<Enter>:e
+
 
 :map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
 
@@ -119,11 +128,8 @@ noremap j h
 
 :map <leader>v      :tabe ~/.vimrc<Enter>
 
-:map <leader>nt     :tabe<Enter><C-p>
-:map <leader>nf     :tabe<Enter>:e
 :map <leader>tw     <C-w><S-t>
 
-:map <leader>q      :q!<Enter>
 :map <leader>qa     :qa!<Enter>
 
 :map <leader>k      :NERDTree<Enter><C-w>o
