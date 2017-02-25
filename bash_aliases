@@ -1,6 +1,7 @@
 # So that Vim doesn't hang when using Ctrl mappings.
 stty -ixon
 
+# Default cd to my code directory
 cd ~/Code
 
 #--------------------------------------------------

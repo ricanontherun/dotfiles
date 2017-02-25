@@ -1,4 +1,5 @@
 " -------------------------------------------------
+"  
 " Christian Roman - Vim config
 " -------------------------------------------------
 
@@ -29,7 +30,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'valloric/youcompleteme'
 Plugin 'rdnetto/YCM-Generator'
-Plugin 'sickill/vim-monokai'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

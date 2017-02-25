@@ -1,16 +1,31 @@
 #! /bin/bash
-# Automatically update the current directory, ideally dotfiles, with the current system
-# versions of various scripts.
+# Gather config files from their default locations.
 
-# .vimrc
-echo 'Copying .vimrc'
-cp $HOME/.vimrc vimrc
+function gather
+{
+  if [ -z $1 ] || [ -z $2 ]
+  then
+    echo "Usage gather path label"
+    exit 1
+  fi
 
-echo 'Copying .bashrc'
-cp $HOME/.bashrc bashrc
+  if [ -e $1 ]
+  then
+    echo "$1 -> $2"
+    cp $1 $2
+  else
+    echo "$1 not found"
+  fi
+}
 
-echo 'Copying .tmux.conf'
-cp $HOME/.tmux.conf tmux.conf
+vimrc_path="$HOME/.vimrc"
+gather $vimrc_path vimrc
 
-echo 'Copying .bash_aliases'
-cp $HOME/.bash_aliases bash_aliases
+tmux_path="$HOME/.tmux.conf"
+gather $tmux_path tmux.conf
+
+bashrc_path="$HOME/.bashrc"
+gather $bashrc_path bashrc
+
+bash_aliases_path="$HOME/.bash_aliases"
+gather $bash_aliases_path bash_aliases
