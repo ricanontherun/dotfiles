@@ -29,3 +29,6 @@ gather $bashrc_path bashrc
 
 bash_aliases_path="$HOME/.bash_aliases"
 gather $bash_aliases_path bash_aliases
+
+ideavim_path="$HOME/.ideavim"
+gather $ideavim_path ideavim

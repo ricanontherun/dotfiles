@@ -28,3 +28,6 @@ disperse bashrc $bashrc_path
 
 bash_aliases_path="$HOME/.bash_aliases"
 disperse bash_aliases $bash_aliases_path
+
+ideavim_path="$HOME/.ideavim"
+disperse ideavim $ideavim_path
