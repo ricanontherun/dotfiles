@@ -1,0 +1,51 @@
+:map <C-a>          GVgg
+:map <C-o>          :e . <Enter>
+:map <C-s>          :w <Enter>
+:map <C-c>          y
+:map <C-v>          p
+:map <C-x>          d
+:map <C-z>          u
+:map <C-d>          :Dox<Enter>
+:imap <C-s>         <Esc><C-s>a
+
+:map <Left>          :tabprevious<CR>
+:map <Right>         :tabnext<CR>
+
+" Tag navigation
+:map g]             <C-w>g]
+
+" Movement.
+noremap ; l
+noremap l k
+noremap k j
+noremap j h
+
+:map w; <C-w>l
+:map wl <C-w>k
+:map wk <C-w>j
+:map wj <C-w>h
+
+:map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
+
+" -------------------------------------------------
+" Leaders
+" -------------------------------------------------
+
+:map <leader>v      :tabe ~/.vimrc<Enter>
+
+:map <leader>nt     :tabe<Enter><C-p>
+:map <leader>nf     :tabe<Enter>:e
+:map <leader>tw     <C-w><S-t>
+
+:map <leader>q      :q!<Enter>
+:map <leader>qa     :qa!<Enter>
+
+:map <leader>k      :NERDTree<Enter><C-w>o
+
+:map <leader>l      :TagbarToggle<CR>
+
+:map <leader>t      :!ctags %<Enter>A
+
+" [Un]Comment the select lines.
+:map <leader>c      :s/^/\/\/<enter>
+:map <leader>uc     :s/\/\//<enter>

@@ -95,7 +95,9 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <C-z>          u
 :map <C-d>          :Dox<Enter>
 :imap <C-s>         <Esc><C-s>a
-noremap q           :q<Enter>
+:map q           :q<Enter>
+:map qa          :qa<Enter>
+
 
 " Ctags
 :map g]             <C-w>g]
@@ -113,8 +115,8 @@ noremap j h
 :map gj <C-w>h
 
 " Tab Navigation
-:map <C-j> :tabprevious<Enter>
-:map <C-l> :tabnext<Enter>
+:map fj :tabprevious<Enter>
+:map f; :tabnext<Enter>
 
 :map <leader>nt     :tabe<Enter><C-p>
 :map <leader>nf     :tabe<Enter>:e
