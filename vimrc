@@ -34,17 +34,22 @@ Plugin 'rdnetto/YCM-Generator'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" Doxygen
 let g:DoxygenToolkit_briefTag_pre=""
 
 " I want airline to always be displayed.
 set laststatus=2
 
+" Ctrl P
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_regexp = 1
 let g:ctrlp_max_files=0
 
+" YouCompleteMe
 let g:ycm_show_diagnostics_ui = 0
+set completeopt-=preview
 
+let g:tagbar_autoclose=1 
 " set UTF-8 encoding
 set enc=utf-8
 set fenc=utf-8
@@ -94,8 +99,9 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <C-x>          d
 :map <C-z>          u
 :map <C-d>          :Dox<Enter>
-:imap <C-s>         <Esc><C-s>a
+:imap <C-s>         <Esc><C-s>
 noremap q           :q<Enter>
+noremap qa           :qa<Enter>
 
 " Ctags
 :map g]             <C-w>g]
@@ -113,12 +119,8 @@ noremap j h
 :map gj <C-w>h
 
 " Tab Navigation
-:map <C-j> :tabprevious<Enter>
-:map <C-l> :tabnext<Enter>
-
-:map <leader>nt     :tabe<Enter><C-p>
-:map <leader>nf     :tabe<Enter>:e
-
+:map fj :tabprevious<Enter>
+:map f; :tabnext<Enter>
 
 :map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
 
@@ -127,16 +129,12 @@ noremap j h
 " -------------------------------------------------
 
 :map <leader>v      :tabe ~/.vimrc<Enter>
-
 :map <leader>tw     <C-w><S-t>
-
 :map <leader>qa     :qa!<Enter>
-
-:map <leader>k      :NERDTree<Enter><C-w>o
-
 :map <leader>l      :TagbarToggle<CR>
-
 :map <leader>t      :!ctags %<Enter>A
+:map <leader>nt     :tabe<Enter><C-p>
+:map <leader>nf     :tabe<Enter>:e
 
 " [Un]Comment the select lines.
 :map <leader>c      :s/^/\/\/<enter>
