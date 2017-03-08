@@ -99,9 +99,9 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <C-x>          d
 :map <C-z>          u
 :map <C-d>          :Dox<Enter>
-:imap <C-s>         <Esc><C-s>
-noremap q           :q<Enter>
-noremap qa           :qa<Enter>
+:imap <C-s>         <Esc><C-s>a
+:map q           :q<Enter>
+:map qa          :qa<Enter>
 
 " Ctags
 :map g]             <C-w>g]
