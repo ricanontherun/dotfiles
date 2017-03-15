@@ -30,6 +30,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'valloric/youcompleteme'
 Plugin 'rdnetto/YCM-Generator'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'craigemery/vim-autotag'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -42,7 +44,7 @@ set laststatus=2
 
 " Ctrl P
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_regexp = 1
+let g:ctrlp_regexp = 0
 let g:ctrlp_max_files=0
 
 " YouCompleteMe
@@ -50,6 +52,7 @@ let g:ycm_show_diagnostics_ui = 0
 set completeopt-=preview
 
 let g:tagbar_autoclose=1 
+
 " set UTF-8 encoding
 set enc=utf-8
 set fenc=utf-8
@@ -62,8 +65,8 @@ set autoindent
 set smartindent
 
 " configure tabwidth and insert spaces instead of tabs
-set tabstop=2        " tab width is 4 spaces
-set shiftwidth=2     " indent also with 4 spaces
+set tabstop=4        " tab width is 4 spaces
+set shiftwidth=4     " indent also with 4 spaces
 set expandtab        " expand tabs to spaces
 
 set textwidth=120
@@ -135,6 +138,7 @@ noremap j h
 :map <leader>t      :!ctags %<Enter>A
 :map <leader>nt     :tabe<Enter><C-p>
 :map <leader>nf     :tabe<Enter>:e
+:map <leader>fe     :NERDTree <Enter>
 
 " [Un]Comment the select lines.
 :map <leader>c      :s/^/\/\/<enter>
