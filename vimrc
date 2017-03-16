@@ -32,6 +32,7 @@ Plugin 'valloric/youcompleteme'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'craigemery/vim-autotag'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -95,7 +96,6 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 " -------------------------------------------------
 
 :map <C-a>          GVgg
-:map <C-o>          :e . <Enter>
 :map <C-s>          :w <Enter>
 :map <C-c>          y
 :map <C-v>          p
@@ -125,18 +125,27 @@ noremap j h
 :map fj :tabprevious<Enter>
 :map f; :tabnext<Enter>
 
+// Grep the project for the term under the cursor.
 :map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
 
 " -------------------------------------------------
 " Leaders
 " -------------------------------------------------
 
+" Fugitive leaders
+:map <leader>ga     :Git add %<Enter>
+:map <leader>gaa    :Git add --all<Enter>
+:map <leader>gs     :Git status<Enter>
+:map <leader>gc     :Git commit<Enter>
+:map <leader>gg     :Git pull<Enter>
+:map <leader>ggm    :Git pull origin master<Enter>
+:map <leader>gp     :Git push<Enter>
+
 :map <leader>v      :tabe ~/.vimrc<Enter>
 :map <leader>tw     <C-w><S-t>
 :map <leader>qa     :qa!<Enter>
 :map <leader>l      :TagbarToggle<CR>
-:map <leader>t      :!ctags %<Enter>A
-:map <leader>nt     :tabe<Enter><C-p>
+:map <leader>nt     :tabe<Enter>
 :map <leader>nf     :tabe<Enter>:e
 :map <leader>fe     :NERDTree <Enter>
 
