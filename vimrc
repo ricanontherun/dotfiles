@@ -30,9 +30,13 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'valloric/youcompleteme'
 Plugin 'rdnetto/YCM-Generator'
-Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'craigemery/vim-autotag'
 Plugin 'tpope/vim-fugitive'
+Plugin 'mhinz/vim-grepper'
+
+" PHP Plugins
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'arnaud-lb/vim-php-namespace'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -52,6 +56,7 @@ let g:ctrlp_max_files=0
 let g:ycm_show_diagnostics_ui = 0
 set completeopt-=preview
 
+" Close tagbar as soon as jump is made.
 let g:tagbar_autoclose=1 
 
 " set UTF-8 encoding
@@ -91,6 +96,10 @@ autocmd FileType c,h,cpp,hpp,js,php,html,vue,vimrc autocmd BufWritePre <buffer> 
 "Store tmp files in /var/tmp, thanks http://stackoverflow.com/a/4331812"
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 
+" Allow for project specific vimrc files
+set exrc
+set secure
+
 " -------------------------------------------------
 " Mappings
 " -------------------------------------------------
@@ -109,7 +118,11 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 " Ctags
 :map g]             <C-w>g]
 
-" Movement.
+" --------------------------------------------------
+" Movement
+" --------------------------------------------------
+
+" Remapping the movement keys so I can stay on homerow as much as possible.
 noremap ; l
 noremap l k
 noremap k j
@@ -125,7 +138,7 @@ noremap j h
 :map fj :tabprevious<Enter>
 :map f; :tabnext<Enter>
 
-// Grep the project for the term under the cursor.
+" Grep the project for the term under the cursor.
 :map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
 
 " -------------------------------------------------
@@ -141,13 +154,17 @@ noremap j h
 :map <leader>ggm    :Git pull origin master<Enter>
 :map <leader>gp     :Git push<Enter>
 
+:map <leader>l      :TagbarToggle<CR>
+:map <leader>fe     :NERDTree <Enter>
+
+nmap gs  <plug>(GrepperOperator)
+xmap gs  <plug>(GrepperOperator)
+
 :map <leader>v      :tabe ~/.vimrc<Enter>
 :map <leader>tw     <C-w><S-t>
 :map <leader>qa     :qa!<Enter>
-:map <leader>l      :TagbarToggle<CR>
 :map <leader>nt     :tabe<Enter>
 :map <leader>nf     :tabe<Enter>:e
-:map <leader>fe     :NERDTree <Enter>
 
 " [Un]Comment the select lines.
 :map <leader>c      :s/^/\/\/<enter>
