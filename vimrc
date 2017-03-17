@@ -98,7 +98,6 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 
 " Allow for project specific vimrc files
 set exrc
-set secure
 
 " -------------------------------------------------
 " Mappings
@@ -159,6 +158,13 @@ noremap j h
 
 nmap gs  <plug>(GrepperOperator)
 xmap gs  <plug>(GrepperOperator)
+let g:grepper = {
+    \ 'tools': ['ack'],
+    \ 'ack': {
+    \   'grepprg':    'ack --nocolor --ignore-dir={.git,node_modules,storage,public,build} --ignore-file=is:.tags',
+    \   'grepformat': '%f:%l:%m',
+    \   'escape':     '\+*^$()[]',
+\ }}
 
 :map <leader>v      :tabe ~/.vimrc<Enter>
 :map <leader>tw     <C-w><S-t>

@@ -1,0 +1,2 @@
+3.0
+{'nerdtree': {'checked_time': 1486056517, 'installed_uri': 'https://github.com/scrooloose/nerdtree.git', 'installed_path': '/home/vagrant/.config/nvim/bundle/nerdtree', 'revisions': {'1483364055': '281701021c5001332a862da80175bf585d24e2e8'}, 'updated_time': '1483364055'}, 'neobundle.vim': {'checked_time': 1486056515, 'installed_uri': 'https://github.com/Shougo/neobundle.vim.git', 'installed_path': '/home/vagrant/.config/nvim/bundle/neobundle.vim', 'revisions': {}, 'updated_time': 1486056515}}

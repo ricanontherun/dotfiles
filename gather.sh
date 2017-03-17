@@ -12,7 +12,7 @@ function gather
   if [ -e $1 ]
   then
     echo "$1 -> $2"
-    cp $1 $2
+    cp -r $1 $2
   else
     echo "$1 not found"
   fi
@@ -32,3 +32,6 @@ gather $bash_aliases_path bash_aliases
 
 ideavim_path="$HOME/.ideavim"
 gather $ideavim_path ideavim
+
+vim_path="$HOME/.vim"
+gather $vim_path vim

@@ -11,7 +11,7 @@ function disperse
   if [ -e $1 ]
   then
     echo "$1 -> $2"
-    cp $1 $2
+    cp -r $1 $2
   else
     echo "$1 not found"
   fi
@@ -31,3 +31,6 @@ disperse bash_aliases $bash_aliases_path
 
 ideavim_path="$HOME/.ideavim"
 disperse ideavimrc $ideavim_path
+
+vim_path="$HOME/.vim"
+disperse vim $vim_path
