@@ -125,7 +125,7 @@ noremap j h
 :map fj :tabprevious<Enter>
 :map f; :tabnext<Enter>
 
-// Grep the project for the term under the cursor.
+" Grep the project for the term under the cursor.
 :map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
 
 " -------------------------------------------------
