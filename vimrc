@@ -103,19 +103,21 @@ set exrc
 " Mappings
 " -------------------------------------------------
 
-:map <C-a>          GVgg
-:map <C-s>          :w <Enter>
-:map <C-c>          y
-:map <C-v>          p
-:map <C-x>          d
-:map <C-z>          u
-:map <C-d>          :Dox<Enter>
-:imap <C-s>         <Esc><C-s>a
-:map q           :q<Enter>
-:map qa          :qa<Enter>
+:map <C-a>      GVgg
+:map <C-s>      :w <Enter>
+:map <C-c>      y
+:map <C-v>      p
+:map <C-x>      d
+:map <C-z>      u
+:map <C-d>      :Dox<Enter>
+:imap <C-s>     <Esc><C-s>a
+:map q          :q<Enter>
+:map qa         :qa<Enter>
+:map fq         :q!<Enter>
+:map fqa        :qa!<Enter>
 
 " Ctags
-:map g]             <C-w>g]
+:map g]         <C-w>g]
 
 " --------------------------------------------------
 " Movement
@@ -148,13 +150,14 @@ noremap j h
 :map <leader>ga     :Git add %<Enter>
 :map <leader>gaa    :Git add --all<Enter>
 :map <leader>gs     :Git status<Enter>
+:map <leader>gd     :Git diff<Enter>
 :map <leader>gc     :Git commit<Enter>
 :map <leader>gg     :Git pull<Enter>
 :map <leader>ggm    :Git pull origin master<Enter>
 :map <leader>gp     :Git push<Enter>
 
 :map <leader>l      :TagbarToggle<CR>
-:map <leader>fe     :NERDTree <Enter>
+:map <leader>e      :NERDTreeToggle <Enter>
 
 nmap gs  <plug>(GrepperOperator)
 xmap gs  <plug>(GrepperOperator)
