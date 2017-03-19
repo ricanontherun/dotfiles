@@ -33,6 +33,7 @@ Plugin 'rdnetto/YCM-Generator'
 Plugin 'craigemery/vim-autotag'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-grepper'
+Plugin 'vim-airline/vim-airline-themes'
 
 " PHP Plugins
 Plugin 'shawncplus/phpcomplete.vim'
@@ -46,6 +47,7 @@ let g:DoxygenToolkit_briefTag_pre=""
 
 " I want airline to always be displayed.
 set laststatus=2
+let g:airline_powerline_fonts=1
 
 " Ctrl P
 let g:ctrlp_working_path_mode = 0
@@ -71,8 +73,8 @@ set autoindent
 set smartindent
 
 " configure tabwidth and insert spaces instead of tabs
-set tabstop=4        " tab width is 4 spaces
-set shiftwidth=4     " indent also with 4 spaces
+set tabstop=2        " tab width is 2 spaces
+set shiftwidth=2     " indent also with 2 spaces
 set expandtab        " expand tabs to spaces
 
 set textwidth=120
