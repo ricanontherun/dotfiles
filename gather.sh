@@ -32,6 +32,3 @@ gather $bash_aliases_path bash_aliases
 
 ideavim_path="$HOME/.ideavim"
 gather $ideavim_path ideavim
-
-vim_path="$HOME/.vim"
-gather $vim_path vim

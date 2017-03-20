@@ -31,6 +31,3 @@ disperse bash_aliases $bash_aliases_path
 
 ideavim_path="$HOME/.ideavim"
 disperse ideavimrc $ideavim_path
-
-vim_path="$HOME/.vim"
-disperse vim $vim_path
