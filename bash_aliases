@@ -4,6 +4,8 @@ stty -ixon
 # Default cd to my code directory
 cd ~/Code
 
+alias ll='ls -lah'
+
 #--------------------------------------------------
 # Git aliases
 #--------------------------------------------------

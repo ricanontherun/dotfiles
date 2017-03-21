@@ -1,5 +1,4 @@
 " -------------------------------------------------
-"  
 " Christian Roman - Vim config
 " -------------------------------------------------
 
@@ -34,6 +33,7 @@ Plugin 'craigemery/vim-autotag'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-grepper'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/syntastic'
 
 " PHP Plugins
 Plugin 'shawncplus/phpcomplete.vim'
@@ -60,6 +60,16 @@ set completeopt-=preview
 
 " Close tagbar as soon as jump is made.
 let g:tagbar_autoclose=1 
+
+" Syntastic Settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " set UTF-8 encoding
 set enc=utf-8
