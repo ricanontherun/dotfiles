@@ -19,11 +19,10 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdTree'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'Yggdroot/indentLine'
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'vim-airline/vim-airline'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'majutsushi/tagbar'
-Plugin 'DoxygenToolkit.vim'
 Plugin 'raimondi/delimitmate'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'nanotech/jellybeans.vim'
@@ -34,6 +33,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-grepper'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-obsession'
 
 " PHP Plugins
 Plugin 'shawncplus/phpcomplete.vim'
@@ -71,6 +71,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let g:indent_guides_enable_on_vim_startup = 0
+
 " set UTF-8 encoding
 set enc=utf-8
 set fenc=utf-8
@@ -85,7 +87,6 @@ set smartindent
 " configure tabwidth and insert spaces instead of tabs
 set tabstop=2        " tab width is 2 spaces
 set shiftwidth=2     " indent also with 2 spaces
-set expandtab        " expand tabs to spaces
 
 set textwidth=120
 set wrap!
@@ -170,6 +171,9 @@ noremap j h
 
 :map <leader>l      :TagbarToggle<CR>
 :map <leader>e      :NERDTreeToggle <Enter>
+
+:map <leader>mt     :!ctags -R .<Enter>
+:map <leader>at     :!ctags -a %<Enter>
 
 nmap gs  <plug>(GrepperOperator)
 xmap gs  <plug>(GrepperOperator)
