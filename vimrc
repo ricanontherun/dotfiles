@@ -32,8 +32,6 @@ Plugin 'craigemery/vim-autotag'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-grepper'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-obsession'
 
 " PHP Plugins
 Plugin 'shawncplus/phpcomplete.vim'
@@ -71,7 +69,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:indent_guides_enable_on_vim_startup = 0
+let g:indent_guides_enable_on_vim_startup = 1
 
 " set UTF-8 encoding
 set enc=utf-8
