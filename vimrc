@@ -30,7 +30,7 @@ Plugin 'valloric/youcompleteme'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'craigemery/vim-autotag'
 Plugin 'tpope/vim-fugitive'
-Plugin 'mhinz/vim-grepper'
+Plugin 'mileszs/ack.vim'
 Plugin 'vim-airline/vim-airline-themes'
 
 " PHP Plugins
@@ -102,7 +102,7 @@ set number
 " highlight matching braces
 set showmatch
 
-autocmd FileType c,h,cpp,hpp,js,php,html,vue,vimrc autocmd BufWritePre <buffer> StripWhitespace
+autocmd FileType c,h,cpp,hpp,js,php,html,vue,vimrc,scss autocmd BufWritePre <buffer> StripWhitespace
 
 "Store tmp files in /var/tmp, thanks http://stackoverflow.com/a/4331812"
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
@@ -122,10 +122,8 @@ set exrc
 :map <C-z>      u
 :map <C-d>      :Dox<Enter>
 :imap <C-s>     <Esc><C-s>a
-:map q          :q<Enter>
-:map qa         :qa<Enter>
-:map fq         :q!<Enter>
-:map fqa        :qa!<Enter>
+:map q	 		:q<Enter>
+:map qa     	:bufdo bd<Enter>
 
 " Ctags
 :map g]         <C-w>g]
@@ -151,7 +149,7 @@ noremap j h
 :map f; :tabnext<Enter>
 
 " Grep the project for the term under the cursor.
-:map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
+:map <F4>	:Ack --nocolor --ignore-file=is:tags --ignore-dir={.git,vendor} <cword> . <Enter>
 
 " -------------------------------------------------
 " Leaders
@@ -185,7 +183,6 @@ let g:grepper = {
 
 :map <leader>v      :tabe ~/.vimrc<Enter>
 :map <leader>tw     <C-w><S-t>
-:map <leader>qa     :qa!<Enter>
 :map <leader>nt     :tabe<Enter>
 :map <leader>nf     :tabe<Enter>:e
 
