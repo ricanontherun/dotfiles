@@ -36,6 +36,7 @@ Plugin 'vim-airline/vim-airline-themes'
 " PHP Plugins
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'posva/vim-vue'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
