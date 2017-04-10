@@ -72,6 +72,9 @@ let g:syntastic_check_on_wq = 0
 
 let g:indent_guides_enable_on_vim_startup = 1
 
+set tags=tags
+set path=.
+
 " set UTF-8 encoding
 set enc=utf-8
 set fenc=utf-8
@@ -127,7 +130,7 @@ set exrc
 :map qa     	:bufdo bd<Enter>
 
 " Ctags
-:map g]         <C-w>g]
+:map <C-]>         g<C-]>
 
 " --------------------------------------------------
 " Movement
