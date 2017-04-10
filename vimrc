@@ -52,6 +52,8 @@ let g:airline_powerline_fonts=1
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_regexp = 0
 let g:ctrlp_max_files=0
+let g:ctrlp_clear_cache_on_exit=0
+let g:ctrlp_regexp = 1
 
 " YouCompleteMe
 let g:ycm_show_diagnostics_ui = 0
@@ -126,8 +128,6 @@ set exrc
 :map <C-z>      u
 :map <C-d>      :Dox<Enter>
 :imap <C-s>     <Esc><C-s>a
-:map q	 		:q<Enter>
-:map qa     	:bufdo bd<Enter>
 
 " Ctags
 :map <C-]>         g<C-]>
@@ -171,6 +171,8 @@ noremap j h
 
 :map <leader>l      :TagbarToggle<CR>
 :map <leader>e      :NERDTreeToggle <Enter>
+:map <leader>q	 		:q<Enter>
+:map <leader>qa     	:bufdo bd<Enter>
 
 :map <leader>mt     :!ctags -R .<Enter>
 :map <leader>at     :!ctags -a %<Enter>
