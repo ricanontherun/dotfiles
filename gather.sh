@@ -32,3 +32,6 @@ gather $bash_aliases_path bash_aliases
 
 ideavim_path="$HOME/.ideavim"
 gather $ideavim_path ideavim
+
+ctags_path="$HOME/.ctags"
+gather $ctags_path ctags

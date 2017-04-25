@@ -90,10 +90,9 @@ set autoindent
 set smartindent
 
 " configure tabwidth and insert spaces instead of tabs
-set tabstop=2        " tab width is 2 spaces
-set shiftwidth=2     " indent also with 2 spaces
+set tabstop=4        " tab width is 2 spaces
+set shiftwidth=4     " indent also with 2 spaces
 
-set textwidth=120
 set wrap!
 
 " turn syntax highlighting on
@@ -125,13 +124,13 @@ set exrc
 :map <C-s>      :w <Enter>
 :map <C-c>      y
 :map <C-v>      p
-:map <C-x>      d
+:map <C-x>      "_d
 :map <C-z>      u
-:map <C-d>      :Dox<Enter>
 :imap <C-s>     <Esc><C-s>a
 
 " Ctags
 :map <C-]>         g<C-]>
+
 
 " --------------------------------------------------
 " Movement

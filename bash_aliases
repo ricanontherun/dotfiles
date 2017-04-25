@@ -30,7 +30,7 @@ alias js_compile='npm run watch no-upload'
 #--------------------------------------------------
 # Command overrides
 #--------------------------------------------------
-alias tmux="TERM=screen-256color-bce tmux"
+alias tmux='tmux -u'
 alias valgrind='valgrind -v --leak-check=full --show-leak-kinds=all'
 alias cppcheck='cppcheck --quiet --enable=all'
 
