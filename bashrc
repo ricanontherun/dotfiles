@@ -115,3 +115,5 @@ if ! shopt -oq posix; then
 fi
 
 PATH=$PATH:~/.composer/vendor/bin
+
+cd /var/www

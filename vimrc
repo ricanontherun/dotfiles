@@ -75,6 +75,8 @@ let g:syntastic_check_on_wq = 0
 
 let g:indent_guides_enable_on_vim_startup = 1
 
+autocmd FileType vue syntax sync fromstart
+
 set tags=tags
 set path=.
 
@@ -98,9 +100,14 @@ set wrap!
 " turn syntax highlighting on
 set t_Co=256
 
+" No highlighting bg color
+highlight Normal ctermbg=NONE
+highlight NonText ctermbg=NONE
+
 " Color scheme
 syntax enable
 colorscheme jellybeans 
+set background=dark
 
 " turn line numbers on
 set number
@@ -147,6 +154,10 @@ noremap j h
 :map gl <C-w>k
 :map gk <C-w>j
 :map gj <C-w>h
+
+:map <C-_> <C-w>-
+:map <C-+> <C-w>+
+:map <C-,> <C-w><
 
 " Tab Navigation
 :map fj :tabprevious<Enter>
