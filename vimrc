@@ -42,9 +42,6 @@ Plugin 'mattn/emmet-vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Doxygen
-let g:DoxygenToolkit_briefTag_pre=""
-
 " I want airline to always be displayed.
 set laststatus=2
 let g:airline_powerline_fonts=1
@@ -138,7 +135,6 @@ set exrc
 " Ctags
 :map <C-]>         g<C-]>
 
-
 " --------------------------------------------------
 " Movement
 " --------------------------------------------------
@@ -155,9 +151,11 @@ noremap j h
 :map gk <C-w>j
 :map gj <C-w>h
 
-:map <C-_> <C-w>-
-:map <C-+> <C-w>+
-:map <C-,> <C-w><
+:map < :vertical resize -5<Enter>
+:map > :vertical resize +5<Enter>
+
+:map _ :resize -5<Enter>
+:map + :resize +5<Enter>
 
 " Tab Navigation
 :map fj :tabprevious<Enter>
