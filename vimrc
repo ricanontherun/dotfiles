@@ -18,9 +18,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdTree'
+Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'vim-airline/vim-airline'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'majutsushi/tagbar'
 Plugin 'raimondi/delimitmate'
@@ -42,9 +42,7 @@ Plugin 'mattn/emmet-vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" I want airline to always be displayed.
-set laststatus=2
-let g:airline_powerline_fonts=1
+set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 
 " Ctrl P
 let g:ctrlp_working_path_mode = 0
@@ -151,11 +149,11 @@ noremap j h
 :map gk <C-w>j
 :map gj <C-w>h
 
-:map < :vertical resize -5<Enter>
-:map > :vertical resize +5<Enter>
+:map _ :vertical resize +5<Enter>
+:map + :vertical resize -5<Enter>
 
-:map _ :resize -5<Enter>
-:map + :resize +5<Enter>
+:map - :resize +5<Enter>
+:map = :resize -5<Enter>
 
 " Tab Navigation
 :map fj :tabprevious<Enter>
