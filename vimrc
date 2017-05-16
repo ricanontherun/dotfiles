@@ -31,7 +31,6 @@ Plugin 'rdnetto/YCM-Generator'
 Plugin 'craigemery/vim-autotag'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mileszs/ack.vim'
-Plugin 'vim-airline/vim-airline-themes'
 
 " Work related plugins
 Plugin 'shawncplus/phpcomplete.vim'
