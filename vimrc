@@ -194,6 +194,9 @@ noremap j h
 :map <leader>mt     :!ctags -R .<Enter>
 :map <leader>at     :!ctags -a %<Enter>
 
+:map <leader>vs 		:vsplit<Enter>
+:map <leader>hs 		:split<Enter>
+
 nmap gs  <plug>(GrepperOperator)
 xmap gs  <plug>(GrepperOperator)
 let g:grepper = {
