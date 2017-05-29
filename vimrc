@@ -18,7 +18,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdTree'
-Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ntpeters/vim-better-whitespace'
@@ -67,17 +66,6 @@ set completeopt-=preview
 " Close tagbar as soon as jump is made.
 let g:tagbar_autoclose=1 
 
-" Syntastic Settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-" Syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 let g:indent_guides_enable_on_vim_startup = 1
 
 autocmd FileType vue syntax sync fromstart
@@ -120,7 +108,7 @@ set number
 " highlight matching braces
 set showmatch
 
-autocmd FileType c,h,cpp,hpp,js,php,html,vue,vimrc,scss autocmd BufWritePre <buffer> StripWhitespace
+autocmd FileType c,h,cpp,hpp,js,php,html,vue,vimrc,scss,go,lisp autocmd BufWritePre <buffer> StripWhitespace
 
 "Store tmp files in /var/tmp, thanks http://stackoverflow.com/a/4331812"
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
