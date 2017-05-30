@@ -87,6 +87,7 @@ set smartindent
 " configure tabwidth and insert spaces instead of tabs
 set tabstop=4        " tab width is 2 spaces
 set shiftwidth=4     " indent also with 2 spaces
+set expandtab
 
 set wrap!
 
