@@ -94,7 +94,6 @@ set wrap!
 " turn syntax highlighting on
 set t_Co=256
 
-set binary
 set noeol
 
 " No highlighting bg color
