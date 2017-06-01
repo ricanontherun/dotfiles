@@ -94,6 +94,9 @@ set wrap!
 " turn syntax highlighting on
 set t_Co=256
 
+set binary
+set noeol
+
 " No highlighting bg color
 highlight Normal ctermbg=NONE
 highlight NonText ctermbg=NONE
@@ -172,6 +175,7 @@ noremap j h
 :map <leader>gd     :Git diff<Enter>
 :map <leader>gc     :Git commit<Enter>
 :map <leader>gg     :Git pull<Enter>
+:map <leader>gu     :Git checkout %<Enter>
 :map <leader>ggm    :Git pull origin master<Enter>
 :map <leader>gp     :Git push<Enter>
 
