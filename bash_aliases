@@ -31,7 +31,7 @@ alias tmux='tmux -u'
 alias valgrind='valgrind -v --leak-check=full --show-leak-kinds=all'
 alias cppcheck='cppcheck --quiet --enable=all'
 
-alias update='sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y autoremove && sudo apt-get -y autoclean'
+alias update='sudo apt-get update && sudo apt-get -y dist-upgrade && sudo apt-get -y autoremove && sudo apt-get -y autoclean'
 alias install='sudo apt-get install'
 alias search='sudo apt-cache search'
 alias uninstall='sudo apt-get remove'
