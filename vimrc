@@ -162,7 +162,7 @@ noremap j h
 :map f; :tabnext<Enter>
 
 " Ack the project for the term under the cursor.
-:map <F4>	:Ack! --nocolor --ignore-dir={.git,vendor,node_modules,storage,public,build} --ignore-file=is:tags <cword>
+:map <F3>	:Ack! --nocolor --ignore-dir={.git,vendor,node_modules,storage,public,build} --ignore-file=is:tags <cword>
 
 " -------------------------------------------------
 " Leaders
