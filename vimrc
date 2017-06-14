@@ -112,7 +112,7 @@ set number
 " highlight matching braces
 set showmatch
 
-autocmd FileType c,h,cpp,hpp,js,php,html,vue,vimrc,scss,go,lisp autocmd BufWritePre <buffer> StripWhitespace
+autocmd FileType c,h,cpp,hpp,javascript,php,html,vue,vimrc,scss,go,lisp autocmd BufWritePre <buffer> StripWhitespace
 
 "Store tmp files in /var/tmp, thanks http://stackoverflow.com/a/4331812"
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
@@ -161,8 +161,8 @@ noremap j h
 :map fj :tabprevious<Enter>
 :map f; :tabnext<Enter>
 
-" Grep the project for the term under the cursor.
-:map <F4>	:Ack --nocolor --ignore-file=is:tags --ignore-dir={.git,vendor} <cword> . <Enter>
+" Ack the project for the term under the cursor.
+:map <F4>	:Ack! --nocolor --ignore-dir={.git,vendor,node_modules,storage,public,build} --ignore-file=is:tags <cword>
 
 " -------------------------------------------------
 " Leaders
@@ -189,16 +189,6 @@ noremap j h
 
 :map <leader>vs 		:vsplit<Enter>
 :map <leader>hs 		:split<Enter>
-
-nmap gs  <plug>(GrepperOperator)
-xmap gs  <plug>(GrepperOperator)
-let g:grepper = {
-    \ 'tools': ['ack'],
-    \ 'ack': {
-    \   'grepprg':    'ack --nocolor --ignore-dir={.git,node_modules,storage,public,build} --ignore-file=is:.tags',
-    \   'grepformat': '%f:%l:%m',
-    \   'escape':     '\+*^$()[]',
-\ }}
 
 :map <leader>v      :tabe ~/.vimrc<Enter>
 :map <leader>tw     <C-w><S-t>
