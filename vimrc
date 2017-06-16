@@ -30,6 +30,7 @@ Plugin 'rdnetto/YCM-Generator'
 Plugin 'craigemery/vim-autotag'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mileszs/ack.vim'
+Plugin 'vim-syntastic/syntastic'
 
 " Work related plugins
 Plugin 'shawncplus/phpcomplete.vim'
@@ -68,6 +69,22 @@ let g:tagbar_autoclose=1
 
 let g:indent_guides_enable_on_vim_startup = 1
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Specific checkers
+let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_javascript_eslint_exec='node_modules/.bin/eslint'
+
+let g:syntastic_vue_checkers=['eslint']
+let g:syntastic_vue_eslint_exec='node_modules/.bin/eslint'
+
 autocmd FileType vue syntax sync fromstart
 
 set tags=tags
@@ -93,9 +110,6 @@ set wrap!
 
 " turn syntax highlighting on
 set t_Co=256
-
-set binary
-set noeol
 
 " No highlighting bg color
 highlight Normal ctermbg=NONE
