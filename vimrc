@@ -2,8 +2,8 @@
 " Christian Roman - Vim config
 " -------------------------------------------------
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+filetype off
 
 " -------------------------------------------------
 " Plugin Management
@@ -78,13 +78,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" Specific checkers
-let g:syntastic_javascript_checkers=['eslint']
-let g:syntastic_javascript_eslint_exec='node_modules/.bin/eslint'
-
-let g:syntastic_vue_checkers=['eslint']
-let g:syntastic_vue_eslint_exec='node_modules/.bin/eslint'
-
 autocmd FileType vue syntax sync fromstart
 
 set tags=tags
@@ -126,6 +119,7 @@ set number
 " highlight matching braces
 set showmatch
 
+" Automatically strip whitespace on buffer save.
 autocmd FileType c,h,cpp,hpp,javascript,php,html,vue,vimrc,scss,go,lisp autocmd BufWritePre <buffer> StripWhitespace
 
 "Store tmp files in /var/tmp, thanks http://stackoverflow.com/a/4331812"
@@ -145,9 +139,10 @@ set exrc
 :map <C-x>      "_d
 :map <C-z>      u
 :imap <C-s>     <Esc><C-s>a
+:map q	 	:q<Enter>
+:map qa     :bufdo bd<Enter>
 
-" Ctags
-:map <C-]>         g<C-]>
+:map <C-]>      g<C-]>
 
 " --------------------------------------------------
 " Movement
@@ -165,6 +160,7 @@ noremap j h
 :map gk <C-w>j
 :map gj <C-w>h
 
+" Pane resizing.
 :map _ :vertical resize +5<Enter>
 :map + :vertical resize -5<Enter>
 
@@ -175,7 +171,7 @@ noremap j h
 :map fj :tabprevious<Enter>
 :map f; :tabnext<Enter>
 
-" Ack the project for the term under the cursor.
+" Ack a provided file for the <cword>
 :map <F3>	:Ack! --nocolor --ignore-dir={.git,vendor,node_modules,storage,public,build} --ignore-file=is:tags <cword>
 
 " -------------------------------------------------
@@ -183,32 +179,69 @@ noremap j h
 " -------------------------------------------------
 
 " Fugitive leaders
+
+" Add the current file
 :map <leader>ga     :Git add %<Enter>
+
+" Add all modified files
 :map <leader>gaa    :Git add --all<Enter>
+
+" Print the git status
 :map <leader>gs     :Git status<Enter>
+
+" Print the diff of all modified files
 :map <leader>gd     :Git diff<Enter>
+
+" Print the diff of the current file
+:map <leader>gdf    :Git diff %<Enter>
+
+" Open the git commit prompt
 :map <leader>gc     :Git commit<Enter>
+
+" Commit changes with a given message
+:map <leader>gcm    :Git commit -m
+
+" Git pull
 :map <leader>gg     :Git pull<Enter>
-:map <leader>gu     :Git checkout %<Enter>
+
+" Git pull from master
 :map <leader>ggm    :Git pull origin master<Enter>
+
+" Checkout the current file
+:map <leader>gu     :Git checkout %<Enter>
+
+" Git push
 :map <leader>gp     :Git push<Enter>
 
-:map <leader>l      :TagbarToggle<CR>
-:map <leader>e      :NERDTreeToggle <Enter>
-:map <leader>q	 		:q<Enter>
-:map <leader>qa     	:bufdo bd<Enter>
+" Remove the current file
+:map <leader>grm    :Git rm %<Enter>
 
-:map <leader>mt     :!ctags -R .<Enter>
+" Git reset
+:map <leader>gr     :Git reset<Enter>
+
+:map <leader>l      :TagbarToggle<CR>
+
+:map <leader>e      :NERDTreeToggle <Enter>
+
+" Create the tags file starting in current working directory.
+:map <leader>mt     :!ctags .<Enter>
+
+" Append this files tags to the main tags file.
 :map <leader>at     :!ctags -a %<Enter>
 
-:map <leader>vs 		:vsplit<Enter>
-:map <leader>hs 		:split<Enter>
+" Split leaders
+:map <leader>vs 	:vsplit<Enter>
+:map <leader>hs 	:split<Enter>
 
+" Open ~/.vimrc
 :map <leader>v      :tabe ~/.vimrc<Enter>
-:map <leader>tw     <C-w><S-t>
+
+" New tab
 :map <leader>nt     :tabe<Enter>
+
+" New file
 :map <leader>nf     :tabe<Enter>:e
 
-" [Un]Comment the select lines.
+" [Un]comment the select lines.
 :map <leader>c      :s/^/\/\/<enter>
 :map <leader>uc     :s/\/\//<enter>

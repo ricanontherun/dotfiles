@@ -48,3 +48,6 @@ else
  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
 fi
 unset color_prompt force_color_prompt
+
+export GOPATH=$HOME/Code/go
+export PATH=$PATH:$(go env GOPATH)/bin
