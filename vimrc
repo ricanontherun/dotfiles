@@ -73,10 +73,20 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" PHPInsertUse
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+
+autocmd FileType php inoremap <leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <leader>u :call PhpInsertUse()<CR>
 
 autocmd FileType vue syntax sync fromstart
 
@@ -222,6 +232,7 @@ noremap j h
 :map <leader>l      :TagbarToggle<CR>
 
 :map <leader>e      :NERDTreeToggle <Enter>
+:map <leader>ef     :NERDTreeFind<Enter>
 
 " Create the tags file starting in current working directory.
 :map <leader>mt     :!ctags .<Enter>
@@ -245,3 +256,4 @@ noremap j h
 " [Un]comment the select lines.
 :map <leader>c      :s/^/\/\/<enter>
 :map <leader>uc     :s/\/\//<enter>
+:map <leader>fw     /<c-r><c-w><enter>
