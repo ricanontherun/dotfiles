@@ -31,6 +31,7 @@ Plugin 'craigemery/vim-autotag'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mileszs/ack.vim'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'fatih/vim-go'
 
 " Work related plugins
 Plugin 'shawncplus/phpcomplete.vim'
