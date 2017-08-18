@@ -50,4 +50,4 @@ fi
 unset color_prompt force_color_prompt
 
 export GOPATH=$HOME/Code/go
-export PATH=$PATH:$(go env GOPATH)/bin
+export PATH=$PATH:/usr/local/go/bin
