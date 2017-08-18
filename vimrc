@@ -79,6 +79,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_checkers = ['gcc']
+let g:syntastic_cpp_compiler = 'gcc'
+let g:syntastic_cpp_compiler_options = '-std=c++14'
 
 " PHPInsertUse
 function! IPhpInsertUse()
@@ -258,3 +261,14 @@ noremap j h
 :map <leader>c      :s/^/\/\/<enter>
 :map <leader>uc     :s/\/\//<enter>
 :map <leader>fw     /<c-r><c-w><enter>
+
+" Opens a 'scratch' file.
+function! OpenScratch()
+    let scratch_directory = "~/.vimscratch" . getcwd()
+
+    silent! execute "!mkdir -p " . scratch_directory
+
+    execute "tabe " . scratch_directory . "/scratch.txt"
+endfunction
+
+:map <leader>s      :call OpenScratch()<Enter>
