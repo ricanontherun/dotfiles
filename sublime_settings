@@ -1,0 +1,19 @@
+{
+	"autocomplete_all": false,
+	"color_scheme": "Packages/Color Scheme - Default/Mariana.tmTheme",
+	"common_flags":
+	[
+		"I/usr/include",
+		"I/usr/include/clang/3.8/include"
+	],
+	"cpp_flags":
+	[
+		"--std=c++14"
+	],
+	"font_size": 12,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"theme": "Adaptive.sublime-theme"
+}

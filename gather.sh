@@ -35,3 +35,6 @@ gather $ideavim_path ideavim
 
 ctags_path="$HOME/.ctags"
 gather $ctags_path ctags
+
+sublime_settings_path="$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
+gather $sublime_settings_path sublime_settings
