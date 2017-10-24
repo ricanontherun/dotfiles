@@ -100,6 +100,7 @@ noremap j h
 
 " Open ~/.vimrc
 :map <leader>v      :tabe ~/.vimrc<Enter>
+:map <leader>e      :Explore<Enter>
 
 " New tab
 :map <leader>nt     :tabe<Enter>
