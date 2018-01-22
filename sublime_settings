@@ -1,19 +1,43 @@
 {
-	"autocomplete_all": false,
+	"close_windows_when_empty": false,
 	"color_scheme": "Packages/Color Scheme - Default/Mariana.tmTheme",
+	"word_wrap": false,
+	"folder_exclude_patterns":
+	[
+		"vendor",
+		"node_modules",
+		".git",
+		"build"
+	],
+	"font_size": 13,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"index_exclude_patterns":
+	[
+		"node_modules",
+		".git",
+		"build",
+		"public",
+		"tags"
+	],
+	"theme": "Adaptive.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+
+
+	// Package specific settings.
 	"common_flags":
 	[
-		"I/usr/include",
-		"I/usr/include/clang/3.8/include"
+		"-IC:\\Program Files\\LLVM\\lib\\clang\\5.0.0\\include",
+		"-IC:\\cygwin64\\lib\\gcc\\x86_64-w64-mingw32\\5.4.0\\include\\c++",
+		"-IC:\\cygwin64\\lib\\gcc\\x86_64-w64-mingw32\\5.4.0\\include\\c++\\backward"
 	],
 	"cpp_flags":
 	[
 		"--std=c++14"
 	],
-	"font_size": 12,
-	"ignored_packages":
-	[
-		"Vintage"
-	],
-	"theme": "Adaptive.sublime-theme"
+	"easy_clang_complete_verbose": true,
+	"use_libclang": false,
 }

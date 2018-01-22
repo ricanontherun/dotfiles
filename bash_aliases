@@ -30,6 +30,7 @@ alias js_compile='npm run watch no-upload'
 alias tmux='tmux -u'
 alias valgrind='valgrind -v --leak-check=full --show-leak-kinds=all'
 alias cppcheck='cppcheck --quiet --enable=all'
+alias grepr="grep -rnI"
 
 alias update='sudo apt-get update && sudo apt-get -y dist-upgrade && sudo apt-get -y autoremove && sudo apt-get -y autoclean'
 alias install='sudo apt-get install'
@@ -52,4 +53,4 @@ fi
 unset color_prompt force_color_prompt
 
 export GOPATH=$HOME/Code/go
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
