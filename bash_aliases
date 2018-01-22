@@ -36,6 +36,8 @@ alias install='sudo apt-get install'
 alias search='sudo apt-cache search'
 alias uninstall='sudo apt-get remove'
 
+alias dce="docker-compose exec"
+
 force_color_prompt=yes
 
 # Add git branch if its present to PS1

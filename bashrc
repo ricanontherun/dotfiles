@@ -115,3 +115,5 @@ if ! shopt -oq posix; then
 fi
 
 PATH=$PATH:~/.composer/vendor/bin
+export APP_PORT=80
+export DB_PORT=3306
