@@ -23,6 +23,9 @@ disperse vimrc $vimrc_path
 tmux_path="$HOME/.tmux.conf"
 disperse tmux.conf $tmux_path
 
+bash_profile_path="$HOME/.bash_profile"
+disperse bash_profile $bash_profile_path
+
 bashrc_path="$HOME/.bashrc"
 disperse bashrc $bashrc_path
 

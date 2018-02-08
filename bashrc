@@ -2,6 +2,18 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# Platform Detection
+platform='unknown'
+unamestr=$(uname)
+
+if [[ "$unamestr" == 'Linux' ]]; then
+    platform='linux'
+elif [[ "$unamestr" == 'Darwin'  ]]; then
+    platform='mac'
+fi
+
+echo $platform
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;

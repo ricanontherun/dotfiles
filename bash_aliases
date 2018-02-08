@@ -28,8 +28,6 @@ alias js_compile='npm run watch no-upload'
 # Command overrides
 #--------------------------------------------------
 alias tmux='tmux -u'
-alias valgrind='valgrind -v --leak-check=full --show-leak-kinds=all'
-alias cppcheck='cppcheck --quiet --enable=all'
 alias grepr="grep -rnI"
 
 alias update='sudo apt-get update && sudo apt-get -y dist-upgrade && sudo apt-get -y autoremove && sudo apt-get -y autoclean'

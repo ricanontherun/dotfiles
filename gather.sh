@@ -24,6 +24,9 @@ gather $vimrc_path vimrc
 tmux_path="$HOME/.tmux.conf"
 gather $tmux_path tmux.conf
 
+bash_profile_path="$HOME/.bash_profile"
+gather $bash_profile_path bash_profile
+
 bashrc_path="$HOME/.bashrc"
 gather $bashrc_path bashrc
 
