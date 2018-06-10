@@ -32,11 +32,8 @@ disperse bashrc $bashrc_path
 bash_aliases_path="$HOME/.bash_aliases"
 disperse bash_aliases $bash_aliases_path
 
-ideavim_path="$HOME/.ideavim"
-disperse ideavimrc $ideavim_path
+ideavimrc_path="$HOME/.ideavimrc"
+disperse ideavimrc $ideavimrc_path
 
 ctags_path="$HOME/.ctags"
 disperse ctags $ctags_path
-
-sublime_path="$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
-disperse sublime_settings $sublime_path

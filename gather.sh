@@ -33,11 +33,8 @@ gather $bashrc_path bashrc
 bash_aliases_path="$HOME/.bash_aliases"
 gather $bash_aliases_path bash_aliases
 
-ideavim_path="$HOME/.ideavim"
-gather $ideavim_path ideavim
+ideavimrc_path="$HOME/.ideavimrc"
+gather $ideavimrc_path ideavimrc
 
 ctags_path="$HOME/.ctags"
 gather $ctags_path ctags
-
-sublime_settings_path="$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
-gather $sublime_settings_path sublime_settings
