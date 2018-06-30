@@ -9,6 +9,20 @@ filetype plugin indent on    " required
 
 set path=.
 
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree'
+Plug 'nanotech/jellybeans.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-eunuch'
+Plug 'raimondi/delimitmate'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'w0rp/ale'
+
+call plug#end()
+
 " set UTF-8 encoding
 set enc=utf-8
 set fenc=utf-8
@@ -36,6 +50,7 @@ highlight NonText ctermbg=NONE
 
 " Color scheme
 syntax enable
+colorscheme jellybeans
 set background=dark
 
 " turn line numbers on
@@ -46,6 +61,13 @@ set showmatch
 
 "Store tmp files in /var/tmp, thanks http://stackoverflow.com/a/4331812"
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
+
+"--------------------------------------------------
+" Plugin Specific Configuration
+"--------------------------------------------------
+set laststatus=2
+
+let g:ale_linters = {'javascript': ['eslint']}
 
 " -------------------------------------------------
 " Mappings
@@ -82,7 +104,6 @@ noremap j h
 " Pane resizing.
 :map _ :vertical resize +5<Enter>
 :map + :vertical resize -5<Enter>
-
 :map - :resize +5<Enter>
 :map = :resize -5<Enter>
 
@@ -94,13 +115,17 @@ noremap j h
 " Leaders
 " -------------------------------------------------
 
-" Split leaders
+" Create vertical split
 :map <leader>vs 	:vsplit<Enter>
+
+" Create horiztonal split
 :map <leader>hs 	:split<Enter>
 
 " Open ~/.vimrc
 :map <leader>v      :tabe ~/.vimrc<Enter>
-:map <leader>e      :Explore<Enter>
+
+" Open the file explorer.
+:map <leader>e      :NERDTreeToggle <Enter>
 
 " New tab
 :map <leader>nt     :tabe<Enter>
@@ -108,18 +133,5 @@ noremap j h
 " New file
 :map <leader>nf     :tabe<Enter>:e
 
-" [Un]comment the select lines.
-:map <leader>c      :s/^/\/\/<enter>
-:map <leader>uc     :s/\/\//<enter>
-:map <leader>fw     /<c-r><c-w><enter>
-
-" Opens a 'scratch' file.
-function! OpenScratch()
-    let scratch_directory = "~/.vimscratch" . getcwd()
-
-    silent! execute "!mkdir -p " . scratch_directory
-
-    execute "tabe " . scratch_directory . "/scratch.txt"
-endfunction
-
-:map <leader>s      :call OpenScratch()<Enter>
+" Open zfz search pane
+:map <leader>s    :GFiles<Enter>

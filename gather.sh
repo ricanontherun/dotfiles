@@ -21,6 +21,9 @@ function gather
 vimrc_path="$HOME/.vimrc"
 gather $vimrc_path vimrc
 
+vimplug_path="$HOME/.vim/autoload/plug.vim"
+gather $vimplug_path vimplug
+
 tmux_path="$HOME/.tmux.conf"
 gather $tmux_path tmux.conf
 

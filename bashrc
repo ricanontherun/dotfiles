@@ -129,3 +129,5 @@ fi
 PATH=$PATH:~/.composer/vendor/bin
 export APP_PORT=80
 export DB_PORT=3306
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -20,6 +20,9 @@ function disperse
 vimrc_path="$HOME/.vimrc"
 disperse vimrc $vimrc_path
 
+vimplug_path="$HOME/.vim/autoload/plug.vim"
+disperse vimplug $vimplug_path
+
 tmux_path="$HOME/.tmux.conf"
 disperse tmux.conf $tmux_path
 
