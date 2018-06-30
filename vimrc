@@ -20,6 +20,8 @@ Plug 'tpope/vim-eunuch'
 Plug 'raimondi/delimitmate'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
+Plug 'tpope/vim-fugitive'
+Plug 'moll/vim-node'
 
 call plug#end()
 
@@ -35,9 +37,9 @@ set autoindent
 set smartindent
 
 " configure tabwidth and insert spaces instead of tabs
-set tabstop=4        " tab width is 2 spaces
-set shiftwidth=4     " indent also with 2 spaces
 set expandtab
+set shiftwidth=2
+set softtabstop=2
 
 set wrap!
 
