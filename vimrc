@@ -22,6 +22,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'moll/vim-node'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'scrooloose/syntastic'
 
 call plug#end()
 
@@ -70,6 +72,9 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 set laststatus=2
 
 let g:ale_linters = {'javascript': ['eslint']}
+
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
 
 " -------------------------------------------------
 " Mappings
@@ -124,7 +129,7 @@ noremap j h
 :map <leader>hs 	:split<Enter>
 
 " Open ~/.vimrc
-:map <leader>v      :tabe ~/.vimrc<Enter>
+:map <leader>v      :e ~/.vimrc<Enter>
 
 " Open the file explorer.
 :map <leader>e      :NERDTreeToggle <Enter>
@@ -136,4 +141,20 @@ noremap j h
 :map <leader>nf     :tabe<Enter>:e
 
 " Open zfz search pane
-:map <leader>s    :GFiles<Enter>
+:map <leader>fs    :call OpenFileSearch()<Enter>
+:map <leader>cs    :Ag<Enter>
+
+"--------------------------------------------------
+" Functions
+"--------------------------------------------------
+
+" Open the file search pane, will exclude .gitignore stuff if .git exists.
+function! OpenFileSearch()
+  if isdirectory('./git')
+    let fn = 'GFiles'
+  else
+    let fn = 'Files'
+  endif
+
+  execute fn
+endfunction
