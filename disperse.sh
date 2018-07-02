@@ -40,3 +40,6 @@ disperse ideavimrc $ideavimrc_path
 
 ctags_path="$HOME/.ctags"
 disperse ctags $ctags_path
+
+zshrc_path="$HOME/.zshrc"
+disperse zshrc $zshrc_path

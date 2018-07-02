@@ -41,3 +41,6 @@ gather $ideavimrc_path ideavimrc
 
 ctags_path="$HOME/.ctags"
 gather $ctags_path ctags
+
+zshrc_path="$HOME/.zshrc"
+gather $zshrc_path zshrc
