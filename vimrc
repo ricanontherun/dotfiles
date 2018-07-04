@@ -24,6 +24,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'moll/vim-node'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdcommenter'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'nathanaelkane/vim-indent-guides'
 
 call plug#end()
 
@@ -76,6 +79,8 @@ let g:ale_linters = {'javascript': ['eslint']}
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
+let g:indent_guides_enable_on_vim_startup = 1
+
 " -------------------------------------------------
 " Mappings
 " -------------------------------------------------
@@ -122,6 +127,9 @@ noremap j h
 " Leaders
 " -------------------------------------------------
 
+" Reload the current file as vimrc
+:map <leader>r        :so %<Enter>
+
 " Create vertical split
 :map <leader>vs 	:vsplit<Enter>
 
@@ -133,6 +141,7 @@ noremap j h
 
 " Open the file explorer.
 :map <leader>e      :NERDTreeToggle <Enter>
+:map <leader>f      :NERDTreeFind<Enter>
 
 " New tab
 :map <leader>nt     :tabe<Enter>
@@ -142,7 +151,11 @@ noremap j h
 
 " Open zfz search pane
 :map <leader>fs    :call OpenFileSearch()<Enter>
-:map <leader>cs    :Ag<Enter>
+:map <leader>ts    :Ag<Enter>
+
+" Fugitive
+:map <leader>gs     :Gstatus<Enter>
+:map <leader>gd     :Gsdiff<Enter>
 
 "--------------------------------------------------
 " Functions
