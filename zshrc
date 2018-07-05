@@ -101,13 +101,13 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # Common unix aliases.
 if [ -f ~/.bash_aliases ]; then
-    echo "~/.bash_aliases found!"
+    echo "~/.bash_aliases found, loading..."
     . ~/.bash_aliases
 fi
 
 # Work specific aliases.
 if [ -f ~/.work_aliases ]; then
-    echo "~/.work_aliases found!"
+    echo "~/.work_aliases found, loading..."
     . ~/.work_aliases
 fi
 
