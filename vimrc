@@ -48,6 +48,10 @@ set softtabstop=2
 
 set wrap!
 
+" Using Fira Code
+set macligatures
+set guifont=Fira\ Code:h12
+
 " turn syntax highlighting on
 set t_Co=256
 
@@ -69,6 +73,9 @@ set showmatch
 "Store tmp files in /var/tmp, thanks http://stackoverflow.com/a/4331812"
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 
+" Share a common clipboard across all MacVim instances.
+set clipboard=unnamed
+
 "--------------------------------------------------
 " Plugin Specific Configuration
 "--------------------------------------------------
@@ -80,6 +87,8 @@ let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
 let g:indent_guides_enable_on_vim_startup = 1
+
+let NERDTreeShowHidden=1
 
 " -------------------------------------------------
 " Mappings
