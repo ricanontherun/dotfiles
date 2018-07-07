@@ -48,8 +48,11 @@ set softtabstop=2
 
 set wrap!
 
-" Using Fira Code
-set macligatures
+if has("gui_macvim")
+  set macligatures
+endif
+
+" using Fira Code
 set guifont=Fira\ Code:h12
 
 " turn syntax highlighting on
@@ -73,7 +76,6 @@ set showmatch
 "Store tmp files in /var/tmp, thanks http://stackoverflow.com/a/4331812"
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 
-" Share a common clipboard across all MacVim instances.
 set clipboard=unnamed
 
 "--------------------------------------------------
