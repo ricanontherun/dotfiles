@@ -96,8 +96,11 @@ source $ZSH/oh-my-zsh.sh
 
 # PATH extensions
 export PATH=$PATH:~/.composer/vendor/bin
-export GOPATH=$HOME/Code/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export GOROOT=/usr/local/go
+export GOBIN=$GOROOT/bin
+export GOPATH=$HOME/golang
+export PATH=$PATH:$GOBIN
 
 # Common unix aliases.
 if [ -f ~/.bash_aliases ]; then
@@ -110,6 +113,5 @@ if [ -f ~/.work_aliases ]; then
     echo "~/.work_aliases found, loading..."
     . ~/.work_aliases
 fi
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
