@@ -95,12 +95,11 @@ source $ZSH/oh-my-zsh.sh
 #
 
 # PATH extensions
-export PATH=$PATH:~/.composer/vendor/bin
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
 export GOROOT=/usr/local/go
-export GOBIN=$GOROOT/bin
-export GOPATH=$HOME/golang
-export PATH=$PATH:$GOBIN
+
+export PATH=$PATH:$GOBIN:/usr/local/go/bin
 
 # Common unix aliases.
 if [ -f ~/.bash_aliases ]; then
