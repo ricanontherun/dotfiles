@@ -18,7 +18,7 @@ alias ggm='git pull origin master'
 alias gu='git checkout'
 alias gum='git checkout master'
 alias gnb='git checkout -b'
-alias conflicts='git diff --name-only --diff-filter=U'
+alias git-conflicts='git diff --name-only --diff-filter=U'
 
 #--------------------------------------------------
 # Command overrides
