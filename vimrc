@@ -58,6 +58,9 @@ set guifont=Fira\ Code:h12
 " turn syntax highlighting on
 set t_Co=256
 
+set exrc
+set secure
+
 " No highlighting bg color
 highlight Normal ctermbg=NONE
 highlight NonText ctermbg=NONE
@@ -97,7 +100,7 @@ let NERDTreeShowHidden=1
 " -------------------------------------------------
 
 :map <C-a>      GVgg
-:map <C-s>      :w <Enter>
+:map <C-s>      :w <Enter><Esc>
 :map <C-c>      y
 :map <C-v>      p
 :map <C-x>      "_d
@@ -105,6 +108,7 @@ let NERDTreeShowHidden=1
 :imap <C-s>     <Esc><C-s>a
 :map q	 	:q<Enter>
 :map qa     :bufdo bd<Enter>
+:imap jj <Esc>
 
 :map <C-]>      g<C-]>
 
@@ -119,20 +123,20 @@ noremap k j
 noremap j h
 
 " Split Navigation
-:map g; <C-w>l
-:map gl <C-w>k
-:map gk <C-w>j
-:map gj <C-w>h
+:map f; <C-w>l
+:map fl <C-w>k
+:map fk <C-w>j
+:map fj <C-w>h
 
 " Pane resizing.
-:map _ :vertical resize +5<Enter>
-:map + :vertical resize -5<Enter>
-:map - :resize +5<Enter>
-:map = :resize -5<Enter>
+":map _ :vertical resize +5<Enter>
+":map + :vertical resize -5<Enter>
+":map - :resize +5<Enter>
+":map = :resize -5<Enter>
 
 " Tab Navigation
-:map fj :tabprevious<Enter>
-:map f; :tabnext<Enter>
+:map gj :tabprevious<Enter>
+:map g; :tabnext<Enter>
 
 " -------------------------------------------------
 " Leaders
@@ -182,3 +186,8 @@ function! OpenFileSearch()
 
   execute fn
 endfunction
+
+"--------------------------------------------------
+" Commands
+"--------------------------------------------------
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--word-regexp', <bang>0)
