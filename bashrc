@@ -12,8 +12,6 @@ elif [[ "$unamestr" == 'Darwin'  ]]; then
     platform='mac'
 fi
 
-echo $platform
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
