@@ -43,3 +43,9 @@ disperse ctags $ctags_path
 
 zshrc_path="$HOME/.zshrc"
 disperse zshrc $zshrc_path
+
+ag_ignore_path="$HOME/.ignore"
+disperse ignore $ag_ignore_path
+
+git_global_ignore="$HOME/.gitignore_global"
+disperse gitignore_global $git_global_ignore

@@ -44,3 +44,9 @@ gather $ctags_path ctags
 
 zshrc_path="$HOME/.zshrc"
 gather $zshrc_path zshrc
+
+ag_ignore_path="$HOME/.ignore"
+gather $ag_ignore_path ignore
+
+git_ignore_path="$HOME/.gitignore_global"
+gather $git_ignore_path gitignore_global

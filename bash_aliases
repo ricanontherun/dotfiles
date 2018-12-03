@@ -12,7 +12,7 @@ alias gc='git commit'
 alias gd='git diff'
 alias gpush='git push'
 alias gpull='git pull'
-alias gu='git checkout'
+alias gch='git checkout'
 alias git-conflicts='git diff --name-only --diff-filter=U'
 
 #--------------------------------------------------
@@ -20,7 +20,6 @@ alias git-conflicts='git diff --name-only --diff-filter=U'
 #--------------------------------------------------
 alias tmux='tmux -u'
 alias grepr="grep -rnI"
-
 alias dce="docker-compose exec"
-
 alias docker-stop-all='docker container stop $(docker container ls -q)'
+alias ag='ag --path-to-ignore ~/.ignore'
