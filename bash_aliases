@@ -8,16 +8,11 @@ alias ll='ls -lah'
 #--------------------------------------------------
 alias gs='git status'
 alias ga='git add '
-alias gaa='git add --all'
 alias gc='git commit'
-alias gcm='git commit -m '
 alias gd='git diff'
-alias gp='git push'
-alias gg='git pull'
-alias ggm='git pull origin master'
+alias gpush='git push'
+alias gpull='git pull'
 alias gu='git checkout'
-alias gum='git checkout master'
-alias gnb='git checkout -b'
 alias git-conflicts='git diff --name-only --diff-filter=U'
 
 #--------------------------------------------------

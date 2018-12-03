@@ -189,6 +189,6 @@ function! OpenFileSearch()
 endfunction
 
 "--------------------------------------------------
-" Commands
+" Commands Overrides
 "--------------------------------------------------
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--word-regexp', <bang>0)
