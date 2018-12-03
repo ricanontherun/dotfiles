@@ -12,7 +12,6 @@ set path=.
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
-Plug 'nanotech/jellybeans.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
@@ -23,11 +22,11 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'moll/vim-node'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'valloric/youcompleteme'
+Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
@@ -38,9 +37,6 @@ set termencoding=utf-8
 
 " use indentation of previous line
 set autoindent
-
-" use intelligent indentation for C
-set smartindent
 
 " configure tabwidth and insert spaces instead of tabs
 set expandtab
@@ -68,7 +64,7 @@ highlight NonText ctermbg=NONE
 
 " Color scheme
 syntax enable
-colorscheme jellybeans
+colorscheme solarized
 set background=dark
 
 " turn line numbers on
