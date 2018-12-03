@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/ricanontherun/.oh-my-zsh"
+export ZSH="/Users/christianroman/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -97,27 +97,20 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# PATH extensions
-export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export GOROOT=/usr/local/go
 
-export PATH=$PATH:$GOBIN:/usr/local/go/bin
-
-# Common unix aliases.
 if [ -f ~/.bash_aliases ]; then
     echo "~/.bash_aliases found, loading..."
     . ~/.bash_aliases
 fi
 
-# Work specific aliases.
+if [ -f ~/.bash_envvars ]; then
+    echo "~/.bash_envvars found, loading..."
+    . ~/.bash_envvars
+fi
+
 if [ -f ~/.work_aliases ]; then
     echo "~/.work_aliases found, loading..."
     . ~/.work_aliases
 fi
-
-export NVM_DIR=$HOME
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

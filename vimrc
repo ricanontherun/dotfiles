@@ -27,6 +27,7 @@ Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'valloric/youcompleteme'
 
 call plug#end()
 
