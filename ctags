@@ -1,5 +1,7 @@
---recurse=yes
+-R
 --exclude=.git
 --exclude=node_modules/*
+--exclude=bin/*
 --exclude=db/*
 --exclude=log/*
+--exclude=coolstatic

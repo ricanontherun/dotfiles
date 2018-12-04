@@ -16,8 +16,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-eunuch'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'raimondi/delimitmate'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'moll/vim-node'
@@ -27,7 +27,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'valloric/youcompleteme'
 Plug 'altercation/vim-colors-solarized'
-Plug 'joonty/vdebug'
 
 call plug#end()
 
@@ -146,27 +145,20 @@ noremap j h
 " Reload the current file as vimrc
 :map <leader>r        :so %<Enter>
 
-" Create vertical split
+" panes + tabs
 :map <leader>vs 	:vsplit<Enter>
-
-" Create horiztonal split
 :map <leader>hs 	:split<Enter>
+:map <leader>e      :NERDTreeToggle <Enter>
+:map <leader>f      :NERDTreeFind<Enter>
+:map <leader>nt     :tabe<Enter>
+:map <leader>nf     :tabe<Enter>:e
 
 " Open ~/.vimrc
 :map <leader>v      :e ~/.vimrc<Enter>
 
-" Open the file explorer.
-:map <leader>e      :NERDTreeToggle <Enter>
-:map <leader>f      :NERDTreeFind<Enter>
-
-" New tab
-:map <leader>nt     :tabe<Enter>
-
-" New file
-:map <leader>nf     :tabe<Enter>:e
-
-" Open zfz search pane
+" Searching
 :map <leader>fs    :Files<Enter>
+:map <leader>tsw   :Ag<Space><C-r><C-w><Enter>
 :map <leader>ts    :Ag<Space>
 
 " Fugitive
