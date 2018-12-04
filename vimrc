@@ -27,6 +27,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'valloric/youcompleteme'
 Plug 'altercation/vim-colors-solarized'
+Plug 'joonty/vdebug'
 
 call plug#end()
 
@@ -57,6 +58,7 @@ set t_Co=256
 
 set exrc
 set secure
+set autoread
 
 " No highlighting bg color
 highlight Normal ctermbg=NONE
@@ -99,15 +101,15 @@ set completeopt-=preview
 " -------------------------------------------------
 
 :map <C-a>      GVgg
-:map <C-s>      :w <Enter><Esc>
+:map <C-s>      :w <Enter>
 :map <C-c>      y
 :map <C-v>      p
 :map <C-x>      "_d
 :map <C-z>      u
 :imap <C-s>     <Esc><C-s>a
 :map q	 	:q<Enter>
-:map qa     :bufdo bd<Enter>
-:imap jj <Esc>
+:map qa         :bufdo bd<Enter>
+:imap jj        <Esc>
 
 :map <C-]>      g<C-]>
 
@@ -164,8 +166,8 @@ noremap j h
 :map <leader>nf     :tabe<Enter>:e
 
 " Open zfz search pane
-:map <leader>fs    :call OpenFileSearch()<Enter>
-:map <leader>ts    :Ag<Enter>
+:map <leader>fs    :Files<Enter>
+:map <leader>ts    :Ag<Space>
 
 " Fugitive
 :map <leader>gs     :Gstatus<Enter>
