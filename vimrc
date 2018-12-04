@@ -157,9 +157,10 @@ noremap j h
 :map <leader>v      :e ~/.vimrc<Enter>
 
 " Searching
-:map <leader>fs    :Files<Enter>
-:map <leader>tsw   :Ag<Space><C-r><C-w><Enter>
+:map <leader>fs    :call fzf#vim#gitfiles('',fzf#vim#with_preview('right'))<Enter>
+:map <leader>fsr   :call fzf#vim#files('',fzf#vim#with_preview('right'))<Enter>
 :map <leader>ts    :Ag<Space>
+:map <leader>tsw   :Ag<Space><C-r><C-w><Enter>
 
 " Fugitive
 :map <leader>gs     :Gstatus<Enter>
