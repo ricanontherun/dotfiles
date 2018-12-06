@@ -25,3 +25,4 @@ alias grepr="grep -rnI"
 alias dce="docker-compose exec"
 alias docker-stop-all='docker container stop $(docker container ls -q)'
 alias ag='ag --path-to-ignore ~/.ignore'
+alias ctags='ctags --options=$HOME/.ctags'

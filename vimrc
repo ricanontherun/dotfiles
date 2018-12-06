@@ -27,6 +27,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'valloric/youcompleteme'
 Plug 'altercation/vim-colors-solarized'
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
 
@@ -94,6 +95,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 let NERDTreeShowHidden=1
 
 set completeopt-=preview
+set statusline+=%{gutentags#statusline()}
 
 " -------------------------------------------------
 " Mappings
@@ -159,8 +161,8 @@ noremap j h
 " Searching
 :map <leader>fs    :call fzf#vim#gitfiles('',fzf#vim#with_preview('right'))<Enter>
 :map <leader>fsr   :call fzf#vim#files('',fzf#vim#with_preview('right'))<Enter>
-:map <leader>ts    :Ag<Space>
-:map <leader>tsw   :Ag<Space><C-r><C-w><Enter>
+:map <leader>ts   :Ag<Space><C-r><C-w><Enter>
+:map <leader>tsr    :Ag<Space>
 
 " Fugitive
 :map <leader>gs     :Gstatus<Enter>
