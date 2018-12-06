@@ -1,4 +1,6 @@
--R
+--recurse=yes
+--languages=php,JavaScript
+
 --exclude=.git
 --exclude=bin/*
 --exclude=db/*

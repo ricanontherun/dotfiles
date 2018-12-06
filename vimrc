@@ -26,6 +26,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'valloric/youcompleteme'
+Plug 'majutsushi/tagbar'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ludovicchabant/vim-gutentags'
 
@@ -90,12 +91,13 @@ let g:ale_linters = {'javascript': ['eslint']}
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
+let g:indent_guides_start_level=2
 let g:indent_guides_enable_on_vim_startup = 1
 
 let NERDTreeShowHidden=1
 
 set completeopt-=preview
-set statusline+=%{gutentags#statusline()}
+let g:loaded_youcompleteme = 1
 
 " -------------------------------------------------
 " Mappings
@@ -159,14 +161,17 @@ noremap j h
 :map <leader>v      :e ~/.vimrc<Enter>
 
 " Searching
-:map <leader>fs    :call fzf#vim#gitfiles('',fzf#vim#with_preview('right'))<Enter>
-:map <leader>fsr   :call fzf#vim#files('',fzf#vim#with_preview('right'))<Enter>
-:map <leader>ts   :Ag<Space><C-r><C-w><Enter>
+:map <leader>fs    :GFiles<Enter>
+:map <leader>fsr   :Files<Enter>
+:map <leader>ts     :Ag<Space><C-r><C-w><Enter>
 :map <leader>tsr    :Ag<Space>
 
 " Fugitive
 :map <leader>gs     :Gstatus<Enter>
 :map <leader>gd     :Gsdiff<Enter>
+
+" Tags
+:map <leader>s      :TagbarToggle<Enter>
 
 "--------------------------------------------------
 " Functions
@@ -186,4 +191,13 @@ endfunction
 "--------------------------------------------------
 " Commands Overrides
 "--------------------------------------------------
-command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--path-to-ignore ~/.ignore --hidden', <bang>0)
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(
+  \   <q-args>,
+  \   '--path-to-ignore ~/.ignore --hidden',
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
+" Status barl
+set statusline+=%F
