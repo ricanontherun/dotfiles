@@ -24,7 +24,7 @@ Plug 'moll/vim-node'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
 Plug 'majutsushi/tagbar'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ludovicchabant/vim-gutentags'
@@ -92,8 +92,7 @@ let g:ale_linters = {'javascript': ['eslint']}
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
-let g:indent_guides_start_level=2
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indentLine_enabled = 0
 
 let NERDTreeShowHidden=1
 
@@ -115,9 +114,9 @@ let g:tagbar_autoclose=1
 :imap <C-s>     <Esc><C-s>a
 :map q	 	:q<Enter>
 :map qa         :bufdo bd<Enter>
-:imap jj        <Esc>
-
 :map <C-]>      g<C-]>
+
+:imap jj        <Esc>
 
 " --------------------------------------------------
 " Movement
