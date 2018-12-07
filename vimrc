@@ -25,10 +25,11 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'valloric/youcompleteme'
 Plug 'majutsushi/tagbar'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -52,7 +53,7 @@ set wrap!
 "endif
 
 " using Fira Code
-set guifont=Source\ Code\ Pro:h14
+set guifont=Source\ Code\ Pro:h13
 
 " turn syntax highlighting on
 set t_Co=256
@@ -98,6 +99,8 @@ let NERDTreeShowHidden=1
 
 set completeopt-=preview
 let g:loaded_youcompleteme = 1
+let g:tagbar_autofocus=1
+let g:tagbar_autoclose=1
 
 " -------------------------------------------------
 " Mappings
@@ -131,12 +134,6 @@ noremap j h
 :map fl <C-w>k
 :map fk <C-w>j
 :map fj <C-w>h
-
-" Pane resizing.
-":map _ :vertical resize +5<Enter>
-":map + :vertical resize -5<Enter>
-":map - :resize +5<Enter>
-":map = :resize -5<Enter>
 
 " Tab Navigation
 :map gj :tabprevious<Enter>
@@ -198,6 +195,3 @@ command! -bang -nargs=* Ag
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
-
-" Status barl
-:set statusline+=%F
