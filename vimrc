@@ -47,12 +47,12 @@ set softtabstop=2
 
 set wrap!
 
-if has("gui_macvim")
-  set macligatures
-endif
+"if has("gui_macvim")
+  "set macligatures
+"endif
 
 " using Fira Code
-set guifont=Fira\ Code:h12
+set guifont=Source\ Code\ Pro:h14
 
 " turn syntax highlighting on
 set t_Co=256
@@ -200,4 +200,4 @@ command! -bang -nargs=* Ag
   \   <bang>0)
 
 " Status barl
-set statusline+=%F
+:set statusline+=%F
