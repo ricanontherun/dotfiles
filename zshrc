@@ -97,20 +97,29 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# PATH extensions
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export GOROOT=/usr/local/go
 
+export PATH=$PATH:$GOBIN:/usr/local/go/bin
+
+# Common unix aliases.
 if [ -f ~/.bash_aliases ]; then
-    echo "~/.bash_aliases found, loading..."
     . ~/.bash_aliases
 fi
 
-if [ -f ~/.bash_envvars ]; then
-    echo "~/.bash_envvars found, loading..."
-    . ~/.bash_envvars
+if [ -f ~/.bash_environment ]; then
+
 fi
 
+# Work specific aliases.
 if [ -f ~/.work_aliases ]; then
-    echo "~/.work_aliases found, loading..."
     . ~/.work_aliases
 fi
+
+export NVM_DIR=$HOME
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

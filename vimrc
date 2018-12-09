@@ -30,6 +30,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vimwiki/vimwiki'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
@@ -92,7 +94,7 @@ let g:ale_linters = {'javascript': ['eslint']}
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
-let g:indentLine_enabled = 0
+let g:indentLine_enabled = 1
 
 let NERDTreeShowHidden=1
 
@@ -101,22 +103,23 @@ let g:loaded_youcompleteme = 1
 let g:tagbar_autofocus=1
 let g:tagbar_autoclose=1
 
+let g:vimwiki_list = [{'path': '~/Google Drive/Shared/notes'}]
+
 " -------------------------------------------------
 " Mappings
 " -------------------------------------------------
 
-:map <C-a>      GVgg
-:map <C-s>      :w <Enter>
-:map <C-c>      y
-:map <C-v>      p
-:map <C-x>      "_d
-:map <C-z>      u
-:imap <C-s>     <Esc><C-s>a
-:map q	 	:q<Enter>
-:map qa         :bufdo bd<Enter>
-:map <C-]>      g<C-]>
-
-:imap jj        <Esc>
+:map <C-a> GVgg
+:map <C-s> :w <Enter>
+:map <C-c> y
+:map <C-v> p
+:map <C-x> "_d
+:map <C-z> u
+:imap <C-s> <Esc><C-s>a
+:map q :q<Enter>
+:map qa :bufdo bd<Enter>
+:map <C-]> g<C-]>
+:imap jj <Esc>
 
 " --------------------------------------------------
 " Movement
@@ -143,31 +146,32 @@ noremap j h
 " -------------------------------------------------
 
 " Reload the current file as vimrc
-:map <leader>r        :so %<Enter>
+:map <leader>r :so %<Enter>
 
 " panes + tabs
-:map <leader>vs 	:vsplit<Enter>
-:map <leader>hs 	:split<Enter>
-:map <leader>e      :NERDTreeToggle <Enter>
-:map <leader>f      :NERDTreeFind<Enter>
-:map <leader>nt     :tabe<Enter>
-:map <leader>nf     :tabe<Enter>:e
+:map <leader>vs	:vsplit<Enter>
+:map <leader>hs	:split<Enter>
+:map <leader>e :NERDTreeToggle <Enter>
+:map <leader>f :NERDTreeFind<Enter>
+:map <leader>nt :tabe<Enter>
+:map <leader>nf :tabe<Enter>:e
 
 " Open ~/.vimrc
-:map <leader>v      :e ~/.vimrc<Enter>
+:map <leader>v :e ~/.vimrc<Enter>
 
 " Searching
-:map <leader>fs    :GFiles<Enter>
-:map <leader>fsr   :Files<Enter>
-:map <leader>ts     :Ag<Space><C-r><C-w><Enter>
-:map <leader>tsr    :Ag<Space>
+:map <leader>fs :GFiles<Enter>
+:map <leader>fsr :Files<Enter>
+:map <leader>fw /<C-r><C-w><Enter>
+:map <leader>ts :Ag<Space><C-r><C-w><Enter>
+:map <leader>tsr :Ag<Space>
 
 " Fugitive
-:map <leader>gs     :Gstatus<Enter>
-:map <leader>gd     :Gsdiff<Enter>
+:map <leader>gs :Gstatus<Enter>
+:map <leader>gd :Gsdiff<Enter>
 
 " Tags
-:map <leader>s      :TagbarToggle<Enter>
+:map <leader>s :TagbarToggle<Enter>
 
 "--------------------------------------------------
 " Functions
