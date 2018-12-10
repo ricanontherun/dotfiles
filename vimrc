@@ -32,6 +32,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 Plug 'leafgarland/typescript-vim'
+Plug 'universal-ctags/ctags'
 
 call plug#end()
 
@@ -103,7 +104,11 @@ let g:loaded_youcompleteme = 1
 let g:tagbar_autofocus=1
 let g:tagbar_autoclose=1
 
+" Path to vimwiki root directory
 let g:vimwiki_list = [{'path': '~/Google Drive/Shared/notes'}]
+
+" Make sure gutentags uses ~/.ctags when running the ctags bin.
+let g:gutentags_ctags_extra_args=["--options=~/.ctags"]
 
 " -------------------------------------------------
 " Mappings
@@ -159,7 +164,11 @@ noremap j h
 :map <leader>v :e ~/.vimrc<Enter>
 
 " Searching
+
+" Open GFiles search
 :map <leader>fs :GFiles<Enter>
+
+" Open raw files search
 :map <leader>fsr :Files<Enter>
 :map <leader>fw /<C-r><C-w><Enter>
 :map <leader>ts :Ag<Space><C-r><C-w><Enter>
@@ -192,3 +201,4 @@ command! -bang -nargs=* Ag
   \   <bang>0)
 
 autocmd Filetype vimwiki call SetWikiOptions()
+
