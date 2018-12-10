@@ -99,17 +99,19 @@ source $ZSH/oh-my-zsh.sh
 
 # Common unix aliases.
 if [ -f ~/.bash_aliases ]; then
-    echo "Loading ~"
+    echo "Loading $HOME/.bash_aliases"
     . ~/.bash_aliases
 fi
 
 # Machine specific environment variables.
 if [ -f ~/.bash_envvars ]; then
-  . ~/.bash_envars
+    echo "Loading $HOME/.bash_envvars"
+   . ~/.bash_envvars
 fi
 
 # Work specific aliases.
 if [ -f ~/.work_aliases ]; then
+    echo "Loading $HOME/.work_aliases"
     . ~/.work_aliases
 fi
 

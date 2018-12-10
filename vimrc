@@ -49,7 +49,6 @@ set shiftwidth=2
 set softtabstop=2
 
 set wrap!
-autocmd Filetype vimwiki SetWikiOptions()
 
 "if has("gui_macvim")
   "set macligatures
@@ -176,19 +175,7 @@ noremap j h
 "--------------------------------------------------
 " Functions
 "--------------------------------------------------
-
-" Open the file search pane, will exclude .gitignore stuff if .git exists.
-function! OpenFileSearch()
-  if isdirectory('./git')
-    let fn = 'GFiles'
-  else
-    let fn = 'Files'
-  endif
-
-  execute fn
-endfunction
-
-function SetWikiOptions()
+function! SetWikiOptions()
   setlocal wrap
   setlocal linebreak
 endfunction
@@ -203,3 +190,5 @@ command! -bang -nargs=* Ag
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
+
+autocmd Filetype vimwiki call SetWikiOptions()
