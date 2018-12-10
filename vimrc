@@ -49,6 +49,7 @@ set shiftwidth=2
 set softtabstop=2
 
 set wrap!
+autocmd Filetype vimwiki SetWikiOptions()
 
 "if has("gui_macvim")
   "set macligatures
@@ -115,7 +116,6 @@ let g:vimwiki_list = [{'path': '~/Google Drive/Shared/notes'}]
 :map <C-v> p
 :map <C-x> "_d
 :map <C-z> u
-:imap <C-s> <Esc><C-s>a
 :map q :q<Enter>
 :map qa :bufdo bd<Enter>
 :map <C-]> g<C-]>
@@ -186,6 +186,11 @@ function! OpenFileSearch()
   endif
 
   execute fn
+endfunction
+
+function SetWikiOptions()
+  setlocal wrap
+  setlocal linebreak
 endfunction
 
 "--------------------------------------------------

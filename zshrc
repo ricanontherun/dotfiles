@@ -106,11 +106,12 @@ export PATH=$PATH:$GOBIN:/usr/local/go/bin
 
 # Common unix aliases.
 if [ -f ~/.bash_aliases ]; then
+    echo "Loading ~"
     . ~/.bash_aliases
 fi
 
-if [ -f ~/.bash_environment ]; then
-
+if [ -f ~/.bash_envvars ]; then
+  . ~/.bash_envars
 fi
 
 # Work specific aliases.
