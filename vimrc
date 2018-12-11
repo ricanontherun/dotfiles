@@ -36,53 +36,30 @@ Plug 'universal-ctags/ctags'
 
 call plug#end()
 
-" set UTF-8 encoding
+"--------------------------------------------------
+" Basic setup
+"--------------------------------------------------
 set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
-
-" use indentation of previous line
 set autoindent
-
-" configure tabwidth and insert spaces instead of tabs
 set expandtab
 set shiftwidth=2
 set softtabstop=2
-
 set wrap!
-
-"if has("gui_macvim")
-  "set macligatures
-"endif
-
-" using Fira Code
 set guifont=Source\ Code\ Pro:h13
-
-" turn syntax highlighting on
 set t_Co=256
-
 set exrc
 set secure
 set autoread
-
-" No highlighting bg color
 highlight Normal ctermbg=NONE
 highlight NonText ctermbg=NONE
-
-" Color scheme
 syntax enable
 colorscheme solarized
 set background=dark
-
-" turn line numbers on
 set number
-
-" highlight matching braces
 set showmatch
-
-"Store tmp files in /var/tmp, thanks http://stackoverflow.com/a/4331812"
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
-
 set clipboard=unnamed
 
 "--------------------------------------------------
@@ -99,21 +76,16 @@ let g:indentLine_enabled = 1
 
 let NERDTreeShowHidden=1
 
-set completeopt-=preview
-let g:loaded_youcompleteme = 1
 let g:tagbar_autofocus=1
 let g:tagbar_autoclose=1
 
-" Path to vimwiki root directory
 let g:vimwiki_list = [{'path': '~/Google Drive/Shared/notes'}]
 
-" Make sure gutentags uses ~/.ctags when running the ctags bin.
-let g:gutentags_ctags_extra_args=["--options=~/.ctags"]
+let g:gutentags_ctags_extra_args=["--options=" . $HOME . "/.ctags"]
 
 " -------------------------------------------------
 " Mappings
 " -------------------------------------------------
-
 :map <C-a> GVgg
 :map <C-s> :w <Enter>
 :map <C-c> y
@@ -152,18 +124,18 @@ noremap j h
 " Reload the current file as vimrc
 :map <leader>r :so %<Enter>
 
-" panes + tabs
+" Tabs + Panes
 :map <leader>vs	:vsplit<Enter>
 :map <leader>hs	:split<Enter>
-:map <leader>e :NERDTreeToggle <Enter>
-:map <leader>f :NERDTreeFind<Enter>
 :map <leader>nt :tabe<Enter>
 :map <leader>nf :tabe<Enter>:e
 
 " Open ~/.vimrc
-:map <leader>v :e ~/.vimrc<Enter>
+:map <leader>v :tabe ~/.vimrc<Enter>
 
 " Searching
+:map <leader>e :NERDTreeToggle <Enter>
+:map <leader>f :NERDTreeFind<Enter>
 
 " Open GFiles search
 :map <leader>fs :GFiles<Enter>
@@ -200,5 +172,8 @@ command! -bang -nargs=* Ag
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
 
-autocmd Filetype vimwiki call SetWikiOptions()
 
+"--------------------------------------------------
+" Autocmd
+"--------------------------------------------------
+autocmd Filetype vimwiki call SetWikiOptions()
