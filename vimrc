@@ -87,15 +87,14 @@ let g:gutentags_ctags_extra_args=["--options=" . $HOME . "/.ctags"]
 " Mappings
 " -------------------------------------------------
 :map <C-a> GVgg
-:map <C-s> :w <Enter>
 :map <C-c> y
 :map <C-v> p
 :map <C-x> "_d
 :map <C-z> u
-:map q :q<Enter>
-:map qa :bufdo bd<Enter>
 :map <C-]> g<C-]>
+
 :imap jj <Esc>
+:imap <C-s> <Esc>:w<Enter>
 
 " --------------------------------------------------
 " Movement
