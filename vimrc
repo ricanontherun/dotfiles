@@ -94,7 +94,7 @@ let g:gutentags_ctags_extra_args=["--options=" . $HOME . "/.ctags"]
 :map <C-]> g<C-]>
 
 :imap jj <Esc>
-:imap <C-s> <Esc>:w<Enter>
+:map <C-s> <Esc>:w<Enter>
 
 " --------------------------------------------------
 " Movement
