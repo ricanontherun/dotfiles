@@ -14,25 +14,22 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-eunuch'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'raimondi/delimitmate'
 Plug 'w0rp/ale'
-Plug 'tpope/vim-fugitive'
 Plug 'moll/vim-node'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Yggdroot/indentLine'
 Plug 'majutsushi/tagbar'
-Plug 'altercation/vim-colors-solarized'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 Plug 'leafgarland/typescript-vim'
 Plug 'universal-ctags/ctags'
+Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
@@ -47,7 +44,7 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 set wrap!
-set guifont=Source\ Code\ Pro:h13
+set guifont=Source\ Code\ Pro\ for\ Powerline:h13
 set t_Co=256
 set exrc
 set secure
@@ -82,6 +79,7 @@ let g:tagbar_autoclose=1
 let g:vimwiki_list = [{'path': '~/Google Drive/Shared/notes'}]
 
 let g:gutentags_ctags_extra_args=["--options=" . $HOME . "/.ctags"]
+let g:airline_powerline_fonts=1
 
 " -------------------------------------------------
 " Mappings
@@ -92,8 +90,8 @@ let g:gutentags_ctags_extra_args=["--options=" . $HOME . "/.ctags"]
 :map <C-x> "_d
 :map <C-z> u
 :map <C-]> g<C-]>
-
 :imap jj <Esc>
+:imap <C-s> <Esc>:w<Enter>
 :map <C-s> <Esc>:w<Enter>
 
 " --------------------------------------------------
@@ -152,6 +150,12 @@ noremap j h
 " Tags
 :map <leader>s :TagbarToggle<Enter>
 
+" Format JSON using Python
+:map <leader>fj :%!python -m json.tool<Enter>
+
+" Duplicate line
+:map <leader>dl <S-v>yp
+
 "--------------------------------------------------
 " Functions
 "--------------------------------------------------
@@ -176,3 +180,4 @@ command! -bang -nargs=* Ag
 " Autocmd
 "--------------------------------------------------
 autocmd Filetype vimwiki call SetWikiOptions()
+autocmd BufEnter,BufNew *.inc set syntax=PHP
