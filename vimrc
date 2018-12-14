@@ -71,8 +71,6 @@ let g:strip_whitespace_on_save=1
 
 let g:indentLine_enabled = 1
 
-let NERDTreeShowHidden=1
-
 let g:tagbar_autofocus=1
 let g:tagbar_autoclose=1
 
@@ -80,6 +78,8 @@ let g:vimwiki_list = [{'path': '~/Google Drive/Shared/notes'}]
 
 let g:gutentags_ctags_extra_args=["--options=" . $HOME . "/.ctags"]
 let g:airline_powerline_fonts=1
+
+let NERDTreeShowHidden=1
 
 " -------------------------------------------------
 " Mappings
@@ -93,6 +93,7 @@ let g:airline_powerline_fonts=1
 :imap jj <Esc>
 :imap <C-s> <Esc>:w<Enter>
 :map <C-s> <Esc>:w<Enter>
+:nmap riw viwp
 
 " --------------------------------------------------
 " Movement
