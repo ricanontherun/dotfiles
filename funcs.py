@@ -25,7 +25,7 @@ def copy(copyFrom, copyTo):
         except OSError as e:
             # Race condition guard.
             if e.errno != EEXIST:
-                raise
+                print("Failed to makedirs: {}".format(str(e)))
 
     print("Copying {} to {}".format(copyFrom, copyTo))
     copyfile(copyFrom, copyTo)
