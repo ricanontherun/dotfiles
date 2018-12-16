@@ -64,7 +64,7 @@ set clipboard=unnamed
 "--------------------------------------------------
 set laststatus=2
 
-let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_linters = {'javascript': ['eslint'], 'java': ['javac']}
 
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
@@ -76,10 +76,12 @@ let g:tagbar_autoclose=1
 
 let g:vimwiki_list = [{'path': '~/Google Drive/Shared/notes'}]
 
-let g:gutentags_ctags_extra_args=["--options=" . $HOME . "/.ctags"]
 let g:airline_powerline_fonts=1
 
 let NERDTreeShowHidden=1
+
+let g:gutentags_ctags_extra_args=["--options=" . $HOME . "/.ctags"]
+let g:gutentags_project_root = ['tags']
 
 " -------------------------------------------------
 " Mappings
@@ -182,3 +184,4 @@ command! -bang -nargs=* Ag
 "--------------------------------------------------
 autocmd Filetype vimwiki call SetWikiOptions()
 autocmd BufEnter,BufNew *.inc set syntax=PHP
+
