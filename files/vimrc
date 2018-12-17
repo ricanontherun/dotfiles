@@ -28,8 +28,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 Plug 'leafgarland/typescript-vim'
-Plug 'universal-ctags/ctags'
 Plug 'altercation/vim-colors-solarized'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
@@ -92,7 +92,6 @@ let g:gutentags_project_root = ['tags']
 :map <C-x> "_d
 :map <C-z> u
 :map <C-]> g<C-]>
-:imap jj <Esc>
 :imap <C-s> <Esc>:w<Enter>
 :map <C-s> <Esc>:w<Enter>
 :nmap riw viwp
@@ -184,4 +183,3 @@ command! -bang -nargs=* Ag
 "--------------------------------------------------
 autocmd Filetype vimwiki call SetWikiOptions()
 autocmd BufEnter,BufNew *.inc set syntax=PHP
-
