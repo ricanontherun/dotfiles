@@ -39,10 +39,9 @@ call plug#end()
 set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
-set autoindent
-set expandtab
+set tabstop=2
 set shiftwidth=2
-set softtabstop=2
+set expandtab
 set wrap!
 set guifont=Source\ Code\ Pro\ for\ Powerline:h13
 set t_Co=256
@@ -58,6 +57,7 @@ set number
 set showmatch
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 set clipboard=unnamed
+set previewheight=100
 
 "--------------------------------------------------
 " Plugin Specific Configuration
@@ -151,12 +151,18 @@ noremap j h
 
 " Tags
 :map <leader>s :TagbarToggle<Enter>
+:map to :execute "vertical ptag " . expand("<cword>")<Enter>
+:map tn :ptnext<Enter>
+:map tp :ptprevious<Enter>
+:map tc <C-w>z
 
 " Format JSON using Python
 :map <leader>fj :%!python -m json.tool<Enter>
 
 " Duplicate line
 :map <leader>dl <S-v>yp
+
+:map <leader>
 
 "--------------------------------------------------
 " Functions
