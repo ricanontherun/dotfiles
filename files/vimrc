@@ -116,6 +116,12 @@ noremap j h
 :map gj :tabprevious<Enter>
 :map g; :tabnext<Enter>
 
+" Tags
+:map to :execute "vertical ptag " . expand("<cword>")<Enter>
+:map tn :ptnext<Enter>
+:map tp :ptprevious<Enter>
+:map tc <C-w>z
+
 " -------------------------------------------------
 " Leaders
 " -------------------------------------------------
@@ -151,10 +157,6 @@ noremap j h
 
 " Tags
 :map <leader>s :TagbarToggle<Enter>
-:map to :execute "vertical ptag " . expand("<cword>")<Enter>
-:map tn :ptnext<Enter>
-:map tp :ptprevious<Enter>
-:map tc <C-w>z
 
 " Format JSON using Python
 :map <leader>fj :%!python -m json.tool<Enter>
