@@ -30,6 +30,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'leafgarland/typescript-vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -58,6 +59,7 @@ set showmatch
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 set clipboard=unnamed
 set previewheight=100
+set conceallevel=0
 
 "--------------------------------------------------
 " Plugin Specific Configuration
@@ -163,6 +165,9 @@ noremap j h
 
 " Duplicate line
 :map <leader>dl <S-v>yp
+
+" Fugitive
+:map <leader>gs :Gstatus<Enter>
 
 "--------------------------------------------------
 " Functions
