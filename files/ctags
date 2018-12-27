@@ -35,7 +35,7 @@
 --regex-typescript=/^[ \t]*import[ \t]+([a-zA-Z0-9_]+)/\1/I,imports/
 --regex-typescript=/^[ \t]*@([A-Za-z0-9._$]+)[ \t]*/\1/d,decorator/
 
---languages=PHP,JavaScript,typescript,Ruby,java
+--languages=PHP,JavaScript,typescript,Ruby,java,C
 
 --langmap=PHP:+.inc.module
 --langmap=Sh:+.csh

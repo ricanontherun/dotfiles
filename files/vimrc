@@ -26,11 +26,12 @@ Plug 'majutsushi/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vimwiki/vimwiki'
 Plug 'leafgarland/typescript-vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
+Plug 'jceb/vim-orgmode'
+Plug 'vim-scripts/utl.vim'
 
 call plug#end()
 
@@ -75,8 +76,6 @@ let g:indentLine_enabled = 1
 
 let g:tagbar_autofocus=1
 let g:tagbar_autoclose=1
-
-let g:vimwiki_list = [{'path': '~/Google Drive/Shared/notes'}]
 
 let g:airline_powerline_fonts=1
 
@@ -169,12 +168,25 @@ noremap j h
 " Fugitive
 :map <leader>gs :Gstatus<Enter>
 
+" vim-orgmode
+:map <leader>n :tabe ~/Google\ Drive/Shared/org/index.org<Enter>
+
 "--------------------------------------------------
 " Functions
 "--------------------------------------------------
 function! SetWikiOptions()
   setlocal wrap
   setlocal linebreak
+endfunction
+
+" https://stackoverflow.com/a/4294176/3210164
+function s:MkNonExDir(file, buf)
+    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+        let dir=fnamemodify(a:file, ':h')
+        if !isdirectory(dir)
+            call mkdir(dir, 'p')
+        endif
+    endif
 endfunction
 
 "--------------------------------------------------
@@ -190,7 +202,18 @@ command! -bang -nargs=* Ag
 
 
 "--------------------------------------------------
-" Autocmd
+" Autocmds
 "--------------------------------------------------
-autocmd Filetype vimwiki call SetWikiOptions()
+
+" Make sure .inc files get PHP syntax highlighting
 autocmd BufEnter,BufNew *.inc set syntax=PHP
+
+" When editing notes (.org), change CWD to parent of current buffer file.
+autocmd BufEnter *.org silent! lcd %:p:h
+
+" When editing notes (.org) saving a file should ensure parent directories are
+" created.
+augroup BWCCreateDir
+    autocmd!
+    autocmd BufWritePre *.org :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+augroup END
