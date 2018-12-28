@@ -166,7 +166,7 @@ noremap j h
 :map <leader>dl <S-v>yp
 
 " Fugitive
-:map <leader>gs :Gstatus<Enter>
+:map <leader>gs :Gtabedit :<Enter>
 
 " vim-orgmode
 :map <leader>n :tabe ~/Google\ Drive/Shared/org/index.org<Enter>
@@ -192,13 +192,13 @@ endfunction
 "--------------------------------------------------
 " Commands Overrides
 "--------------------------------------------------
+
+" Open Ag with preview pane options.
 command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(
-  \   <q-args>,
-  \   '--path-to-ignore ~/.ignore --hidden',
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \   <bang>0)
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%'),
+  \                 <bang>0)
 
 
 "--------------------------------------------------
