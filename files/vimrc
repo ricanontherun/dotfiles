@@ -30,8 +30,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
-Plug 'jceb/vim-orgmode'
-Plug 'vim-scripts/utl.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
@@ -61,6 +60,7 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 set clipboard=unnamed
 set previewheight=100
 set conceallevel=0
+set formatoptions-=cro
 
 "--------------------------------------------------
 " Plugin Specific Configuration
@@ -168,9 +168,6 @@ noremap j h
 " Fugitive
 :map <leader>gs :Gtabedit :<Enter>
 
-" vim-orgmode
-:map <leader>n :tabe ~/Google\ Drive/Shared/org/index.org<Enter>
-
 "--------------------------------------------------
 " Functions
 "--------------------------------------------------
@@ -207,13 +204,3 @@ command! -bang -nargs=* Ag
 
 " Make sure .inc files get PHP syntax highlighting
 autocmd BufEnter,BufNew *.inc set syntax=PHP
-
-" When editing notes (.org), change CWD to parent of current buffer file.
-autocmd BufEnter *.org silent! lcd %:p:h
-
-" When editing notes (.org) saving a file should ensure parent directories are
-" created.
-augroup BWCCreateDir
-    autocmd!
-    autocmd BufWritePre *.org :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
-augroup END
