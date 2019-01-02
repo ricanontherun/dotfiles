@@ -60,7 +60,7 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 set clipboard=unnamed
 set previewheight=100
 set conceallevel=0
-set formatoptions-=cro
+set spell spelllang=en_us
 
 "--------------------------------------------------
 " Plugin Specific Configuration
