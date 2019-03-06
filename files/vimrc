@@ -16,21 +16,15 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-eunuch'
 Plug 'raimondi/delimitmate'
-Plug 'w0rp/ale'
 Plug 'moll/vim-node'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Yggdroot/indentLine'
-Plug 'majutsushi/tagbar'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'leafgarland/typescript-vim'
 Plug 'altercation/vim-colors-solarized'
-Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
@@ -60,14 +54,11 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 set clipboard=unnamed
 set previewheight=100
 set conceallevel=0
-set spell spelllang=en_us
 
 "--------------------------------------------------
 " Plugin Specific Configuration
 "--------------------------------------------------
 set laststatus=2
-
-let g:ale_linters = {'javascript': ['eslint'], 'java': ['javac']}
 
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
@@ -80,9 +71,7 @@ let g:tagbar_autoclose=1
 let g:airline_powerline_fonts=1
 
 let NERDTreeShowHidden=1
-
-let g:gutentags_ctags_extra_args=["--options=" . $HOME . "/.ctags"]
-let g:gutentags_project_root = ['tags']
+let g:nerdtree_tabs_open_on_gui_startup=0
 
 " -------------------------------------------------
 " Mappings
@@ -167,24 +156,6 @@ noremap j h
 
 " Fugitive
 :map <leader>gs :Gtabedit :<Enter>
-
-"--------------------------------------------------
-" Functions
-"--------------------------------------------------
-function! SetWikiOptions()
-  setlocal wrap
-  setlocal linebreak
-endfunction
-
-" https://stackoverflow.com/a/4294176/3210164
-function s:MkNonExDir(file, buf)
-    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
-        let dir=fnamemodify(a:file, ':h')
-        if !isdirectory(dir)
-            call mkdir(dir, 'p')
-        endif
-    endif
-endfunction
 
 "--------------------------------------------------
 " Commands Overrides
