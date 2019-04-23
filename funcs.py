@@ -6,7 +6,7 @@ import config
 
 def iterate(callback):
     """
-    Interate over config keys, executing callback on each entry.
+    Iterate over config keys, executing callback on each entry.
     """
     for key in config.FILE_MAP:
         repofile = config.REPO_FILES_DIR + key
@@ -19,12 +19,12 @@ def iterate(callback):
 
     print("Fin.")
 
-def copy(copyFrom, copyTo):
+def copy(copy_from, copy_to):
     """
     Copy a file from one source to another.
     """
     # Create any parent directories as necessary
-    dirname = path.dirname(copyTo)
+    dirname = path.dirname(copy_to)
     if not path.exists(dirname):
         try:
             makedirs(dirname)
@@ -33,5 +33,5 @@ def copy(copyFrom, copyTo):
             if e.errno != EEXIST:
                 print("Failed to makedirs: {}".format(str(e)))
 
-    print("Copying {} to {}".format(copyFrom, copyTo))
-    copyfile(copyFrom, copyTo)
+    print("Copying {} to {}".format(copy_from, copy_to))
+    copyfile(copy_from, copy_to)
