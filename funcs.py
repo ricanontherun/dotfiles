@@ -5,6 +5,9 @@ from shutil import copyfile
 import config
 
 def iterate(callback):
+    """
+    Interate over config keys, executing callback on each entry.
+    """
     for key in config.FILE_MAP:
         repofile = config.REPO_FILES_DIR + key
         dotfile = path.expanduser(config.FILE_MAP[key])
@@ -17,6 +20,9 @@ def iterate(callback):
     print("Fin.")
 
 def copy(copyFrom, copyTo):
+    """
+    Copy a file from one source to another.
+    """
     # Create any parent directories as necessary
     dirname = path.dirname(copyTo)
     if not path.exists(dirname):
