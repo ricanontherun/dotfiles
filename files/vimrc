@@ -152,8 +152,11 @@ noremap q :q<Enter>
 :map <leader>vr :so %<Enter>
 
 "==================================================
-" File Navigation
+" File Operations
 "==================================================
+
+" Open File Search
+:map <leader>fs :Files<Enter>
 
 " Open file navigation
 :map <leader>fo :NERDTreeToggle <Enter>
@@ -166,14 +169,15 @@ noremap q :q<Enter>
 "==================================================
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-" Open raw files search
+" Buffer search, cursor
 :map <leader>tbS /<C-r><C-w><Enter>
 
-" Open text search prompt
+" Project search, prompt
 :map <leader>tps :Ag<Space>
 
-" Execute text search with current word
+" Project search, cursor
 :map <leader>tpS :Ag<Space><C-r><C-w><Enter>
+let g:startify_lists = [{ 'type': 'dir',       'header': ['   MRU '. getcwd()] }]
 
 " Custom Ag command
 command! -bang -nargs=* Ag
