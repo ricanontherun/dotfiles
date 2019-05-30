@@ -8,9 +8,9 @@ set path=.
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-vinegar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-eunuch'
 Plug 'raimondi/delimitmate'
 Plug 'w0rp/ale'
@@ -32,6 +32,7 @@ Plug 'mhinz/vim-startify'
 Plug 'nanotech/jellybeans.vim'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'ryanoasis/vim-devicons'
+Plug 'nathanaelkane/vim-indent-guides'
 
 call plug#end()
 
@@ -74,8 +75,10 @@ let g:ale_linters = {'javascript': ['eslint'], 'java': ['javac']}
 
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
+let g:strip_whitespace_confirm=0
 
 let g:indentLine_enabled = 1
+let g:indent_guides_enable_on_vim_startup = 1
 
 let g:tagbar_autofocus=1
 let g:tagbar_autoclose=1
@@ -210,20 +213,6 @@ let g:fzf_colors =
 
 " Duplicate line
 :map <leader>dl <S-v>yp
-
-"--------------------------------------------------
-" Functions
-"--------------------------------------------------
-
-" https://stackoverflow.com/a/4294176/3210164
-function s:MkNonExDir(file, buf)
-    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
-        let dir=fnamemodify(a:file, ':h')
-        if !isdirectory(dir)
-            call mkdir(dir, 'p')
-        endif
-    endif
-endfunction
 
 "--------------------------------------------------
 " Autocmds
