@@ -8,13 +8,13 @@ set path=.
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-vinegar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-eunuch'
 Plug 'raimondi/delimitmate'
 Plug 'w0rp/ale'
 Plug 'moll/vim-node'
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Yggdroot/indentLine'
@@ -30,6 +30,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mhinz/vim-startify'
 Plug 'nanotech/jellybeans.vim'
+Plug 'artur-shaik/vim-javacomplete2'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -44,7 +46,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set wrap!
-set guifont=Source\ Code\ Pro\ for\ Powerline:h13
+set guifont=SauceCodePro\ Nerd\ Font:h14
 set t_Co=256
 set exrc
 set secure
@@ -81,9 +83,11 @@ let g:tagbar_autoclose=1
 let g:airline_powerline_fonts=1
 
 let NERDTreeShowHidden=1
+let NERDTreeChDirMode=0
 
 let g:gutentags_ctags_extra_args=["--options=" . $HOME . "/.ctags"]
 let g:gutentags_project_root = ['tags']
+let g:startify_change_to_dir=0
 
 " -------------------------------------------------
 " Mappings
@@ -121,13 +125,14 @@ noremap j h
 " Buffers
 "==================================================
 noremap q :q<Enter>
+:map <leader>qa :qa<Enter>
+:map <leader>qaf :!qa<Enter>
 :map <leader>h :Startify<Enter>
 
 "==================================================
 " Tabs
 "==================================================
-:map <leader>tn :tabe<Enter>
-:map <leader>tN :tabe<Enter>:e
+:map <leader>t :tabe<Enter>
 
 :map gj :tabprevious<Enter>
 :map g; :tabnext<Enter>
@@ -135,11 +140,14 @@ noremap q :q<Enter>
 "==================================================
 " Tags
 "==================================================
-:map <leader>tO :execute "vertical ptag " . expand("<cword>")<Enter>
+:map <leader>tt :TagbarToggle<Enter>
+
+" Open up a tag browser
+:map <leader>tbv :execute "vertical ptag " . expand("<cword>")<Enter>
+:map <leader>tb :execute "ptag " . expand("<cword>")<Enter>
 :map <leader>tn :ptnext<Enter>
 :map <leader>tp :ptprevious<Enter>
 :map tc <C-w>z
-:map <leader>tb :TagbarToggle<Enter>
 
 "==================================================
 " Vimrc
@@ -159,7 +167,7 @@ noremap q :q<Enter>
 :map <leader>fs :Files<Enter>
 
 " Open file navigation
-:map <leader>fo :NERDTreeToggle <Enter>
+:map <leader>ft :NERDTreeToggle <Enter>
 
 " Reveal current buffer file in navigation.
 :map <leader>ff :NERDTreeFind<Enter>
@@ -170,13 +178,13 @@ noremap q :q<Enter>
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Buffer search, cursor
-:map <leader>tbS /<C-r><C-w><Enter>
+:map <leader>tbs /\c<C-r><C-w><Enter>
 
 " Project search, prompt
-:map <leader>tps :Ag<Space>
+:map <leader>tsp :Ag<Space>
 
 " Project search, cursor
-:map <leader>tpS :Ag<Space><C-r><C-w><Enter>
+:map <leader>tSp :Ag<Space><C-r><C-w><Enter>
 let g:startify_lists = [{ 'type': 'dir',       'header': ['   MRU '. getcwd()] }]
 
 " Custom Ag command
@@ -185,6 +193,10 @@ command! -bang -nargs=* Ag
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
   \                         : fzf#vim#with_preview('right:50%'),
   \                 <bang>0)
+
+let g:fzf_colors =
+\ { 'fg': ['fg', 'Normal'],
+\ 'bg': ['bg', 'Normal']}
 
 "==================================================
 " Git
@@ -202,10 +214,6 @@ command! -bang -nargs=* Ag
 "--------------------------------------------------
 " Functions
 "--------------------------------------------------
-function! SetWikiOptions()
-  setlocal wrap
-  setlocal linebreak
-endfunction
 
 " https://stackoverflow.com/a/4294176/3210164
 function s:MkNonExDir(file, buf)
