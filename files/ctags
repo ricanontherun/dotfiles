@@ -33,7 +33,7 @@
 --regex-typescript=/^[ \t]*(export)?[ \t]*interface[ \t]+([a-zA-Z0-9_]+)/\2/i,interfaces/
 --regex-typescript=/^[ \t]*(export)?[ \t]*enum[ \t]+([a-zA-Z0-9_]+)/\2/e,enums/
 
---languages=PHP,JavaScript,typescript,Ruby,java,C,Go
+--languages=PHP,JavaScript,typescript,Ruby,java,C,Go,Python
 
 --langmap=PHP:+.inc.module
 --langmap=Sh:+.csh
