@@ -33,6 +33,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
@@ -220,8 +221,6 @@ let g:fzf_colors =
 
 " Make sure .inc files get PHP syntax highlighting
 autocmd BufEnter,BufNew *.inc set syntax=PHP
-
-autocmd FileType javascript,java,php,c,cpp,go,ruby,python call tagbar#OpenWindow()
 
 let g:tagbar_type_typescript = {
   \ 'ctagsbin' : 'tstags',
