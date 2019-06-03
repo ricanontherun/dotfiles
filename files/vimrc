@@ -66,6 +66,7 @@ set previewheight=100
 set conceallevel=0
 set spell spelllang=en_us
 set hlsearch
+set ignorecase
 
 "--------------------------------------------------
 " Plugin Specific Configuration
@@ -182,13 +183,13 @@ noremap q :q<Enter>
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Buffer search, cursor
-:map <leader>tbs /\c<C-r><C-w><Enter>
+:map <leader>sb /\c<C-r><C-w><Enter>
 
 " Project search, prompt
-:map <leader>tsp :Ag<Space>
+:map <leader>sp :Ag<Space>
 
 " Project search, cursor
-:map <leader>tSp :Ag<Space><C-r><C-w><Enter>
+:map <leader>sP :Ag<Space><C-r><C-w><Enter>
 let g:startify_lists = [{ 'type': 'dir',       'header': ['   MRU '. getcwd()] }]
 
 " Custom Ag command
