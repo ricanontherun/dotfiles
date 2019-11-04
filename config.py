@@ -9,6 +9,7 @@ FILE_MAP = {
     "zshrc": "~/.zshrc",
     "ignore": "~/.ignore",
     "gitignore_global": "~/.gitignore_global",
+    "zprofile": "~/.zprofile"
 }
 
 REPO_FILES_DIR = "./files/"
