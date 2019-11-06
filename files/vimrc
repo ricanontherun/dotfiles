@@ -13,7 +13,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-eunuch'
 Plug 'raimondi/delimitmate'
-Plug 'w0rp/ale'
 Plug 'moll/vim-node'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
@@ -32,8 +31,11 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-fugitive'
+Plug 'janko-m/vim-test'
+Plug 'tpope/vim-dispatch'
+Plug 'neomake/neomake'
+Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
@@ -56,7 +58,7 @@ set autoread
 highlight Normal ctermbg=NONE
 highlight NonText ctermbg=NONE
 syntax enable
-colorscheme jellybeans
+colorscheme solarized
 set background=dark
 set number
 set showmatch
@@ -190,7 +192,11 @@ noremap q :q<Enter>
 
 " Project search, cursor
 :map <leader>sP :Ag<Space><C-r><C-w><Enter>
+
+" Recently used files
 let g:startify_lists = [{ 'type': 'dir',       'header': ['   MRU '. getcwd()] }]
+
+:map <leader>h :History<Enter>
 
 " Custom Ag command
 command! -bang -nargs=* Ag
@@ -241,3 +247,5 @@ let g:tagbar_type_typescript = {
   \ ],
   \ 'sort' : 0
 \ }
+
+let test#strategy = "dispatch"
