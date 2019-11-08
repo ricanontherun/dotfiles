@@ -58,7 +58,7 @@ set autoread
 highlight Normal ctermbg=NONE
 highlight NonText ctermbg=NONE
 syntax enable
-colorscheme solarized
+colorscheme jellybeans
 set background=dark
 set number
 set showmatch
