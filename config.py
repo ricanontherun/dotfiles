@@ -9,7 +9,9 @@ FILE_MAP = {
     "zshrc": "~/.zshrc",
     "ignore": "~/.ignore",
     "gitignore_global": "~/.gitignore_global",
-    "zprofile": "~/.zprofile"
+    "zprofile": "~/.zprofile",
+    "init.toml": "~/.SpaceVim.d/init.toml",
+    "spacevimrc": "~/.SpaceVim.d/vimrc",
 }
 
 REPO_FILES_DIR = "./files/"
