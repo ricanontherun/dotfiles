@@ -12,22 +12,17 @@ alias gc='git commit'
 alias gd='git diff'
 alias gl='git log'
 alias gb='git branch'
+alias gca='git commit --amend'
+alias gr='git rebase'
 alias gpush='git push'
 alias gpull='git pull'
 alias gch='git checkout'
-alias git-conflicts='git diff --name-only --diff-filter=U'
-alias gcane='git commit --amend --no-edit'
+alias gco='git diff --name-only --diff-filter=U'
 
 #--------------------------------------------------
 # Command overrides
 #--------------------------------------------------
-alias tmux='tmux -u'
-alias grepr="grep -rnI"
 alias dce="docker-compose exec"
 alias docker-stop-all='docker container stop $(docker container ls -q)'
-alias ag='ag --path-to-ignore ~/.ignore'
+alias ag='ag --path-to-ignore $HOME/.ignore'
 alias ctags='ctags --options=$HOME/.ctags'
-
-function findDirectory() {
-
-}
