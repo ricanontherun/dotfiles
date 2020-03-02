@@ -1,6 +1,6 @@
-" -------------------------------------------------
-" Christian Roman - Vim config
-" -------------------------------------------------
+" IdeaVim specific settings
+
+set multiple-cursors
 
 set nocompatible
 filetype off
@@ -57,7 +57,7 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <C-v>      p
 :map <C-x>      "_d
 :map <C-z>      u
-:imap <C-s>     <Esc><C-s>a
+:imap <C-s>     :w<Enter><Esc>
 :map q      :q<Enter>
 :map qa     :bufdo bd<Enter>
 
