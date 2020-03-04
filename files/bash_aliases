@@ -26,3 +26,4 @@ alias dce="docker-compose exec"
 alias docker-stop-all='docker container stop $(docker container ls -q)'
 alias ag='ag --path-to-ignore $HOME/.ignore'
 alias ctags='ctags --options=$HOME/.ctags'
+alias notes='vim $HOME/Google\ Drive/Shared/notes'
