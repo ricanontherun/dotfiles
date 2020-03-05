@@ -82,6 +82,9 @@ let g:gutentags_ctags_extra_args=["--options=" . $HOME . "/.ctags"]
 let g:gutentags_project_root = ['tags']
 let g:startify_change_to_dir=0
 
+" Markdown
+let g:vim_markdown_folding_disabled = 1
+
 " -------------------------------------------------
 " Mappings
 " -------------------------------------------------
