@@ -159,51 +159,16 @@ noremap q :q<Enter>
 " File Operations
 "==================================================
 
-" Open File Search
-:map <leader>fs :Files<Enter>
-
 " Open file navigation
 :map <leader>ft :NERDTreeToggle <Enter>
 
 " Reveal current buffer file in navigation.
 :map <leader>ff :NERDTreeFind<Enter>
 
-"==================================================
-" Text search
-"==================================================
-:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-
-" Buffer search, cursor
-:map <leader>sb /\c<C-r><C-w><Enter>
-
-" Project search, prompt
-:map <leader>sp :Ag<Space>
-
-" Project search, cursor
-:map <leader>sP :Ag<Space><C-r><C-w><Enter>
-
 " Recently used files
 let g:startify_lists = [{ 'type': 'dir',       'header': ['   MRU '. getcwd()] }]
 
 :map <leader>h :History<Enter>
-
-" Custom Ag command
-command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>,
-  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%'),
-  \                 <bang>0)
-
-let g:fzf_colors =
-\ { 'fg': ['fg', 'Normal'],
-\ 'bg': ['bg', 'Normal']}
-
-"==================================================
-" Git
-"==================================================
-:map <leader>gs :Gstatus<Enter>
-
-" Tags
 
 " Format JSON using Python
 :map <leader>fj :%!python -m json.tool<Enter>
@@ -215,5 +180,8 @@ let g:fzf_colors =
 " Autocmds
 "--------------------------------------------------
 
-" Make sure .inc files get PHP syntax highlighting
+" Interpret .inc files as PHP syntax
 autocmd BufEnter,BufNew *.inc set syntax=PHP
+
+au BufRead,BufNewFile *.md setlocal textwidth=100
+let g:vim_markdown_conceal_code_blocks = 0
