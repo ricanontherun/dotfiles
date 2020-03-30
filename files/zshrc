@@ -106,16 +106,16 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# Machine specific environment variables.
-if [ -f ~/.bash_envvars ]; then
-    echo "Loading $HOME/.bash_envvars"
-   . ~/.bash_envvars
+# Machine local exports
+if [ -f ~/.local_exports ]; then
+    echo "Loading $HOME/.local_exports"
+   . ~/.local_exports
 fi
 
-# Work specific aliases.
-if [ -f ~/.work_aliases ]; then
-    echo "Loading $HOME/.work_aliases"
-    . ~/.work_aliases
+# Machine local aliases/commands.
+if [ -f ~/.local_aliases ]; then
+    echo "Loading $HOME/.local_aliases"
+    . ~/.local_aliases
 fi
 
 export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
