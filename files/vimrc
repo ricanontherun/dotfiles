@@ -161,14 +161,14 @@ noremap q :q<Enter>
 " Vimrc
 "==================================================
 
-" Open vimrc
-:map <leader>vo :tabe ~/.vimrc<Enter>
+" Edit vimrc
+:map <leader>ve :tabe ~/.vimrc<Enter>
 
 " Reload vimrc
 :map <leader>vr :so %<Enter>
 
 "==================================================
-" File Operations
+" FILE OPERATIONS
 "==================================================
 
 " Open file navigation
@@ -176,6 +176,14 @@ noremap q :q<Enter>
 
 " Reveal current buffer file in navigation.
 :map <leader>ff :NERDTreeFind<Enter>
+
+"==================================================
+" Searching
+"==================================================
+
+:map <leader>s :Ag<Enter>
+:map <leader>sf :Files<Enter>
+:map <leader>sb :Buffers<Enter>
 
 " Recently used files
 let g:startify_lists = [{ 'type': 'dir',       'header': ['   MRU '. getcwd()] }]
@@ -199,3 +207,4 @@ autocmd BufEnter,BufNew *.inc set syntax=PHP
 autocmd FileType markdown setlocal spell
 
 au BufRead,BufNewFile *.md setlocal textwidth=100
+
