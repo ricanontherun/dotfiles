@@ -104,9 +104,9 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Machine specific environment variables.
-if [ -f ~/.local_envvars ]; then
-    echo "Loading $HOME/.local_envvars"
-   . ~/.local_envvars
+if [ -f ~/.local_exports ]; then
+    echo "Loading $HOME/.local_exports"
+   . ~/.local_exports
 fi
 
 # Work specific aliases.

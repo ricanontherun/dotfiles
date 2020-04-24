@@ -23,6 +23,15 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'ctrlpvim/ctrlp.vim'
 
+Plug 'ekalinin/dockerfile.vim'
+Plug 'majutsushi/tagbar'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'editorconfig/editorconfig-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 call plug#end()
 
 "--------------------------------------------------
@@ -52,7 +61,8 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 set clipboard=unnamed
 set previewheight=100
 set conceallevel=0
-set spell spelllang=en_us
+set spelllang=en_us
+set nospell
 set hlsearch
 set ignorecase
 
@@ -77,13 +87,16 @@ let g:airline_powerline_fonts=1
 
 let NERDTreeShowHidden=1
 let NERDTreeChDirMode=0
+let g:nerdtree_tabs_open_on_gui_startup=0
 
 let g:gutentags_ctags_extra_args=["--options=" . $HOME . "/.ctags"]
 let g:gutentags_project_root = ['tags']
+
 let g:startify_change_to_dir=0
 
 " Markdown
 let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal_code_blocks = 0
 
 " -------------------------------------------------
 " Mappings
@@ -105,17 +118,16 @@ noremap l k
 noremap k j
 noremap j h
 
-
 "==================================================
 " Splits
 "==================================================
 :map <leader>sv	:vsplit<Enter>
 :map <leader>sh	:split<Enter>
 
-:map f; <C-w>l
-:map fl <C-w>k
-:map fk <C-w>j
-:map fj <C-w>h
+:map g; <C-w>l
+:map gl <C-w>k
+:map gk <C-w>j
+:map gj <C-w>h
 
 "==================================================
 " Buffers
@@ -130,8 +142,8 @@ noremap q :q<Enter>
 "==================================================
 :map <leader>t :tabe<Enter>
 
-:map gj :tabprevious<Enter>
-:map g; :tabnext<Enter>
+:map fj :tabprevious<Enter>
+:map f; :tabnext<Enter>
 
 "==================================================
 " Tags
@@ -183,5 +195,7 @@ let g:startify_lists = [{ 'type': 'dir',       'header': ['   MRU '. getcwd()] }
 " Interpret .inc files as PHP syntax
 autocmd BufEnter,BufNew *.inc set syntax=PHP
 
+" Enable spell check in select file types.
+autocmd FileType markdown setlocal spell
+
 au BufRead,BufNewFile *.md setlocal textwidth=100
-let g:vim_markdown_conceal_code_blocks = 0

@@ -3,6 +3,8 @@ stty -ixon
 
 alias ll='ls -lah'
 
+export SHARED_CLOUD_DIR=$HOME/Google\ Drive/Shared
+
 #--------------------------------------------------
 # Git aliases
 #--------------------------------------------------
@@ -26,4 +28,14 @@ alias dce="docker-compose exec"
 alias docker-stop-all='docker container stop $(docker container ls -q)'
 alias ag='ag --path-to-ignore $HOME/.ignore'
 alias ctags='ctags --options=$HOME/.ctags'
-alias notes='vim -c "cd ~/Google\ Drive/Shared/notes"'
+
+#--------------------------------------------------
+# Docker
+#--------------------------------------------------
+alias d='docker'
+alias di='docker image'
+alias dis='docker images'
+alias dc='docker container'
+
+# Short Form
+alias wt='sf w -t thoughts'

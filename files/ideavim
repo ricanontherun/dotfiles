@@ -52,7 +52,6 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 " -------------------------------------------------
 
 :map <C-a>      GVgg
-:map <C-s>      :w <Enter>
 :map <C-c>      y
 :map <C-v>      p
 :map <C-x>      "_d
@@ -63,7 +62,7 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 
 :map <C-]>      g<C-]>
 
-" --------------------------------------------------
+"--------------------------------------------------
 " Movement
 " --------------------------------------------------
 
@@ -109,5 +108,7 @@ noremap j h
 
 " [Un]comment the select lines.
 :map <leader>c      :s/^/\/\/<enter>
-:map <leader>uc     :s/\/\//<enter>
+:map <leader>uc     :s/\\//<enter>
 :map <leader>fw     /<c-r><c-w><enter>
+
+:let mapleader = <Space>
