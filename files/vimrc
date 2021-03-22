@@ -21,8 +21,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
 
 Plug 'ekalinin/dockerfile.vim'
 Plug 'majutsushi/tagbar'
@@ -99,6 +100,8 @@ let g:startify_change_to_dir=0
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal_code_blocks = 0
 
+let g:notes_directories = ['~/vim-notes']
+
 " -------------------------------------------------
 " Mappings
 " -------------------------------------------------
@@ -125,10 +128,10 @@ noremap j h
 :map <leader>sv	:vsplit<Enter>
 :map <leader>sh	:split<Enter>
 
-:map g; <C-w>l
-:map gl <C-w>k
-:map gk <C-w>j
-:map gj <C-w>h
+:map f; <C-w>l
+:map fl <C-w>k
+:map fk <C-w>j
+:map fj <C-w>h
 
 "==================================================
 " Buffers
@@ -143,8 +146,8 @@ noremap q :q<Enter>
 "==================================================
 :map <leader>t :tabe<Enter>
 
-:map fj :tabprevious<Enter>
-:map f; :tabnext<Enter>
+:map gj :tabprevious<Enter>
+:map g; :tabnext<Enter>
 
 "==================================================
 " Tags
@@ -182,9 +185,14 @@ noremap q :q<Enter>
 " Searching
 "==================================================
 
-:map <leader>s :Ag<Enter>
-:map <leader>sf :Files<Enter>
+" Text search filesystem, Ag
+:map <leader>st :Ag<Enter>
+
+" Search open buffers (files, basically)
 :map <leader>sb :Buffers<Enter>
+
+" File search filesystem
+:map <leader>sf :Files<Enter>
 
 " Recently used files
 let g:startify_lists = [{ 'type': 'dir',       'header': ['   MRU '. getcwd()] }]

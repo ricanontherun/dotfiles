@@ -19,7 +19,7 @@
 --exclude=target
 --exclude=gulp
 
---languages=PHP,Ruby,java,C,Go,Python,typescript,JavaScript
+--languages=PHP,Ruby,java,C,Go,Python,typescript,JavaScript,xml
 
 --langmap=PHP:+.inc.module
 --langmap=Sh:+.csh

@@ -2,11 +2,11 @@
 .DS_Store
 /.vscode
 /.ignore
-/node_modules
+**/node_modules
 /.vimrc
 /tags
 /*.pyc
 **/__pycache__
-/.idea
+**/.idea
 
 **/SystemConfigProvider.java

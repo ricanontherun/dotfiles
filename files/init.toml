@@ -30,8 +30,10 @@
 name = "colorscheme"
 
 [[layers]]
-  name = "colorscheme"
+name = "lang#go"
 
+[[layers]]
+name = "lang#java"
 
 # Ctrlp
 [[layers]]
@@ -63,6 +65,3 @@ name="git"
 
 [[layers]]
 name="lang#java"
-
-[[layers]]
-name = "lang#typescript"
