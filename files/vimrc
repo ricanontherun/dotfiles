@@ -1,39 +1,22 @@
 set nocompatible
 filetype off
-
-filetype plugin indent on    " required
+filetype plugin indent on
 
 set path=.
 
 call plug#begin('~/.vim/plugged')
-
 Plug 'scrooloose/nerdtree'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-eunuch'
 Plug 'raimondi/delimitmate'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Yggdroot/indentLine'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'mhinz/vim-startify'
 Plug 'nanotech/jellybeans.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdcommenter'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-notes'
-
-Plug 'ekalinin/dockerfile.vim'
-Plug 'majutsushi/tagbar'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'editorconfig/editorconfig-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
 call plug#end()
 
 "--------------------------------------------------
@@ -47,7 +30,6 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set wrap!
-set guifont=SauceCodePro\ Nerd\ Font:h14
 set t_Co=256
 set exrc
 set secure
@@ -73,8 +55,6 @@ set ignorecase
 "--------------------------------------------------
 set laststatus=2
 
-let g:ale_linters = {'javascript': ['eslint'], 'java': ['javac']}
-
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 let g:strip_whitespace_confirm=0
@@ -82,41 +62,29 @@ let g:strip_whitespace_confirm=0
 let g:indentLine_enabled = 1
 let g:indent_guides_enable_on_vim_startup = 1
 
-let g:tagbar_autofocus=1
-let g:tagbar_autoclose=1
-
-let g:airline_powerline_fonts=1
-
 let NERDTreeShowHidden=1
 let NERDTreeChDirMode=0
-let g:nerdtree_tabs_open_on_gui_startup=0
+let g:nerdtree_tabs_open_on_gui_startup=1
 
-let g:gutentags_ctags_extra_args=["--options=" . $HOME . "/.ctags"]
-let g:gutentags_project_root = ['tags']
-
-let g:startify_change_to_dir=0
-
-" Markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal_code_blocks = 0
-
-let g:notes_directories = ['~/vim-notes']
 
 " -------------------------------------------------
 " Mappings
 " -------------------------------------------------
 let mapleader=" "
+
 :map <C-a> GVgg
 :map <C-c> y
 :map <C-v> p
 :map <C-x> "_d
 :map <C-z> u
 :map <C-]> g<C-]>
-:imap <C-s> <Esc>:w<Enter>
-:map <C-s> <Esc>:w<Enter>
+:imap <leader>s <Esc>:w<Enter>
+:map <leader>s <Esc>:w<Enter>
 :nmap riw viwp
+:imap <leader><leader> <Esc>
 
-" Remapping the movement keys so I can stay on home row as much as possible.
 noremap ; l
 noremap l k
 noremap k j
@@ -145,7 +113,6 @@ noremap q :q<Enter>
 " Tabs
 "==================================================
 :map <leader>t :tabe<Enter>
-
 :map gj :tabprevious<Enter>
 :map g; :tabnext<Enter>
 
