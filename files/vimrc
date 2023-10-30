@@ -80,10 +80,7 @@ let mapleader=" "
 :map <C-x> "_d
 :map <C-z> u
 :map <C-]> g<C-]>
-:imap <leader>s <Esc>:w<Enter>
-:map <leader>s <Esc>:w<Enter>
 :nmap riw viwp
-:imap <leader><leader> <Esc>
 
 noremap ; l
 noremap l k

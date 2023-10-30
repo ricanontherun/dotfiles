@@ -25,10 +25,8 @@ alias gco='git diff --name-only --diff-filter=U'
 #--------------------------------------------------
 # Command overrides
 #--------------------------------------------------
-alias dce="docker-compose exec"
 alias docker-stop-all='docker container stop $(docker container ls -q)'
 alias ag='ag --path-to-ignore $HOME/.ignore'
-alias ctags='ctags --options=$HOME/.ctags'
 
 #--------------------------------------------------
 # Docker
@@ -38,30 +36,11 @@ alias di='docker image'
 alias dis='docker images'
 alias dc='docker-compose'
 
-# Short Form
-alias wt='sf w -t thoughts'
+alias uuid='python3 -c "import uuid; print(uuid.uuid4())"'
 
-function codeSection() {
-    description=""
-    for arg; do
-        description="$description $arg"
-    done
-    description=${description#"${description%%[![:space:]]*}"}
+# Platform specific aliases
+platform=$(uname -s)
+if [[ $platform == "Linux" ]]; then
+  alias reboot-machine='shutdown --reboot now'
+fi
 
-    description="# $description"
-    description_length=${#description}
-    description_length=$((description_length++))
-
-    top_line=""
-    for i in {1..$description_length}
-    do
-        top_line="$top_line#"
-    done
-
-    bottom_line=$top_line
-    echo $top_line
-    echo $description
-    echo $bottom_line
-}
-
-alias uuid='python -c "import uuid; print(uuid.uuid4())"'
