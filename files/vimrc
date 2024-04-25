@@ -180,4 +180,3 @@ autocmd BufEnter,BufNew *.inc set syntax=PHP
 autocmd FileType markdown setlocal spell
 
 au BufRead,BufNewFile *.md setlocal textwidth=100
-

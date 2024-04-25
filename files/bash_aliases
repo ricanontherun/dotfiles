@@ -44,3 +44,6 @@ if [[ $platform == "Linux" ]]; then
   alias reboot-machine='shutdown --reboot now'
 fi
 
+alias findproc='ps aux | ag '
+alias sysinfo='fastfetch'
+

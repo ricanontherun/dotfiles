@@ -57,6 +57,7 @@ set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 :map <C-x>      "_d
 :map <C-z>      u
 :imap <C-s>     :w<Enter><Esc>
+:imap <Ctrl>v <Esc>
 :map q      :q<Enter>
 :map qa     :bufdo bd<Enter>
 
@@ -93,7 +94,7 @@ noremap j h
 " Leaders
 " -------------------------------------------------
 
-" Split leaders
+"Split leaders
 :map <leader>vs     :vsplit<Enter>
 :map <leader>hs     :split<Enter>
 
@@ -110,5 +111,3 @@ noremap j h
 :map <leader>c      :s/^/\/\/<enter>
 :map <leader>uc     :s/\\//<enter>
 :map <leader>fw     /<c-r><c-w><enter>
-
-:let mapleader = <Space>

@@ -5,3 +5,4 @@ if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 # Added by Toolbox App
 export PATH="$PATH:/home/christian/.local/share/JetBrains/Toolbox/scripts"
 
+. "$HOME/.cargo/env"
