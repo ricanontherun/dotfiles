@@ -47,3 +47,5 @@ fi
 alias findproc='ps aux | ag '
 alias sysinfo='fastfetch'
 
+alias tmux='tmux -f ~/.tmux.conf'
+

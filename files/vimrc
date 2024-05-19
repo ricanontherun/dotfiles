@@ -5,6 +5,7 @@ filetype plugin indent on
 set path=.
 
 call plug#begin('~/.vim/plugged')
+" General purpose stuff.
 Plug 'scrooloose/nerdtree'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-eunuch'
@@ -17,6 +18,12 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdcommenter'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+
+Plug 'artur-shaik/vim-javacomplete2'
+Plug 'fatih/vim-go'
 call plug#end()
 
 "--------------------------------------------------
@@ -180,3 +187,12 @@ autocmd BufEnter,BufNew *.inc set syntax=PHP
 autocmd FileType markdown setlocal spell
 
 au BufRead,BufNewFile *.md setlocal textwidth=100
+
+"--------------------------------------------------
+" Java Plugin Specific
+"--------------------------------------------------
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#sources = {}
+let g:deoplete#sources.java = ['jc', 'javacomplete2', 'file', 'buffer', 'ultisnips']
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+autocmd FileType java JCEnable

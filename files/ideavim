@@ -1,5 +1,29 @@
-" IdeaVim specific settings
+" -------------------------------------------------
+" Leaders
+" -------------------------------------------------
+let mapleader = ','
 
+"Split leaders
+:map <leader>vs     :vsplit
+map <leader>hs     :split<Enter>
+
+" Open ~/.vimrc
+:map <leader>v      :tabe ~/.vimrc<Enter>
+
+" New tab
+:map <leader>nt     :tabe<Enter>
+
+" New file
+:map <leader>nf     :tabe<Enter>:e
+
+" [Un]comment the select lines.
+:map <leader>c      :s/^/\/\/<enter>
+:map <leader>uc     :s/\\//<enter>
+:map <leader>fw     /<c-r><c-w><enter>
+
+:imap <leader>t <Esc>
+
+" IdeaVim specific settings
 set multiple-cursors
 
 set nocompatible
@@ -90,24 +114,3 @@ noremap j h
 :map fj :tabprevious<Enter>
 :map f; :tabnext<Enter>
 
-" -------------------------------------------------
-" Leaders
-" -------------------------------------------------
-
-"Split leaders
-:map <leader>vs     :vsplit<Enter>
-:map <leader>hs     :split<Enter>
-
-" Open ~/.vimrc
-:map <leader>v      :tabe ~/.vimrc<Enter>
-
-" New tab
-:map <leader>nt     :tabe<Enter>
-
-" New file
-:map <leader>nf     :tabe<Enter>:e
-
-" [Un]comment the select lines.
-:map <leader>c      :s/^/\/\/<enter>
-:map <leader>uc     :s/\\//<enter>
-:map <leader>fw     /<c-r><c-w><enter>
