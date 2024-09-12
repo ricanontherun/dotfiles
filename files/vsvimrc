@@ -1,0 +1,67 @@
+" -------------------------------------------------
+" Leaders
+" -------------------------------------------------
+let mapleader = ','
+
+"Split leaders
+:map <leader>vs     :vsplit
+map <leader>hs     :split<Enter>
+
+" Open ~/.vimrc
+:map <leader>v      :tabe ~/.vimrc<Enter>
+
+" New tab
+:map <leader>nt     :tabe<Enter>
+
+" New file
+:map <leader>nf     :tabe<Enter>:e
+
+" [Un]comment the select lines.
+:map <leader>c      :s/^/\/\/<enter>
+:map <leader>uc     :s/\\//<enter>
+:map <leader>fw     /<c-r><c-w><enter>
+
+:imap <leader>t <Esc>
+
+" -------------------------------------------------
+" Mappings
+" -------------------------------------------------
+
+:map <C-a>      GVgg
+:map <C-c>      y
+:map <C-v>      p
+:map <C-x>      "_d
+:map <C-z>      u
+:imap <C-s>     :w<Enter><Esc>
+:imap <Ctrl>v <Esc>
+:map q      :q<Enter>
+:map qa     :bufdo bd<Enter>
+
+:map <C-]>      g<C-]>
+
+"--------------------------------------------------
+" Movement
+" --------------------------------------------------
+
+" Remapping the movement keys so I can stay on homerow as much as possible.
+noremap ; l
+noremap l k
+noremap k j
+noremap j h
+
+" Split Navigation
+:map g; <C-w>l
+:map gl <C-w>k
+:map gk <C-w>j
+:map gj <C-w>h
+
+" Pane resizing.
+:map _ :vertical resize +5<Enter>
+:map + :vertical resize -5<Enter>
+
+:map - :resize +5<Enter>
+:map = :resize -5<Enter>
+
+" Tab Navigation
+:map fj :tabprevious<Enter>
+:map f; :tabnext<Enter>
