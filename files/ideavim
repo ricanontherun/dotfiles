@@ -114,3 +114,4 @@ noremap j h
 :map fj :tabprevious<Enter>
 :map f; :tabnext<Enter>
 
+set ideajoin

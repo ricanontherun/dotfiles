@@ -25,7 +25,6 @@ alias gco='git diff --name-only --diff-filter=U'
 #--------------------------------------------------
 # Command overrides
 #--------------------------------------------------
-alias docker-stop-all='docker container stop $(docker container ls -q)'
 alias ag='ag --path-to-ignore $HOME/.ignore'
 
 #--------------------------------------------------
@@ -35,6 +34,7 @@ alias d='docker'
 alias di='docker image'
 alias dis='docker images'
 alias dc='docker-compose'
+alias docker-stop-all='docker container stop $(docker container ls -q)'
 
 alias uuid='python3 -c "import uuid; print(uuid.uuid4())"'
 
@@ -42,6 +42,21 @@ alias uuid='python3 -c "import uuid; print(uuid.uuid4())"'
 platform=$(uname -s)
 if [[ $platform == "Linux" ]]; then
   alias reboot-machine='shutdown --reboot now'
+
+  if command -v apt &> /dev/null; then
+    alias install-package='sudo apt-get install'
+    alias update-packages='(sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoclean)'
+  fi
+
+  # xclip alises
+  if ! type xclip > /dev/null; then
+    $install-package xclip
+  fi
+  alias copy='xclip -selection clipboard'
+  alias paste='xclip -selection clipboard -o'
+
+  # Networking aliases
+  alias print-public-ip='wget -qO- https://ipecho.net/plain ; echo'
 fi
 
 alias findproc='ps aux | ag '
@@ -49,3 +64,6 @@ alias sysinfo='fastfetch'
 
 alias tmux='tmux -f ~/.tmux.conf'
 
+alias aptupdatepackages='sudo apt-get update && sudo apt-get upgrade'
+
+export PATH="$PATH:/home/christian/Tools/etcd-v3.4.34-linux-amd64"
