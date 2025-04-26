@@ -4,28 +4,6 @@ filetype plugin indent on
 
 set path=.
 
-call plug#begin('~/.vim/plugged')
-" General purpose stuff.
-Plug 'scrooloose/nerdtree'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'tpope/vim-eunuch'
-Plug 'raimondi/delimitmate'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'Yggdroot/indentLine'
-Plug 'nanotech/jellybeans.vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'scrooloose/nerdcommenter'
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-
-Plug 'artur-shaik/vim-javacomplete2'
-Plug 'fatih/vim-go'
-call plug#end()
-
 "--------------------------------------------------
 " Basic setup
 "--------------------------------------------------
@@ -44,7 +22,6 @@ set autoread
 highlight Normal ctermbg=NONE
 highlight NonText ctermbg=NONE
 syntax enable
-colorscheme jellybeans
 set background=dark
 set number
 set showmatch
@@ -62,19 +39,9 @@ set ignorecase
 "--------------------------------------------------
 set laststatus=2
 
-let g:better_whitespace_enabled=1
-let g:strip_whitespace_on_save=1
-let g:strip_whitespace_confirm=0
-
-let g:indentLine_enabled = 1
-let g:indent_guides_enable_on_vim_startup = 1
-
 let NERDTreeShowHidden=1
 let NERDTreeChDirMode=0
 let g:nerdtree_tabs_open_on_gui_startup=1
-
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_conceal_code_blocks = 0
 
 " -------------------------------------------------
 " Mappings
@@ -121,21 +88,8 @@ noremap q :q<Enter>
 :map g; :tabnext<Enter>
 
 "==================================================
-" Tags
-"==================================================
-:map <leader>tt :TagbarToggle<Enter>
-
-" Open up a tag browser
-:map <leader>tbv :execute "vertical ptag " . expand("<cword>")<Enter>
-:map <leader>tb :execute "ptag " . expand("<cword>")<Enter>
-:map <leader>tn :ptnext<Enter>
-:map <leader>tp :ptprevious<Enter>
-:map tc <C-w>z
-
-"==================================================
 " Vimrc
 "==================================================
-
 " Edit vimrc
 :map <leader>ve :tabe ~/.vimrc<Enter>
 
@@ -145,7 +99,6 @@ noremap q :q<Enter>
 "==================================================
 " FILE OPERATIONS
 "==================================================
-
 " Open file navigation
 :map <leader>ft :NERDTreeToggle <Enter>
 
@@ -155,18 +108,11 @@ noremap q :q<Enter>
 "==================================================
 " Searching
 "==================================================
-
-" Text search filesystem, Ag
-:map <leader>st :Ag<Enter>
-
 " Search open buffers (files, basically)
 :map <leader>sb :Buffers<Enter>
 
 " File search filesystem
 :map <leader>sf :Files<Enter>
-
-" Recently used files
-let g:startify_lists = [{ 'type': 'dir',       'header': ['   MRU '. getcwd()] }]
 
 :map <leader>h :History<Enter>
 
@@ -179,7 +125,6 @@ let g:startify_lists = [{ 'type': 'dir',       'header': ['   MRU '. getcwd()] }
 "--------------------------------------------------
 " Autocmds
 "--------------------------------------------------
-
 " Interpret .inc files as PHP syntax
 autocmd BufEnter,BufNew *.inc set syntax=PHP
 
@@ -187,12 +132,3 @@ autocmd BufEnter,BufNew *.inc set syntax=PHP
 autocmd FileType markdown setlocal spell
 
 au BufRead,BufNewFile *.md setlocal textwidth=100
-
-"--------------------------------------------------
-" Java Plugin Specific
-"--------------------------------------------------
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#sources = {}
-let g:deoplete#sources.java = ['jc', 'javacomplete2', 'file', 'buffer', 'ultisnips']
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-autocmd FileType java JCEnable
