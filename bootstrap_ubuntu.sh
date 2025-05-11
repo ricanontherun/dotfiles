@@ -3,7 +3,7 @@
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch &&
   sudo apt update -y &&
   sudo apt install -y \
-     curl jq fastfetch silversearcher-ag zsh xclip
+     curl jq fastfetch silversearcher-ag zsh xclip libfuse2
 
 # Install and configure oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

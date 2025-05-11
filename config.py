@@ -9,7 +9,8 @@ FILE_MAP = {
     "ignore": "~/.ignore",
     "gitignore_global": "~/.gitignore_global",
     "init.toml": "~/.SpaceVim.d/init.toml",
-    "ideavim": "~/.ideavimrc"
+    "ideavim": "~/.ideavimrc",
+    "vscodevimrc": "~/.vscodevimrc"
 }
 
 REPO_FILES_DIR = "./files/"
