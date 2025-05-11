@@ -1,0 +1,32 @@
+" Mappings
+let mapleader=","
+
+imap <leader>s <Esc>:w<Enter>
+imap <leader>e <Esc>
+
+noremap ; l
+noremap l k
+noremap k j
+noremap j h
+
+" Splits
+map <leader>vs	:vsplit<Enter>
+map <leader>hs	:split<Enter>
+
+map f; <C-w>l
+map fl <C-w>k
+map fk <C-w>j
+map fj <C-w>h
+
+" Tabs
+map <leader>t :tabe<Enter>
+map gj        :tabprevious<Enter>
+map g;        :tabnext<Enter
+
+" Vimrc
+
+map <leader>ve :tabe ~/.vscodevimrc<Enter>
+map <leader>vr :so %<Enter>
+
+" Duplicate line
+map <leader>dl <S-v>yp
