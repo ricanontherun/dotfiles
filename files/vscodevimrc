@@ -1,0 +1,32 @@
+" Mappings
+noremap ; l
+noremap l k
+noremap k j
+noremap j h
+
+" Exit insert mode
+imap <leader>e <Esc>
+" Save
+imap <leader>s <Esc>:w<Enter>
+noremap <leader>s :w<Enter><Esc>
+
+" close pane
+map <leader>q :q<Enter>
+
+" Create and navigate splits
+noremap <leader>vs	:vsplit<Enter>
+noremap <leader>hs	:split<Enter>
+noremap f; <C-w>l
+noremap fl <C-w>k
+noremap fk <C-w>j
+noremap fj <C-w>h
+
+noremap <leader>t :tabe<Enter>
+" previous/next tab
+noremap gj :tabprevious<Enter>
+noremap g; :tabnext<Enter>
+
+" Edit vimrc
+map <leader>ve :tabe ~/.vscodevimrc<Enter>
+" Reload vimrc
+map <leader>vr :so %<Enter>
