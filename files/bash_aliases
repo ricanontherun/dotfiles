@@ -64,7 +64,3 @@ alias findproc='ps aux | ag '
 alias sysinfo='fastfetch'
 
 alias tmux='tmux -f ~/.tmux.conf'
-
-alias aptupdatepackages='sudo apt-get update && sudo apt-get upgrade'
-
-export PATH="$PATH:/home/christian/Tools/etcd-v3.4.34-linux-amd64"
