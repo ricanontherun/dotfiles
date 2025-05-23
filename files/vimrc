@@ -1,134 +1,65 @@
 set nocompatible
-filetype off
-filetype plugin indent on
-
-set path=.
-
-"--------------------------------------------------
-" Basic setup
-"--------------------------------------------------
-set backspace=indent,eol,start
-set enc=utf-8
-set fenc=utf-8
-set termencoding=utf-8
-set tabstop=2
-set shiftwidth=2
-set expandtab
-set wrap!
-set t_Co=256
-set exrc
-set secure
-set autoread
-highlight Normal ctermbg=NONE
-highlight NonText ctermbg=NONE
-syntax enable
-set background=dark
-set number
-set showmatch
-set dir=~/.vimswap//,/var/tmp//,/tmp//,.
-set clipboard=unnamed
-set previewheight=100
-set conceallevel=0
-set spelllang=en_us
-set nospell
-set hlsearch
-set ignorecase
-
-"--------------------------------------------------
-" Plugin Specific Configuration
-"--------------------------------------------------
-set laststatus=2
-
-let NERDTreeShowHidden=1
-let NERDTreeChDirMode=0
-let g:nerdtree_tabs_open_on_gui_startup=1
-
-" -------------------------------------------------
-" Mappings
-" -------------------------------------------------
-let mapleader=" "
-
-:map <C-a> GVgg
-:map <C-c> y
-:map <C-v> p
-:map <C-x> "_d
-:map <C-z> u
-:map <C-]> g<C-]>
-:nmap riw viwp
-
+filetype plugin indent on  " Load plugins according to detected filetype.
+syntax on                  " Enable syntax highlighting.
+set autoindent             " Indent according to previous line.
+set expandtab              " Use spaces instead of tabs.
+set shiftround             " >> indents to next multiple of 'shiftwidth'.
+set backspace   =indent,eol,start  " Make backspace work as you would expect.
+set hidden                 " Switch between buffers without having to save first.
+set laststatus  =2         " Always show statusline.
+set display     =lastline  " Show as much as possible of the last line.
+set showmode               " Show current mode in command-line.
+set showcmd                " Show already typed keys when more are expected.
+set incsearch              " Highlight while searching with / or ?.
+set hlsearch               " Keep matches highlighted.
+set ttyfast                " Faster redrawing.
+set lazyredraw             " Only redraw when necessary.
+set splitbelow             " Open new windows below the current window.
+set splitright             " Open new windows right of the current window.
+set cursorline             " Find the current line quickly.
+set wrapscan               " Searches wrap around end-of-file.
+set report      =0         " Always report changed lines.
+set synmaxcol   =200       " Only highlight the first 200 columns.
+set list                   " Show non-printable characters.
+set backup
+set backupdir   =$HOME/.vim/files/backup/
+set backupext   =-vimbackup
+set backupskip  =
+set directory   =$HOME/.vim/files/swap//
+set updatecount =100
+set undofile
+set undodir     =$HOME/.vim/files/undo/
+let mapleader='\'
+" Mappings, keep hands on home row
 noremap ; l
 noremap l k
 noremap k j
 noremap j h
 
-"==================================================
-" Splits
-"==================================================
-:map <leader>sv	:vsplit<Enter>
-:map <leader>sh	:split<Enter>
+" Exit insert mode.
+inoremap    <leader>e   <Esc>
 
-:map f; <C-w>l
-:map fl <C-w>k
-:map fk <C-w>j
-:map fj <C-w>h
+" Save active buffer
+inoremap    <leader>s   <Esc>:w<Enter>
+nnoremap    s           <Esc>:w<Enter><Esc>
 
-"==================================================
-" Buffers
-"==================================================
-noremap q :q<Enter>
-:map <leader>qa :qa<Enter>
-:map <leader>qaf :!qa<Enter>
-:map <leader>h :Startify<Enter>
+" close active buffer
+nnoremap    q  :q<Enter>
 
-"==================================================
+" Create and navigate splits
+nnoremap    vs  :vsplit<Enter>
+nnoremap    hs  :split<Enter>
+nnoremap    f;  <C-w>l
+nnoremap    fl  <C-w>k
+nnoremap    fk  <C-w>j
+nnoremap    fj  <C-w>h
+
 " Tabs
-"==================================================
-:map <leader>t :tabe<Enter>
-:map gj :tabprevious<Enter>
-:map g; :tabnext<Enter>
+nnoremap    gj  :tabprevious<Enter>
+nnoremap    g;  :tabnext<Enter>
 
-"==================================================
-" Vimrc
-"==================================================
-" Edit vimrc
-:map <leader>ve :tabe ~/.vimrc<Enter>
+" ideavimrc management
+nnoremap    <leader>ve  :tabe ~/.ideavim<Enter>
+nnoremap    <leader>vr  :so %<Enter>
 
-" Reload vimrc
-:map <leader>vr :so %<Enter>
-
-"==================================================
-" FILE OPERATIONS
-"==================================================
-" Open file navigation
-:map <leader>ft :NERDTreeToggle <Enter>
-
-" Reveal current buffer file in navigation.
-:map <leader>ff :NERDTreeFind<Enter>
-
-"==================================================
-" Searching
-"==================================================
-" Search open buffers (files, basically)
-:map <leader>sb :Buffers<Enter>
-
-" File search filesystem
-:map <leader>sf :Files<Enter>
-
-:map <leader>h :History<Enter>
-
-" Format JSON using Python
-:map <leader>fj :%!python -m json.tool<Enter>
-
-" Duplicate line
-:map <leader>dl <S-v>yp
-
-"--------------------------------------------------
-" Autocmds
-"--------------------------------------------------
-" Interpret .inc files as PHP syntax
-autocmd BufEnter,BufNew *.inc set syntax=PHP
-
-" Enable spell check in select file types.
-autocmd FileType markdown setlocal spell
-
-au BufRead,BufNewFile *.md setlocal textwidth=100
+nnoremap    al  o<Esc>
