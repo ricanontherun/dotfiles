@@ -1,32 +1,78 @@
-" Mappings
+set nocompatible
+
+filetype plugin indent on  " Load plugins according to detected filetype.
+syntax on                  " Enable syntax highlighting.
+
+set autoindent             " Indent according to previous line.
+set expandtab              " Use spaces instead of tabs.
+set shiftround             " >> indents to next multiple of 'shiftwidth'.
+
+set backspace   =indent,eol,start  " Make backspace work as you would expect.
+set hidden                 " Switch between buffers without having to save first.
+set laststatus  =2         " Always show statusline.
+set display     =lastline  " Show as much as possible of the last line.
+
+set showmode               " Show current mode in command-line.
+set showcmd                " Show already typed keys when more are expected.
+
+set incsearch              " Highlight while searching with / or ?.
+set hlsearch               " Keep matches highlighted.
+
+set ttyfast                " Faster redrawing.
+set lazyredraw             " Only redraw when necessary.
+
+set splitbelow             " Open new windows below the current window.
+set splitright             " Open new windows right of the current window.
+
+set cursorline             " Find the current line quickly.
+set wrapscan               " Searches wrap around end-of-file.
+set report      =0         " Always report changed lines.
+set synmaxcol   =200       " Only highlight the first 200 columns.
+
+set list                   " Show non-printable characters.
+
+set backup
+set backupdir   =$HOME/.vim/files/backup/
+set backupext   =-vimbackup
+set backupskip  =
+set directory   =$HOME/.vim/files/swap//
+set updatecount =100
+set undofile
+set undodir     =$HOME/.vim/files/undo/
+set viminfo     ='100,n$HOME/.vim/files/info/viminfo
+
+let mapleader='\'
+
+" Mappings, keep hands on home row
 noremap ; l
 noremap l k
 noremap k j
 noremap j h
 
-" Exit insert mode
-imap <leader>e <Esc>
-" Save
-imap <leader>s <Esc>:w<Enter>
-noremap <leader>s :w<Enter><Esc>
+" Exit insert mode.
+inoremap    <leader>e   <Esc>
 
-" close pane
-map <leader>q :q<Enter>
+" Save active buffer
+inoremap    <leader>s   <Esc>:w<Enter>
+nnoremap    s           <Esc>:w<Enter><Esc>
+
+" close active buffer
+nnoremap    q  :q<Enter>
 
 " Create and navigate splits
-noremap <leader>vs	:vsplit<Enter>
-noremap <leader>hs	:split<Enter>
-noremap f; <C-w>l
-noremap fl <C-w>k
-noremap fk <C-w>j
-noremap fj <C-w>h
+nnoremap    vs  :vsplit<Enter>
+nnoremap    hs  :split<Enter>
+nnoremap    f;  <C-w>l
+nnoremap    fl  <C-w>k
+nnoremap    fk  <C-w>j
+nnoremap    fj  <C-w>h
 
-noremap <leader>t :tabe<Enter>
-" previous/next tab
-noremap gj :tabprevious<Enter>
-noremap g; :tabnext<Enter>
+" Tabs
+nnoremap    gj  :tabprevious<Enter>
+nnoremap    g;  :tabnext<Enter>
 
-" Edit vimrc
-map <leader>ve :tabe ~/.vscodevimrc<Enter>
-" Reload vimrc
-map <leader>vr :so %<Enter>
+" ideavimrc management
+nnoremap    <leader>ve  :tabe ~/.ideavim<Enter>
+nnoremap    <leader>vr  :so %<Enter>
+
+nnoremap    al  o<Esc>
