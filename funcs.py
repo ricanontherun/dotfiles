@@ -1,8 +1,17 @@
 from os import path, makedirs
 from errno import EEXIST
 from shutil import copyfile
+import subprocess
+from pathlib import Path
 
 import config
+
+def shell_home_dir() -> str:
+    """
+    Attempt to resolve the current user's homedir.
+    """
+    [exit_code, output] = subprocess.getstatusoutput('realpath ~')
+    return output if exit_code == 0 else Path.home()
 
 def iterate(callback):
     """
@@ -23,7 +32,7 @@ def copy(copy_from, copy_to):
     """
     Copy a file from one source to another.
     """
-    # Create any parent directories as necessary
+    # Create any missing parent directories
     dirname = path.dirname(copy_to)
     if not path.exists(dirname):
         try:
@@ -33,5 +42,4 @@ def copy(copy_from, copy_to):
             if e.errno != EEXIST:
                 print("Failed to makedirs: {}".format(str(e)))
 
-    print("Copying {} to {}".format(copy_from, copy_to))
     copyfile(copy_from, copy_to)
