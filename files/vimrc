@@ -1,3 +1,4 @@
+set nolist
 set nocompatible
 filetype plugin indent on  " Load plugins according to detected filetype.
 syntax on                  " Enable syntax highlighting.
@@ -20,15 +21,10 @@ set cursorline             " Find the current line quickly.
 set wrapscan               " Searches wrap around end-of-file.
 set report      =0         " Always report changed lines.
 set synmaxcol   =200       " Only highlight the first 200 columns.
-set list                   " Show non-printable characters.
 set backup
-set backupdir   =$HOME/.vim/files/backup/
-set backupext   =-vimbackup
 set backupskip  =
-set directory   =$HOME/.vim/files/swap//
 set updatecount =100
 set undofile
-set undodir     =$HOME/.vim/files/undo/
 let mapleader='\'
 " Mappings, keep hands on home row
 noremap ; l

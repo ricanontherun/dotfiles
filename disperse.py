@@ -8,7 +8,7 @@ if __name__ == "__main__":
     if confirmation != 'yes':
         print("Operation cancelled, please use 'yes' or 'no'")
         exit(1)
-        
+
     for repo_file, system_file in config.FILE_MAP.items():
         source_path = path.join('.', config.REPO_FILES_DIR, repo_file)
         destination_path = path.join(home_dir, system_file)

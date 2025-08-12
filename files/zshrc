@@ -76,6 +76,11 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.bash_aliases
 
+if test -f ~/.local_aliases;
+  echo ".local_aliases found, sourcing"
+  . ~/.local_aliases
+fi
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
