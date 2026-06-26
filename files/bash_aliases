@@ -18,7 +18,7 @@ alias ga='git add '
 alias gap='git add -p'
 
 alias gc='git commit'
-alias gco='git commit -m '
+alias gco='git commit -m'
 
 alias gb='git branch'
 alias gr='git rebase'
