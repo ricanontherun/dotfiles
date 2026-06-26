@@ -10,18 +10,21 @@ export SHARED_CLOUD_DIR=$HOME/Google\ Drive/Shared
 # Git aliases
 #--------------------------------------------------
 alias gs='git status'
-alias ga='git add '
-alias gc='git commit -m '
-alias gce='git commit'
-alias gd='git diff'
 alias gl='git log'
+alias gd='git diff'
+alias gco='git diff --name-only --diff-filter=U'
+
+alias ga='git add '
+alias gap='git add -p'
+
+alias gc='git commit'
+alias gco='git commit -m '
+
 alias gb='git branch'
-alias gca='git commit --amend'
 alias gr='git rebase'
 alias gpush='git push'
 alias gpull='git pull'
 alias gch='git checkout'
-alias gco='git diff --name-only --diff-filter=U'
 
 #--------------------------------------------------
 # Command overrides
@@ -53,9 +56,6 @@ if [[ $platform == "Linux" ]]; then
   fi
 
   # xclip alises
-  if ! type xclip > /dev/null; then
-    sudo apt install xclip
-  fi
   alias copy='xclip -selection clipboard'
   alias paste='xclip -selection clipboard -o'
 
