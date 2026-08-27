@@ -1,0 +1,33 @@
+vim.wo.number = true
+vim.o.spell = true
+vim.o.spelllang = 'en_us'
+vim.opt.swapfile = true
+vim.opt.backupdir = '~/vimtmp//,.'
+vim.opt.directory = '~/vimtmp//,.'
+vim.g.markdown_fenced_languages = { 'python', 'vim', 'lua', 'go', 'csharp' }
+
+-- Leader
+vim.g.mapleader = " "
+
+-- Movement remapping
+vim.keymap.set('n', 'j', 'h')
+vim.keymap.set('n', 'k', 'j')
+vim.keymap.set('n', 'l', 'k')
+vim.keymap.set('n', ';', 'l')
+vim.keymap.set('v', 'j', 'h')
+vim.keymap.set('v', 'k', 'j')
+vim.keymap.set('v', 'l', 'k')
+vim.keymap.set('v', ';', 'l')
+
+-- configuration management
+vim.keymap.set('n', '<Leader>oc', '<cmd>tabe $MYVIMRC<cr>', {noremap = true})
+vim.keymap.set('n', '<Leader>rc', '<cmd>source $MYVIMRC<cr><cmd>echo "reloaded init.lua"<cr>', {noremap = true})
+
+-- Save current buffer, switch to normal mode
+vim.keymap.set('i', '<C-s>', '<cmd>write<cr><esc>', {desc = "save buffer", noremap = true})
+vim.keymap.set('n', '<C-s>', '<cmd>write<cr><esc>', {desc = "save buffer", noremap = true})
+
+vim.keymap.set('n', 'q', '<cmd>q<cr>', {noremap = true})
+
+vim.keymap.set('n', '<Leader>vs', '<cmd>vsplit<cr>', {noremap = true})
+vim.keymap.set('n', '<Leader>hs', '<cmd>split<cr>', {noremap = true})

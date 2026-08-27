@@ -13,6 +13,7 @@ FILE_MAP = {
     "ideavim": ".ideavimrc",
     "vscodevimrc": ".vscodevimrc",
     "vsvimrc": ".vsvimrc",
+    "init.lua": ".config/nvim/init.lua"
 }
 
 REPO_FILES_DIR = "files"
