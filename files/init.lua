@@ -23,11 +23,21 @@ vim.keymap.set('v', ';', 'l')
 vim.keymap.set('n', '<Leader>oc', '<cmd>tabe $MYVIMRC<cr>', {noremap = true})
 vim.keymap.set('n', '<Leader>rc', '<cmd>source $MYVIMRC<cr><cmd>echo "reloaded init.lua"<cr>', {noremap = true})
 
--- Save current buffer, switch to normal mode
-vim.keymap.set('i', '<C-s>', '<cmd>write<cr><esc>', {desc = "save buffer", noremap = true})
-vim.keymap.set('n', '<C-s>', '<cmd>write<cr><esc>', {desc = "save buffer", noremap = true})
+-- Save current buffer switch to normal mode
+vim.keymap.set('i', '<Leader>s', '<cmd>write<cr><esc>', {desc = "save buffer", noremap = true})
+vim.keymap.set('n', '<Leader>s', '<cmd>write<cr><esc>', {desc = "save buffer", noremap = true})
 
 vim.keymap.set('n', 'q', '<cmd>q<cr>', {noremap = true})
 
+-- Tab management and navigation
 vim.keymap.set('n', '<Leader>vs', '<cmd>vsplit<cr>', {noremap = true})
 vim.keymap.set('n', '<Leader>hs', '<cmd>split<cr>', {noremap = true})
+vim.keymap.set('n', 'f;', '<cmd>wincmd l<cr>', {noremap = true})
+vim.keymap.set('n', 'fj', '<cmd>wincmd h<cr>', {noremap = true})
+vim.keymap.set('n', 'fl', '<cmd>wincmd k<cr>', {noremap = true})
+vim.keymap.set('n', 'fk', '<cmd>wincmd j<cr>', {noremap = true})
+
+-- Markdown stuff
+vim.keymap.set('n', '<Leader>1', 'i# <esc>', {noremap=true})
+vim.keymap.set('n', '<Leader>2', 'i## <esc>', {noremap=true})
+vim.keymap.set('n', '<Leader>3', 'i### <esc>', {noremap=true})
