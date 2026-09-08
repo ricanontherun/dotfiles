@@ -7,7 +7,7 @@ vim.opt.directory = '~/vimtmp//,.'
 vim.g.markdown_fenced_languages = { 'python', 'vim', 'lua', 'go', 'csharp' }
 
 -- Leader
-vim.g.mapleader = " "
+vim.g.mapleader = "\\"
 
 -- Movement remapping
 vim.keymap.set('n', 'j', 'h')
@@ -24,18 +24,23 @@ vim.keymap.set('n', '<Leader>oc', '<cmd>tabe $MYVIMRC<cr>', {noremap = true})
 vim.keymap.set('n', '<Leader>rc', '<cmd>source $MYVIMRC<cr><cmd>echo "reloaded init.lua"<cr>', {noremap = true})
 
 -- Save current buffer switch to normal mode
-vim.keymap.set('i', '<Leader>s', '<cmd>write<cr><esc>', {desc = "save buffer", noremap = true})
-vim.keymap.set('n', '<Leader>s', '<cmd>write<cr><esc>', {desc = "save buffer", noremap = true})
+vim.keymap.set('i', '<c-s>', '<cmd>write<cr><esc>', {desc = "save buffer", noremap = true})
+vim.keymap.set('n', '<c-s>', '<cmd>write<cr><esc>', {desc = "save buffer", noremap = true})
 
 vim.keymap.set('n', 'q', '<cmd>q<cr>', {noremap = true})
 
--- Tab management and navigation
+-- Split management and navigation
 vim.keymap.set('n', '<Leader>vs', '<cmd>vsplit<cr>', {noremap = true})
 vim.keymap.set('n', '<Leader>hs', '<cmd>split<cr>', {noremap = true})
 vim.keymap.set('n', 'f;', '<cmd>wincmd l<cr>', {noremap = true})
 vim.keymap.set('n', 'fj', '<cmd>wincmd h<cr>', {noremap = true})
 vim.keymap.set('n', 'fl', '<cmd>wincmd k<cr>', {noremap = true})
 vim.keymap.set('n', 'fk', '<cmd>wincmd j<cr>', {noremap = true})
+
+vim.keymap.set('n', '<Leader>t', '<cmd>tabe<cr>', {noremap = true})
+vim.keymap.set('n', '<Leader>ft', '<cmd>tabe<cr><cmd>Explore<cr>', {noremap = true})
+vim.keymap.set('n', 'g;', '<cmd>tabn<cr>', {noremap = true})
+vim.keymap.set('n', 'gj', '<cmd>tabp<cr>', {noremap = true})
 
 -- Markdown stuff
 vim.keymap.set('n', '<Leader>1', 'i# <esc>', {noremap=true})
