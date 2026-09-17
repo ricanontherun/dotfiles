@@ -37,12 +37,14 @@ vim.keymap.set('n', 'fj', '<cmd>wincmd h<cr>', {noremap = true})
 vim.keymap.set('n', 'fl', '<cmd>wincmd k<cr>', {noremap = true})
 vim.keymap.set('n', 'fk', '<cmd>wincmd j<cr>', {noremap = true})
 
+vim.keymap.set('n', '<Leader>e', '<cmd>Explore<cr>', {noremap = true})
+
 vim.keymap.set('n', '<Leader>t', '<cmd>tabe<cr>', {noremap = true})
 vim.keymap.set('n', '<Leader>ft', '<cmd>tabe<cr><cmd>Explore<cr>', {noremap = true})
 vim.keymap.set('n', 'g;', '<cmd>tabn<cr>', {noremap = true})
 vim.keymap.set('n', 'gj', '<cmd>tabp<cr>', {noremap = true})
 
 -- Markdown stuff
-vim.keymap.set('n', '<Leader>1', 'i# <esc>', {noremap=true})
-vim.keymap.set('n', '<Leader>2', 'i## <esc>', {noremap=true})
-vim.keymap.set('n', '<Leader>3', 'i### <esc>', {noremap=true})
+vim.keymap.set('n', '<Leader>1', 'i# ', {noremap=true})
+vim.keymap.set('n', '<Leader>2', 'i## ', {noremap=true})
+vim.keymap.set('n', '<Leader>3', 'i### ', {noremap=true})
