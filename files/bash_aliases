@@ -45,6 +45,12 @@ alias dcu='sudo docker compose up'
 alias dcp='sudo docker compose ps'
 alias docker-stop-all='docker container stop $(docker container ls -q)'
 
+#--------------------------------------------------
+# Rclone
+#--------------------------------------------------
+alias rclone-check='rclone --fast-list --transfers 16 --checkers 32 --progress --exclude "**/.rockbox/**" check'
+alias rclone-copy='rclone --fast-list --transfers 16 --checkers 32 --progress copy'
+
 alias uuid='python3 -c "import uuid; print(uuid.uuid4())"'
 
 # Platform specific aliases
